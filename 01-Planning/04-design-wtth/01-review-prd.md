@@ -32,4 +32,3 @@ finding별 수용/기각 (코어 [2.1](./00-core.md#21-finding별-수용기각-p
 ## References
 - 코어: [00-core.md](./00-core.md)
 - 전문가 정의: [../51-expert-definitions.md](../51-expert-definitions.md)
-- 페르소나: [../personas/pm.md](../personas/pm.md), [../personas/arch.md](../personas/arch.md), [../personas/sec.md](../personas/sec.md)

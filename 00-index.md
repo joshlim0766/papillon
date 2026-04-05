@@ -52,9 +52,9 @@ root/
 
 | 날짜 | 변경 파일 | 내용 | 작성자 |
 |---|---|---|---|
-| 2026-04-03 | 01-Planning/02-common-spec.md | 최초 작성 — 공통 규격 분리 | AI |
-| 2026-04-03 | 01-Planning/03, 04 | 설계서 리넘버링 + 공통 부분을 02로 분리 | AI |
-| 2026-04-03 | 01-Planning/50-runbook-template.md | 최초 작성 — 런북 템플릿 (Approved) | AI |
+| 2026-04-05 | 01-Planning/04-design-wtth/ | wtth 설계서를 관심사별 4파일로 분리 (코어 + PRD/설계/태스크) | AI |
+| 2026-04-05 | 01-Planning/personas/ | 페르소나 시스템 강화 — 개별 파일 분리, 통과/실패 기준, 성격 풀 | AI |
+| 2026-04-05 | 전체 | 네임스페이스 패키징 구조 반영 + 스킬 개명 | Human / AI |
 | 2026-04-03 | 01-Planning/01-prd.md | PRD 확정 (Approved) | Human / AI |
 | 2026-04-03 | 00-index.md | 최초 작성 | AI |
 
@@ -66,4 +66,4 @@ root/
 
 - [ ] 공통 규격 리뷰 — 담당: Human — 관련 파일: 01-Planning/02-common-spec.md
 - [ ] papillon 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/03-design-papillon.md
-- [ ] wtth v2 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/04-design-wtth/00-core.md
+- [ ] wtth v2 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/04-design-wtth/

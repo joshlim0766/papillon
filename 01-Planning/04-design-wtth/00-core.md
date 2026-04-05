@@ -109,6 +109,7 @@ RDR/ADR 포맷 및 저장 경로: [02-common-spec.md 섹션 2~4](../02-common-sp
 
 - 리뷰 종료 시 자동으로 생성한다. 리뷰 1회 = RDR 1개.
 - 5모드 모두에서 생성한다.
+- 저장 경로(`docs/decisions/reviews/`)가 존재하지 않으면 자동 생성한다.
 
 ### 3.2. ADR 승격 규칙
 

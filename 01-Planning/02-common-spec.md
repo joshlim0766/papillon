@@ -209,5 +209,31 @@ L/XL 체급 작업 시 papillon가 생성��는 프로젝트 구조:
 
 ---
 
+## 9. 네임스페이스 및 패키징 구조
+
+papillon이 네임스페이스 최상위이며, 하위 스킬은 papillon 네임스페이스 안에 설치된다.
+
+**설치 구조:**
+
+```
+~/.claude/commands/papillon/
+  papillon.md       ← 오케스트레이터 (/papillon)
+  wtth.md           ← 리뷰 엔진 (/papillon:wtth)
+```
+
+**호출 방식:**
+
+| 호출 | 동작 |
+|---|---|
+| `/papillon` | 파이프라인 오케스트레이터 실행 (인터뷰 → 체급 → Phase 자동 전환) |
+| `/papillon:wtth` | 리뷰 엔진 단독 실행 |
+
+**설계 원칙:**
+- 하위 스킬은 단독 실행 가능해야 한다. papillon 오케스트레이터에 의존하지 않는다.
+- papillon은 하위 스킬을 호출하여 파이프라인을 구성한다.
+- 향후 하위 스킬이 추가될 수 있다.
+
+---
+
 ## References
 - PRD: [01-prd.md](./01-prd.md)

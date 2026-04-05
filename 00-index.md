@@ -1,6 +1,7 @@
 # 00-index: AI-Driven Work Pipeline
 
-> wtth 개선 + papillon 신규 스킬 개발. 파이프라인은 자동, 사람은 의사결정만.
+> papillon 네임스페이스 하위에 스킬을 구성. 파이프라인은 자동, 사람은 의사결정만.
+> 호출: `/papillon` (오케스트레이터), `/papillon:wtth` (리뷰 단독)
 
 ---
 

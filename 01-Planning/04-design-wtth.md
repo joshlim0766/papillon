@@ -168,7 +168,7 @@ P0/P1 수용 건 중 **되돌리기 어렵고, 여러 모듈에 영향을 주거
 
 ## Output / Results
 
-`wtth.md` — 개선된 리뷰 엔진 스킬 (`~/.claude/commands/`에 설치)
+`wtth.md` — 개선된 리뷰 엔진 스킬 (`~/.claude/commands/papillon/`에 설치, `/papillon:wtth`로 호출)
 
 ---
 

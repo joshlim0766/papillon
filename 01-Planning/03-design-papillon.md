@@ -281,7 +281,7 @@ wtth의 상세 동작은 [03-design-wtth.md](./03-design-wtth.md) 참조.
 
 ## Output / Results
 
-`papillon.md` — 파이프라인 오케스트레이터 스킬 (`~/.claude/commands/`에 설치)
+`papillon.md` — 파이프라인 오케스트레이터 스킬 (`~/.claude/commands/papillon/`에 설치)
 
 ---
 

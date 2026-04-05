@@ -70,7 +70,7 @@
 
 - **주 사용자**: 본인 (시니어 엔지니어, AI-native 개발 워크플로우 운영)
 - **향후 확장**: 팀 내 엔지니어
-- **설치 위치**: 글로벌 (`~/.claude/commands/` 또는 동등한 글로벌 스킬 경로)
+- **설치 위치**: 글로벌 네임스페이스 (`~/.claude/commands/papillon/`)
 
 ---
 
@@ -78,10 +78,11 @@
 
 | 산출물 | 파일명 | 역할 |
 |---|---|---|
-| **wtth v2** | `wtth.md` | 멀티에이전트 리뷰 엔진. PRD/설계/코드 3모드 지원. RDR/ADR 생성. 수렴 메커니즘 내장 |
-| **papillon** | `papillon.md` | 파이프라인 오케스트레이터. 인터뷰 → 체급 판정 → Phase 자동 전환. 사람은 의사결정만 |
+| **papillon** | `papillon.md` | 파이프라��� 오케스트레이터. 인터�� → 체급 판정 → Phase 자동 전환. 사람은 의사결정만 |
+| **wtth v2** | `papillon:wtth.md` | 멀티에이��트 리뷰 엔진. PRD/설계/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내��� |
 
-- 두 스킬 모두 `~/.claude/commands/`에 글로벌 설치
+- `papillon`이 네임스페이스 최상위. `~/.claude/commands/papillon/` 하위에 설치
+- 호출: `/papillon` (오케스트레이터), `/papillon:wtth` (리뷰 단독)
 - wtth은 papillon 없이 단독 실행 가능
 - 두 스킬 모두 cyberpink에 의존하지 않음
 
@@ -94,16 +95,16 @@
 | R1 | cyberpink 스킬에 대한 의존성 없음 | cyberpink는 별도 팀의 실험적 도구. 참조는 가능 |
 | R2 | 커밋/푸시는 `/commit-plugin:commit`, `/push-plugin:push` 사용 | 글로벌 CLAUDE.md 규칙 |
 | R3 | 문서 생성 시 doc-standard 준수 | 글로벌 CLAUDE.md 규칙 |
-| R4 | 글로벌 설치 (`~/.claude/commands/`) | 특정 프로젝트에 종속되지 않아야 함 |
-| R5 | wtth 단독 실행 가능 유지 | papillon 없이도 직접 호출할 수 있어야 함 |
+| R4 | 네임스페이스 글로벌 설치 (`~/.claude/commands/papillon/`) | 특정 프로젝트에 종속되지 않아야 함. papillon이 네임스페이스 최상위 |
+| R5 | wtth 단독 실행 가능 유지 | `/papillon:wtth`로 단독 호출 가능해야 함 |
 | R6 | PR 플랫폼은 프로젝트 CLAUDE.md에서 선언 | `Git.Platform` 값으로 github/bitbucket/none 분기. 자동 감지하지 않음 |
 
 ---
 
 ## Output / Results
 
-1. `wtth.md` — 개선된 리뷰 엔진 스킬
-2. `papillon.md` — 파이프라인 오케스트레이터 스킬
+1. `papillon.md` — 파이프라인 오케스트레이터 스킬
+2. `papillon:wtth.md` — 개선된 리뷰 엔진 스킬
 3. 설계서: [02-design.md](./02-design.md)
 4. 본 PRD의 Review: Approved (Human) 달성
 

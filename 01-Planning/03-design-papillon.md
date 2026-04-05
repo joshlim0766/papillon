@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [01-prd.md](./01-prd.md), [02-common-spec.md](./02-common-spec.md), [04-design-wtth.md](./04-design-wtth.md)
+- **Related:** [01-prd.md](./01-prd.md), [02-common-spec.md](./02-common-spec.md), [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
 - **Status:**
   - Work: Draft
   - Review: None
@@ -12,7 +12,7 @@
 ## Input / Dependency
 - PRD: [01-prd.md](./01-prd.md)
 - 공통 규격: [02-common-spec.md](./02-common-spec.md)
-- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)
+- wtth v2 설계: [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
 - 런북 템플릿: [50-runbook-template.md](./50-runbook-template.md)
 - 문서 작성 가이드: `~/Work/common-prompt/documentation/`
 
@@ -269,7 +269,7 @@ papillon가 wtth을 호출할 때 전달하는 정보:
 | 기존 RDR/ADR 경로 | 이전 결정 스캔용 |
 | 코드베이스 컨텍스트 | 프로젝트 구조, 관련 파일 등 |
 
-wtth의 상세 동작은 [03-design-wtth.md](./03-design-wtth.md) 참조.
+wtth의 상세 동작은 [04-design-wtth/00-core.md](./04-design-wtth/00-core.md) 참조.
 
 ---
 
@@ -288,6 +288,6 @@ wtth의 상세 동작은 [03-design-wtth.md](./03-design-wtth.md) 참조.
 ## References
 - PRD: [01-prd.md](./01-prd.md)
 - 공통 규격: [02-common-spec.md](./02-common-spec.md)
-- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)
+- wtth v2 설계: [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
 - 런북 템플릿: [50-runbook-template.md](./50-runbook-template.md)
 - 문서 작성 가이드: `~/Work/common-prompt/documentation/00-index.md`

@@ -15,7 +15,11 @@ root/
     ├── 01-prd.md                        # PRD
     ├── 02-common-spec.md               # 공통 규격 (심각도, RDR/ADR, 디렉토리 구조)
     ├── 03-design-papillon.md           # papillon 스킬 설계서
-    ├── 04-design-wtth.md         # wtth v2 스킬 설계서
+    ├── 04-design-wtth/
+    │   ├── 00-core.md                  # wtth 코어 (수렴, RDR/ADR, 공통 메커니즘)
+    │   ├── 01-review-prd.md            # PRD 리뷰 모드
+    │   ├── 02-review-design.md         # 설계 / ADR 리뷰 모드
+    │   └── 03-review-task.md           # 코드 / 운영 절차 리뷰 모드
     ├── 50-runbook-template.md           # 런북 작성 템플릿
     ├── 51-expert-definitions.md         # 리뷰 전문가 정의 (인덱스)
     └── personas/                        # 개별 페르소나 정의
@@ -35,7 +39,10 @@ root/
 | 01-Planning/01-prd.md | Completed | Approved (Human) | PRD — 문제 정의, 목표, 산출물, 제약 조건 |
 | 01-Planning/02-common-spec.md | Draft | None | 공통 규격 — 심각도, RDR/ADR 포맷, 디렉토리 구조 |
 | 01-Planning/03-design-papillon.md | Draft | None | papillon — 파이프라인 Phase, 체급 분류, 호출 인터페이스 |
-| 01-Planning/04-design-wtth.md | Draft | None | wtth v2 — 4모드, 전문가 풀, 수렴 메커니즘 |
+| 01-Planning/04-design-wtth/00-core.md | Draft | None | wtth 코어 — 수렴, RDR/ADR, 공통 메커니즘 |
+| 01-Planning/04-design-wtth/01-review-prd.md | Draft | None | PRD 리뷰 모드 |
+| 01-Planning/04-design-wtth/02-review-design.md | Draft | None | 설계 / ADR 리뷰 모드 |
+| 01-Planning/04-design-wtth/03-review-task.md | Draft | None | 코드 / 운영 절차 리뷰 모드 |
 | 01-Planning/50-runbook-template.md | Completed | Approved (Human) | 런북 템플릿 — 필수 구조, 커맨드/검증/롤백 규칙 |
 | 01-Planning/51-expert-definitions.md | Completed | Approved (Human) | 전문가 정의 — 10명 관점/금기/판단기준/체크리스트 |
 
@@ -59,4 +66,4 @@ root/
 
 - [ ] 공통 규격 리뷰 — 담당: Human — 관련 파일: 01-Planning/02-common-spec.md
 - [ ] papillon 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/03-design-papillon.md
-- [ ] wtth v2 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/04-design-wtth.md
+- [ ] wtth v2 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/04-design-wtth/00-core.md

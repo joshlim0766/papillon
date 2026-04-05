@@ -185,8 +185,8 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
    - RDR 자동 생성 → `docs/decisions/reviews/`에 저장
    - P0/P1 수용 건 중 설계 변경 수반 항목 → ADR 승격 제안
 4. ADR 승격 시 → Phase 2.1로 진입:
-   - ADR 작성 → wtth로 ADR 리뷰 → ★ 사람 의사결정 → RDR 생성
-   - **ADR 리뷰 결과 분기:**
+   - ADR 작성 → wtth로 ADR 리뷰 (finding별 수용/기각 + RDR 생성) → ★ 사람이 ADR 자체에 대해 판단
+   - **ADR 판단 분기 (wtth 리뷰 종료 후):**
      - 승인 → ADR 확정, Phase 2로 복귀하여 다음 finding 처리
      - 방향 기각 → ADR을 다른 방향으로 재작성 → Phase 2.1 재진입 (RDR에 기각 사유 기록)
      - ADR 자체 불필요 판정 → ADR 드롭, finding 수용은 유지하고 구현에서 처리 (RDR에 드롭 사유 기록)

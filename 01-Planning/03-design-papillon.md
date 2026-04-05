@@ -1,8 +1,8 @@
-# 03-design-work-flow: work-flow 스킬 설계서
+# 03-design-papillon: papillon 스킬 설계서
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [01-prd.md](./01-prd.md), [02-common-spec.md](./02-common-spec.md), [04-design-review-hell.md](./04-design-review-hell.md)
+- **Related:** [01-prd.md](./01-prd.md), [02-common-spec.md](./02-common-spec.md), [04-design-wtth.md](./04-design-wtth.md)
 - **Status:**
   - Work: Draft
   - Review: None
@@ -12,7 +12,7 @@
 ## Input / Dependency
 - PRD: [01-prd.md](./01-prd.md)
 - 공통 규격: [02-common-spec.md](./02-common-spec.md)
-- review-hell v2 설계: [04-design-review-hell.md](./04-design-review-hell.md)
+- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)
 - 런북 템플릿: [50-runbook-template.md](./50-runbook-template.md)
 - 문서 작성 가이드: `~/Work/common-prompt/documentation/`
 
@@ -46,12 +46,12 @@
   │
   ▼ (자동 전환)
 [Phase 2] 설계 리뷰
-  │  review-hell 호출 (설계 전문가 풀)
+  │  wtth 호출 (설계 전문가 풀)
   │  리뷰 1라운드 후 지적 15건 초과 시 태스크 크기 경고 (2차 안전망)
   │  ★ 사람: finding별 수용/기각
   │  → RDR 자동 생성
   │  → ADR 승격 대상 있으면:
-  │     [Phase 2.1] ADR 작성 → review-hell 호출 → ★ 사람: 의사결정 → RDR 생성
+  │     [Phase 2.1] ADR 작성 → wtth 호출 → ★ 사람: 의사결정 → RDR 생성
   │       → 승인: ADR 확정
   │       → 방향 기각: ADR 재작성 → Phase 2.1 재진입
   │       → 불필요 판정: ADR 드롭, 구현에서 처리
@@ -65,11 +65,11 @@
 [Phase 4] 구현
   │  확정된 설계서 기반 코딩 수행
   │  4-A. 개발 작업: 코드 작성
-  │  4-B. 인프라/수행 작업: 런북 생성 → review-hell(운영 절차 리뷰) → ★ 사람 의사결정 → 실행 → 검증
+  │  4-B. 인프라/수행 작업: 런북 생성 → wtth(운영 절차 리뷰) → ★ 사람 의사결정 → 실행 → 검증
   │
   ▼ (자동 전환, 4-A인 경우)
 [Phase 5] 코드 리뷰
-  │  review-hell 호출 (코드 전문가 풀: CODE + TEST)
+  │  wtth 호출 (코드 전문가 풀: CODE + TEST)
   │  AI 전문가가 지적 + 자동 수정
   │  ★ 사람: AS-IS / TO-BE diff 전문을 확인하고 승인/반려
   │  → 반려 시 사유와 함께 재수정 싸이클
@@ -144,13 +144,13 @@
 | **S** | 설계 생략 → 바로 Phase 4(구현) 진입 |
 | **M** | 설계 초안 생성 → Phase 1.5(크기 점검) → Phase 2~6 수행 |
 | **L** | 조감도(00-index.md) + 태스크 목록 생성 → **파일로 저장하고 종료**. 각 태스크는 별도 세션에서 S/M으로 수행 |
-| **XL** | PRD 작성 → Phase 1.5(크기 점검) → Phase 2(review-hell PRD 리뷰 모드) → Phase 3(종결 판단) → Phase 분할 + 태스크 목록 생성 → **파일로 저장하고 종료**. 각 Phase 내 태스크는 별도 세션에서 L/M/S로 수행 |
+| **XL** | PRD 작성 → Phase 1.5(크기 점검) → Phase 2(wtth PRD 리뷰 모드) → Phase 3(종결 판단) → Phase 분할 + 태스크 목록 생성 → **파일로 저장하고 종료**. 각 Phase 내 태스크는 별도 세션에서 L/M/S로 수행 |
 
 **L/XL의 핵심 원칙:**
 - L/XL은 파이프라인의 실행 단위가 아니다. **실행 결과물의 저장소이자 추적 구조**이다.
 - 파이프라인이 실제로 도는 단위는 **항상 S/M**이다.
 - L/XL의 산출물은 프로젝트 구조(index + 태스크 목록 + RDR/ADR + 작업 요약 카드)로 남는다.
-- 다음 세션에서 work-flow 호출 시 index를 읽고 "다음 태스크"를 제안한다.
+- 다음 세션에서 papillon 호출 시 index를 읽고 "다음 태스크"를 제안한다.
 
 L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
@@ -179,13 +179,13 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
 ### 2.3. Phase 2: 설계 리뷰
 
-1. review-hell을 **설계 리뷰 모드**로 호출한다.
-2. 기존 review-hell 프로세스 그대로 수행 (전문가 제안 → 승인 → 병렬 실행 → 항목별 의사결정).
+1. wtth을 **설계 리뷰 모드**로 호출한다.
+2. 기존 wtth 프로세스 그대로 수행 (전문가 제안 → 승인 → 병렬 실행 → 항목별 의사결정).
 3. 리뷰 종료 시:
    - RDR 자동 생성 → `docs/decisions/reviews/`에 저장
    - P0/P1 수용 건 중 설계 변경 수반 항목 → ADR 승격 제안
 4. ADR 승격 시 → Phase 2.1로 진입:
-   - ADR 작성 → review-hell로 ADR 리뷰 → ★ 사람 의사결정 → RDR 생성
+   - ADR 작성 → wtth로 ADR 리뷰 → ★ 사람 의사결정 → RDR 생성
    - **ADR 리뷰 결과 분기:**
      - 승인 → ADR 확정, Phase 2로 복귀하여 다음 finding 처리
      - 방향 기각 → ADR을 다른 방향으로 재작성 → Phase 2.1 재진입 (RDR에 기각 사유 기록)
@@ -209,7 +209,7 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
 **4-B. 인프라/수행 작업**
 1. 태스크 내용을 기반으로 **런북(절차서)을 생성**한다. 런북은 [50-runbook-template.md](./50-runbook-template.md)의 형식을 따른다.
-2. review-hell을 **운영 절차 리뷰 모드**로 호출한다.
+2. wtth을 **운영 절차 리뷰 모드**로 호출한다.
 3. ★ 사람: finding별 수용/기각.
 4. 절차서 확정 후, 각 단계를 순서대로 실행한다.
 5. 각 단계의 검증 커맨드를 수행하여 성공 여부를 판단한다.
@@ -222,7 +222,7 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
 **방식: AI 자동 수정 + 사람 diff 전문 확인 (방식 B)**
 
-1. review-hell을 **코드 리뷰 모드**로 호출한다 (코드 전문가 풀 사용).
+1. wtth을 **코드 리뷰 모드**로 호출한다 (코드 전문가 풀 사용).
 2. 리뷰 대상: `git diff` 기반 변경사항.
 3. AI 전문가들이 지적 사항을 도출하고, **수정까지 자동 수행**한다.
 4. 수정 결과를 **AS-IS / TO-BE diff 전문**으로 사람에게 출력한다.
@@ -258,9 +258,9 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
 ---
 
-## 3. review-hell 호출 인터페이스
+## 3. wtth 호출 인터페이스
 
-work-flow가 review-hell을 호출할 때 전달하는 정보:
+papillon가 wtth을 호출할 때 전달하는 정보:
 
 | 파라미터 | 설명 |
 |---|---|
@@ -269,7 +269,7 @@ work-flow가 review-hell을 호출할 때 전달하는 정보:
 | 기존 RDR/ADR 경로 | 이전 결정 스캔용 |
 | 코드베이스 컨텍스트 | 프로젝트 구조, 관련 파일 등 |
 
-review-hell의 상세 동작은 [03-design-review-hell.md](./03-design-review-hell.md) 참조.
+wtth의 상세 동작은 [03-design-wtth.md](./03-design-wtth.md) 참조.
 
 ---
 
@@ -281,13 +281,13 @@ review-hell의 상세 동작은 [03-design-review-hell.md](./03-design-review-he
 
 ## Output / Results
 
-`work-flow.md` — 파이프라인 오케스트레이터 스킬 (`~/.claude/commands/`에 설치)
+`papillon.md` — 파이프라인 오케스트레이터 스킬 (`~/.claude/commands/`에 설치)
 
 ---
 
 ## References
 - PRD: [01-prd.md](./01-prd.md)
 - 공통 규격: [02-common-spec.md](./02-common-spec.md)
-- review-hell v2 설계: [04-design-review-hell.md](./04-design-review-hell.md)
+- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)
 - 런북 템플릿: [50-runbook-template.md](./50-runbook-template.md)
 - 문서 작성 가이드: `~/Work/common-prompt/documentation/00-index.md`

@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [02-design-work-flow.md](./02-design-work-flow.md), [03-design-review-hell.md](./03-design-review-hell.md)
+- **Related:** [02-design-papillon.md](./02-design-papillon.md), [03-design-wtth.md](./03-design-wtth.md)
 - **Status:**
   - Work: Completed
   - Review: Approved (Human)
@@ -10,7 +10,7 @@
 ---
 
 ## Input / Dependency
-- work-flow 설계서: [02-design-work-flow.md](./02-design-work-flow.md) — Phase 4-B에서 이 템플릿을 사용
+- papillon 설계서: [02-design-papillon.md](./02-design-papillon.md) — Phase 4-B에서 이 템플릿을 사용
 
 ---
 
@@ -114,7 +114,7 @@
 
 ## 2. 운영 절차 리뷰 시 검증 항목
 
-이 템플릿으로 작성된 런북을 review-hell 운영 절차 리뷰 모드에서 검증할 때, 전문가들은 아래를 확인한다.
+이 템플릿으로 작성된 런북을 wtth 운영 절차 리뷰 모드에서 검증할 때, 전문가들은 아래를 확인한다.
 
 | 검증 항목 | 내용 |
 |---|---|
@@ -127,4 +127,4 @@
 ---
 
 ## References
-- work-flow 설계서 Phase 4-B: [02-design-work-flow.md](./02-design-work-flow.md)
+- papillon 설계서 Phase 4-B: [02-design-papillon.md](./02-design-papillon.md)

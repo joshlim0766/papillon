@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [03-design-work-flow.md](./03-design-work-flow.md), [04-design-review-hell.md](./04-design-review-hell.md)
+- **Related:** [03-design-papillon.md](./03-design-papillon.md), [04-design-wtth.md](./04-design-wtth.md)
 - **Status:**
   - Work: In-Progress
   - Review: None
@@ -18,16 +18,16 @@
 
 | 등급 | 기준 | 사용 맥락 |
 |---|---|---|
-| **P0** | 데이터 손실·보안 침해·시스템 다운 가능 | review-hell: 강력 수용 권장 / work-flow: 종결 불가 |
-| **P1** | 운영 장애·감사 실패·주요 UX 붕괴 가능 | review-hell: 수용 권장 / work-flow: 종결 불가 |
-| **P2** | 기술 부채·성능 저하·혼란 유발 | review-hell: 수용 제안, 기각 존중 / work-flow: 종결 가능 |
-| **P3** | 개선 제안·코드 품질·선택적 강화 | review-hell: 중립 제시 / work-flow: 종결 가능 |
+| **P0** | 데이터 손실·보안 침해·시스템 다운 가능 | wtth: 강력 수용 권장 / papillon: 종결 불가 |
+| **P1** | 운영 장애·감사 실패·주요 UX 붕괴 가능 | wtth: 수용 권장 / papillon: 종결 불가 |
+| **P2** | 기술 부채·성능 저하·혼란 유발 | wtth: 수용 제안, 기각 존중 / papillon: 종결 가능 |
+| **P3** | 개선 제안·코드 품질·선택적 강화 | wtth: 중립 제시 / papillon: 종결 가능 |
 
 ---
 
 ## 2. RDR (Review Decision Record) 포맷
 
-리뷰 1회 = RDR 1개. review-hell이 리뷰 종료 시 자동 생성한다.
+리뷰 1회 = RDR 1개. wtth이 리뷰 종료 시 자동 생성한다.
 
 **파일명**: `RDR-YYYY-MM-DD-{대상명}.md`
 **저장 경로**: `{프로젝트}/docs/decisions/reviews/`
@@ -53,7 +53,7 @@
 
 ## 3. ADR (Architecture Decision Record) 포맷
 
-P0/P1 수용 건 중 **설계 변경을 수반하는 항목**에 대해 review-hell이 승격을 제안한다.
+P0/P1 수용 건 중 **설계 변경을 수반하는 항목**에 대해 wtth이 승격을 제안한다.
 사람이 승인하면 생성한다.
 
 **파일명**: `ADR-NNN-{제목}.md`
@@ -125,7 +125,7 @@ XL 체급에서 하나의 Phase가 완료될 때 생성한다. 해당 Phase 내 
 
 사람에게 결정을 요청하거나 결정을 기록할 때 반드시 "왜"와 근거를 포함한다.
 
-### 5.1. review-hell finding 제시
+### 5.1. wtth finding 제시
 
 ```markdown
 **문제**: reviewer_id를 클라이언트에서 받는데 인증 토큰과 대조하지 않음
@@ -138,7 +138,7 @@ XL 체급에서 하나의 Phase가 완료될 때 생성한다. 해당 Phase 내 
 - "참조"는 **있으면 필수, 없으면 추론 근거를 명시**한다.
 - 3줄 초과 시 finding을 분할한다.
 
-### 5.2. work-flow 결정 요청
+### 5.2. papillon 결정 요청
 
 ```markdown
 체급: M
@@ -187,7 +187,7 @@ RDR의 "결정 근거" 컬럼에 인과관계 수준으로 기록한다.
 
 ## 8. L/XL 프로젝트 구조 템플릿
 
-L/XL 체급 작업 시 work-flow가 생성��는 프로젝트 구조:
+L/XL 체급 작업 시 papillon가 생성��는 프로젝트 구조:
 
 ```
 {프로젝트}/
@@ -205,7 +205,7 @@ L/XL 체급 작업 시 work-flow가 생성��는 프로젝트 구조:
 ```
 
 - `00-index.md`에 "다음 태스크" 정보가 기재된다.
-- 다음 세션에서 work-flow 호출 시 이 index를 읽고 태스크를 제안한다.
+- 다음 세션에서 papillon 호출 시 이 index를 읽고 태스크를 제안한다.
 
 ---
 

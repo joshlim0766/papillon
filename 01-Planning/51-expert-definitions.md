@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [04-design-review-hell.md](./04-design-review-hell.md)
+- **Related:** [04-design-wtth.md](./04-design-wtth.md)
 - **Status:**
   - Work: Completed
   - Review: Approved (Human)
@@ -10,7 +10,7 @@
 ---
 
 ## Input / Dependency
-- review-hell v2 설계: [04-design-review-hell.md](./04-design-review-hell.md)
+- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)
 
 ---
 
@@ -295,4 +295,4 @@
 ---
 
 ## References
-- review-hell v2 설계: [04-design-review-hell.md](./04-design-review-hell.md)
+- wtth v2 설계: [04-design-wtth.md](./04-design-wtth.md)

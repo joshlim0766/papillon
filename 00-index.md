@@ -17,7 +17,12 @@ root/
     ├── 03-design-papillon.md           # papillon 스킬 설계서
     ├── 04-design-wtth.md         # wtth v2 스킬 설계서
     ├── 50-runbook-template.md           # 런북 작성 템플릿
-    └── 51-expert-definitions.md         # 리뷰 전문가 정의
+    ├── 51-expert-definitions.md         # 리뷰 전문가 정의 (인덱스)
+    └── personas/                        # 개별 페르소나 정의
+        ├── _schema.md                   # 페르소나 작성 규격
+        ├── pm.md, arch.md, be.md, fe.md
+        ├── sre.md, sec.md, po.md, dba.md
+        └── code.md, test.md
 ```
 
 ---

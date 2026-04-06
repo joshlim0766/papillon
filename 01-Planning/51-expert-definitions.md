@@ -28,6 +28,7 @@
 | [DBA](./personas/dba.md) | 설계 | 선택적 | `personas/dba.md` |
 | [CODE](./personas/code.md) | 코드 | 기본 | `personas/code.md` |
 | [TEST](./personas/test.md) | 코드 | 기본 | `personas/test.md` |
+| [INQUISITOR](./personas/inquisitor.md) | inquisition (전용) | 기본 | `personas/inquisitor.md` |
 
 ---
 

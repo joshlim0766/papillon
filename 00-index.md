@@ -37,7 +37,7 @@ root/
 |---|---|---|---|
 | 00-problem-and-proposals.md | Completed | None | 문제 진단 + Sonnet 대화 기반 제안 정리 |
 | 01-Planning/01-prd.md | Completed | Approved (Human) | PRD — 문제 정의, 목표, 산출물, 제약 조건 |
-| 01-Planning/02-common-spec.md | Draft | None | 공통 규격 — 심각도, RDR/ADR 포맷, 디렉토리 구조 |
+| 01-Planning/02-common-spec.md | In-Progress | None | 공통 규격 — 심각도, RDR/ADR 포맷, 디렉토리 구조 |
 | 01-Planning/03-design-papillon.md | Draft | None | papillon — 파이프라인 Phase, 체급 분류, 호출 인터페이스 |
 | 01-Planning/04-design-wtth/00-core.md | Draft | None | wtth 코어 — 수렴, RDR/ADR, 공통 메커니즘 |
 | 01-Planning/04-design-wtth/01-review-prd.md | Draft | None | PRD 리뷰 모드 |

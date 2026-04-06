@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [00-problem-and-proposals.md](../00-problem-and-proposals.md), [02-design.md](./02-design.md)
+- **Related:** [00-problem-and-proposals.md](../00-problem-and-proposals.md), [03-design-papillon.md](./03-design-papillon.md)
 - **Status:**
   - Work: Completed
   - Review: Approved (Human)
@@ -78,8 +78,8 @@
 
 | 산출물 | 파일명 | 역할 |
 |---|---|---|
-| **papillon** | `papillon.md` | 파이프라��� 오케스트레이터. 인터�� → 체급 판정 → Phase 자동 전환. 사람은 의사결정만 |
-| **wtth v2** | `papillon:wtth.md` | 멀티에이��트 리뷰 엔진. PRD/설계/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내��� |
+| **papillon** | `papillon.md` | 파이프라인 오케스트레이터. 인터뷰 → 체급 판정 → Phase 자동 전환. 사람은 의사결정만 |
+| **wtth v2** | `papillon:wtth.md` | 멀티에이전트 리뷰 엔진. PRD/설계/ADR/운영절차/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내장 |
 
 - `papillon`이 네임스페이스 최상위. `~/.claude/commands/papillon/` 하위에 설치
 - 호출: `/papillon` (오케스트레이터), `/papillon:wtth` (리뷰 단독)
@@ -105,7 +105,7 @@
 
 1. `papillon.md` — 파이프라인 오케스트레이터 스킬
 2. `papillon:wtth.md` — 개선된 리뷰 엔진 스킬
-3. 설계서: [02-design.md](./02-design.md)
+3. 설계서: [03-design-papillon.md](./03-design-papillon.md)
 4. 본 PRD의 Review: Approved (Human) 달성
 
 ---

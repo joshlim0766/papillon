@@ -37,3 +37,25 @@
 | 2-5 | [17-phase6-to-phase1-context.md](./17-phase6-to-phase1-context.md) | 공백 | Phase 6→Phase 1 복귀 시 컨텍스트 전달 미정의 | Open |
 | 3-4 | [18-shackled-naming.md](./18-shackled-naming.md) | 용어 | shackled "페어 프로그래밍 스킬" 명칭 vs 실제 역할 괴리 | Open |
 | 5-5 | [19-l-weight-integration.md](./19-l-weight-integration.md) | 누락 | L 체급 인테그레이션 태스크 생성 기준 미정의 | Open |
+
+## PRD 재리뷰 추가분 (2026-04-07)
+
+중복 건: X-1 → 기존 3-3(12번)에 메모 추가, M-1 → 기존 5-2(06번)에 메모 추가
+
+### 중간 (4건)
+
+| # | 파일 | 분류 | 요약 | 상태 |
+|---|---|---|---|---|
+| X-2 | [20-design-shackled-link.md](./20-design-shackled-link.md) | 참조 | 설계서 Context Related에 shackled 설계서 링크 부재 | Open |
+| X-3 | [21-shackled-persona-roles.md](./21-shackled-persona-roles.md) | 참조 | shackled 페르소나 역할 분담(작성자/크로스 체커) 미반영 | Open |
+| M-2 | [22-context-window-constraint.md](./22-context-window-constraint.md) | 누락 | 컨텍스트 윈도우 제약 미언급 | Open |
+| O-1 | [23-prd-reapproval.md](./23-prd-reapproval.md) | outdated | PRD Status "Approved" 이후 스코프 변경 — re-approve 필요 | Open |
+
+### 낮음 (4건)
+
+| # | 파일 | 분류 | 요약 | 상태 |
+|---|---|---|---|---|
+| I-2 | [24-filename-notation.md](./24-filename-notation.md) | 용어 | 파일명 표기(`papillon:x.md` vs `x.md`) 혼재 | Open |
+| X-4 | [25-r3-wording.md](./25-r3-wording.md) | 용어 | R3 제약 "기본/우선" vs common-spec "대신" 미세 차이 | Open |
+| M-3 | [26-migration-plan.md](./26-migration-plan.md) | 누락 | 기존 wtth → papillon 전환 계획 미명시 | Open |
+| O-2 | [27-cyberpink-version.md](./27-cyberpink-version.md) | outdated | cyberpink 참조 경로 버전 하드코딩 | Open |

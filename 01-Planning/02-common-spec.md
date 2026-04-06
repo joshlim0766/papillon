@@ -1,4 +1,4 @@
-# 02-common-spec: 공통 ���격
+# 02-common-spec: 공통 규격
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
@@ -187,7 +187,7 @@ RDR의 "결정 근거" 컬럼에 인과관계 수준으로 기록한다.
 
 ## 8. L/XL 프로젝트 구조 템플릿
 
-L/XL 체급 작업 시 papillon이 생성��는 프로젝트 구조:
+L/XL 체급 작업 시 papillon이 생성하는 프로젝트 구조:
 
 ```
 {프로젝트}/

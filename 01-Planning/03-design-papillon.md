@@ -41,7 +41,7 @@
   │    - L → 조감도 + 태스크 목록 생성 → 파일 저장 → 파이프라인 종료
   │    - XL → PRD 작성 → Phase 2~3(PRD 리뷰 모드) → Phase 분할 → 파일 저장 → 파이프라인 종료
   │  Step 3: Draft 생성 (M 체급, Sonnet)
-  │    - 인터뷰 결과 + doc-standard 기준으로 설계 초안 작성
+  │    - 인터뷰 결과 + 문서 작성 규칙(common-spec §11 또는 사용자 doc-standard) 기준으로 설계 초안 작성
   │    - 핵심 제약은 index에 명시적으로 기재
   │
   ▼ (자동 전환, M 체급)
@@ -155,7 +155,7 @@ L/XL 산출물 구조: [02-common-spec.md 섹션 8](./02-common-spec.md) 참조.
 
 #### Step 3: Draft 생성 (M 체급, Sonnet)
 
-1. 인터뷰 결과를 기반으로 doc-standard(01-doc-standard.md) 기준으로 설계 초안을 작성한다.
+1. 인터뷰 결과를 기반으로 문서 작성 규칙([02-common-spec.md §11](./02-common-spec.md) 또는 사용자 doc-standard)에 따라 설계 초안을 작성한다.
 2. 인터뷰에서 확인된 **핵심 제약은 00-index.md에 명시적으로 기재**한다.
 3. 초안을 사람에게 보여주고 Phase 1.5로 자동 전환한다.
 

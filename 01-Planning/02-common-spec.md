@@ -257,5 +257,52 @@ papillon이 네임스페이스 최상위이며, 하위 스킬은 papillon 네임
 
 ---
 
+## 11. 문서 작성 기본 규칙
+
+papillon이 산출물(설계서, 요약, 문맥 파일 등)을 생성할 때 적용하는 최소 규칙이다. **사용자의 doc-standard가 있으면 그것을 우선 적용**하고, 없으면 아래 규칙을 기본으로 사용한다.
+
+### 11.1. Context 헤더
+
+모든 설계 문서의 최상단에 아래 헤더를 포함한다:
+
+```markdown
+## Context
+- **Parent:** [상위 문서 링크]
+- **Related:** [관련 문서 링크]
+- **Status:**
+  - Work: Draft | In-Progress | Completed
+  - Review: None | Reviewing | Approved (Human)
+```
+
+### 11.2. Status 2축
+
+Status는 Work(작업)과 Review(리뷰) 두 축으로 독립 관리한다.
+
+- **Work:** Draft → In-Progress → Completed
+- **Review:** None → Reviewing → Approved
+
+문서가 종료되려면 `Work: Completed + Review: Approved (Human)` 두 조건을 모두 충족해야 한다.
+
+### 11.3. 섹션 넘버링
+
+모든 섹션은 소수점 넘버링(`1.`, `1.1.`, `1.1.1.`)을 사용하여 논리적 계층을 표현한다.
+
+### 11.4. 상호참조
+
+문서 간 연결이 필요하면 마크다운 링크 `[텍스트](./경로)`를 사용한다. 파일 이동/이름 변경 시 참조하는 모든 문서의 링크를 함께 수정한다.
+
+### 11.5. 문서 분할 기준
+
+아래 트리거 중 하나라도 해당되면 파일 분할을 검토한다:
+- **T1. 독립 변경 가능성** — 서로 독립적으로 수정될 수 있는 개념이 2개 이상 공존
+- **T2. 상호참조 밀도** — 문서 내 섹션 간 상호참조가 3회 이상 발생
+- **T3. 200줄 초과** — T1·T2 기준을 재검토하는 경보 (분할 기준 자체는 아님)
+
+### 11.6. 사용자 doc-standard 우선 적용
+
+사용자의 CLAUDE.md 또는 프로젝트 설정에 doc-standard가 지정되어 있으면 §11.1~11.5 대신 사용자의 규칙을 따른다. papillon은 산출물 생성 시 사용자 doc-standard의 존재 여부를 확인하고, 있으면 그것을 로드한다.
+
+---
+
 ## References
 - PRD: [01-prd.md](./01-prd.md)

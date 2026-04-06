@@ -1,4 +1,4 @@
-# [INQUISITOR] 요구사항 심문관
+# [INQUISITOR] 위선자(Hypocrite) — 요구사항 심문관
 
 **투입 모드:** inquisition (전용)
 

@@ -8,9 +8,9 @@
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
-| 1-1 | [01-section-numbering.md](./01-section-numbering.md) | 구조 | 섹션 번호 충돌 (`## 3.`이 두 번 등장) | Open |
-| 2-1 | [02-s-weight-code-review.md](./02-s-weight-code-review.md) | 공백 | S 체급 코드 리뷰 시 설계서 없는 상태의 검증 기준 미정의 | Open |
-| 3-1 | [03-prd-outputs-missing.md](./03-prd-outputs-missing.md) | 참조 | PRD 산출물에 inquisition, shackled 누락 | Open |
+| 1-1 | [01-section-numbering.md](./01-section-numbering.md) | 구조 | 섹션 번호 충돌 (`## 3.`이 두 번 등장) | **Closed** |
+| 2-1 | [02-s-weight-code-review.md](./02-s-weight-code-review.md) | 공백 | S 체급 코드 리뷰 시 설계서 없는 상태의 검증 기준 미정의 | **Closed** |
+| 3-1 | [03-prd-outputs-missing.md](./03-prd-outputs-missing.md) | 참조 | PRD 산출물에 inquisition, shackled 누락 | **Closed** |
 | 4-1 | [04-model-name-coupling.md](./04-model-name-coupling.md) | 모순 | 다이어그램에 모델명(Opus/Sonnet) 노출 — 독립성 위배 | Open |
 | 5-1 | [05-shackled-interface.md](./05-shackled-interface.md) | 누락 | shackled 호출 인터페이스 미정의 | Open |
 | 5-2 | [06-error-handling.md](./06-error-handling.md) | 누락 | 에러/실패 처리 전략 부재 | Open |

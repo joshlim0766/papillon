@@ -21,7 +21,10 @@
 │   ├── 03-persona-and-review.md
 │   ├── 04-execution-and-error.md
 │   └── feedback.md
-└── 02-design/               # 설계서 (작성 예정)
+├── 02-design/               # 설계서
+│   └── 00-design-shackled.md
+└── 03-review/               # 리뷰 산출물
+    └── 00-review-objectives.md
 ```
 
 ---
@@ -29,6 +32,6 @@
 ## 현재 진행 상태
 
 - [x] inquisition 완료 — 체급 M 확정
-- [ ] 설계서 작성
+- [x] 설계서 초안 작성 완료
 - [ ] wtth 설계 리뷰
 - [ ] 스킬 프롬프트 구현

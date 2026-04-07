@@ -15,7 +15,11 @@ root/
     ├── 01-prd.md                        # PRD
     ├── 02-common-spec.md               # 공통 규격 (심각도, RDR/ADR, 디렉토리 구조)
     ├── 03-design-papillon.md           # papillon 스킬 설계서
-    ├── 05-design-inquisition.md        # inquisition 스킬 설계서 (요구사항 추출)
+    ├── 05-inquisition/
+    │   ├── 00-index.md                 # inquisition 스킬 인덱스
+    │   ├── 02-design/                  # 설계서
+    │   │   └── 00-design-inquisition.md
+    │   └── 03-review/                  # 리뷰 산출물
     ├── 04-design-wtth/
     │   ├── 00-core.md                  # wtth 코어 (수렴, RDR/ADR, 공통 메커니즘)
     │   ├── 01-review-prd.md            # PRD 리뷰 모드
@@ -49,7 +53,7 @@ root/
 | 01-Planning/01-prd.md | Completed | Approved (Human) | PRD — 문제 정의, 목표, 산출물, 제약 조건 |
 | 01-Planning/02-common-spec.md | In-Progress | None | 공통 규격 — 심각도, RDR/ADR 포맷, 디렉토리 구조 |
 | 01-Planning/03-design-papillon.md | Draft | None | papillon — 파이프라인 Phase, 체급 분류, 호출 인터페이스 |
-| 01-Planning/05-design-inquisition.md | Draft | None | inquisition — 요구사항 추출, 문맥 관리, 체급 판정 |
+| 01-Planning/05-inquisition/ | Draft | None | inquisition — 요구사항 추출, 문맥 관리, 체급 판정 |
 | 01-Planning/04-design-wtth/00-core.md | Draft | None | wtth 코어 — 수렴, RDR/ADR, 공통 메커니즘 |
 | 01-Planning/04-design-wtth/01-review-prd.md | Draft | None | PRD 리뷰 모드 |
 | 01-Planning/04-design-wtth/02-review-design.md | Draft | None | 설계 / ADR 리뷰 모드 |
@@ -66,7 +70,7 @@ root/
 | 날짜 | 변경 파일 | 내용 | 작성자 |
 |---|---|---|---|
 | 2026-04-07 | 01-Planning/06-shackled/, 99-HANDOFF.md | shackled 설계 초안(Sonnet) + 리뷰 목적 문서(O1~O6) + 핸드오프 도입 | Human / AI |
-| 2026-04-06 | 01-Planning/05-design-inquisition.md | inquisition 스킬 독립 분리 (papillon Step 1 → 별도 설계서) | Human / AI |
+| 2026-04-06 | 01-Planning/05-inquisition/ | inquisition 스킬 독립 분리 (papillon Step 1 → 별도 설계서) | Human / AI |
 | 2026-04-05 | 01-Planning/04-design-wtth/ | wtth 설계서를 관심사별 4파일로 분리 (코어 + PRD/설계/태스크) | AI |
 | 2026-04-05 | 01-Planning/personas/ | 페르소나 시스템 강화 — 개별 파일 분리, 통과/실패 기준, 성격 풀 | AI |
 | 2026-04-05 | 전체 | 네임스페이스 패키징 구조 반영 + 스킬 개명 | Human / AI |

@@ -5,7 +5,7 @@
 - **Related:**
   - [RDR-2026-04-07-design-shackled.md](./RDR-2026-04-07-design-shackled.md) — 리뷰 결정 기록
   - [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 수정 대상
-  - [05-design-inquisition.md](../../05-design-inquisition.md) — 수정 대상
+  - [05-inquisition/02-design/00-design-inquisition.md](../../05-inquisition/02-design/00-design-inquisition.md) — 수정 대상
   - [personas/](../../personas/) — 수정 대상
 - **Status:**
   - Work: Draft
@@ -144,7 +144,7 @@
   3. 신뢰도 플래그 (인터뷰이 답변 일관성 평가)
 
 **수정 대상:**
-- `05-design-inquisition.md` — 체급 판단 단계에 핸드오프 브리프 생성 추가
+- `05-inquisition/02-design/00-design-inquisition.md` — 체급 판단 단계에 핸드오프 브리프 생성 추가
   - 인터뷰 종료 → 체급 판단 → 핸드오프 브리프 생성 → Sonnet에게 전달
   - 브리프 포맷 정의: 주의 사항 / 깊이 부족 관심사 / 신뢰도
 - 동 문서 — 셀프 오딧 항목에 "관심사별 깊이 균형 확인" 추가

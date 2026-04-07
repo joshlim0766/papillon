@@ -8,7 +8,7 @@
   - [03-blocked-handling.md](./03-blocked-handling.md) — 진행 불가 처리 (분리)
   - [03-design-papillon.md](../../03-design-papillon.md) — 오케스트레이터 (shackled 호출자)
   - [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 엔진 (시블링)
-  - [05-design-inquisition.md](../../05-design-inquisition.md) — 요구사항 추출 (시블링)
+  - [05-inquisition/00-index.md](../../05-inquisition/00-index.md) — 요구사항 추출 (시블링)
   - [02-common-spec.md](../../02-common-spec.md) — 공통 규격
   - [50-runbook-template.md](../../50-runbook-template.md) — 런북 템플릿 (4-B 산출물 형식)
   - [51-expert-definitions.md](../../51-expert-definitions.md) — 전문가 정의 (wtth 페르소나와 겹치지 않는 관계)
@@ -393,7 +393,7 @@ shackled은 wtth의 전문가 풀과 별도로 구현 특화 페르소나를 사
 - shackled 전용 페르소나: [personas/](./personas/) — shackled 크로스 체크용 페르소나 4축 정의
 - papillon 설계: [03-design-papillon.md](../../03-design-papillon.md) — Phase 4 구현 흐름 및 shackled 호출 인터페이스
 - wtth 코어: [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 계층 구분 (wtth과의 역할 경계)
-- inquisition 설계: [05-design-inquisition.md](../../05-design-inquisition.md) — 진행 불가 시 롤백 지점
+- inquisition 설계: [00-design-inquisition.md](../../05-inquisition/02-design/00-design-inquisition.md) — 진행 불가 시 롤백 지점
 - 공통 규격: [02-common-spec.md](../../02-common-spec.md) — 심각도 기준, 작업 요약 카드 포맷
 - 런북 템플릿: [50-runbook-template.md](../../50-runbook-template.md) — 4-B 산출물 형식
 - 전문가 정의: [51-expert-definitions.md](../../51-expert-definitions.md) — wtth 전문가 정의 (shackled 페르소나와 겹치지 않는 관계)

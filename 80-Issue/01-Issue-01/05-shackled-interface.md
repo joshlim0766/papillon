@@ -2,7 +2,7 @@
 
 **심각도:** 높음
 **분류:** 누락
-**상태:** Open
+**상태:** Closed
 
 ## 문제
 
@@ -10,9 +10,20 @@ wtth 호출 인터페이스는 파라미터(리뷰 대상, 리뷰 모드, 기존
 
 ## 논의
 
+- shackled 인터뷰 파일(01-implementation-mode, 02-skill-architecture, 04-execution-and-error)에서 입력 관련 사항 취합
+- 산출물 유형(code/runbook)은 인터뷰 결과/설계서에서 오케스트레이터가 판별하여 전달하는 것이 자연스러움 — papillon이 이미 4-A/4-B 판별 로직을 갖고 있으므로
+- 재개 시 태스크 ID, 실행 모드(auto/pair)는 선택 파라미터로 분류
 
 ## 처리
 
+papillon 설계서 Phase 4에 shackled 호출 인터페이스 테이블 추가:
+- `context_path` (필수): 설계서 또는 인터뷰 요약 경로
+- `weight` (필수): S/M 체급
+- `output_type` (필수): code/runbook — 오케스트레이터가 판별
+- `task_id` (선택): 중단 후 재개 시
+- `exec_mode` (선택): auto/pair — 기본값 auto
 
 ## 결과
+
+papillon 설계서 Phase 4 섹션에 호출 인터페이스 정의 완료.
 

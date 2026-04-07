@@ -1,4 +1,4 @@
-# 06-shackled: 페어 프로그래밍 스킬
+# 06-shackled: 구현 스킬
 
 ## Context
 - **Parent:** [00-index.md](../../00-index.md)

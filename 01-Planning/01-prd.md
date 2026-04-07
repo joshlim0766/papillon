@@ -4,8 +4,8 @@
 - **Parent:** [00-index.md](../00-index.md)
 - **Related:** [00-problem-and-proposals.md](../00-problem-and-proposals.md), [03-design-papillon.md](./03-design-papillon.md)
 - **Status:**
-  - Work: Completed
-  - Review: Approved (Human)
+  - Work: In-Progress
+  - Review: Reviewing
 
 ---
 
@@ -55,7 +55,7 @@
 | G3 | 사람이 단계 전환을 직접 트리거하지 않음 | 파이프라인 시작 후 사람이 하는 행위는 리뷰 의사결정과 종결 승인뿐 |
 | G4 | PRD/설계/ADR/운영절차/코드 리뷰를 동일 시스템으로 처리 | wtth 하나로 5종 리뷰 수행. 각 모드별 전문가 풀과 의사결정 방식은 다름 |
 | G5 | 요구사항 단계에서 암시적 제약을 명시적으로 끌어올림 | 구조화 인터뷰를 통해 핵심 제약이 index에 명시 기재됨 |
-| G6 | 작업 체급에 따라 적절한 프로세스 진입 | S/M은 한 세션에 완료, L/XL은 구조만 만들고 종료 |
+| G6 | 작업 체급에 따라 적절한 프로세스 진입 | S/M은 한 세션에 완료, L/XL은 구조만 만들고 종료. 세션 분할의 근거: AI의 컨텍스트 윈도우 한계와 사람의 인지·집중력 한계 양쪽 모두. 태스크 분할→개별 완료→통합은 이 제약에 대한 대응 전략 |
 
 ### 2.3. 비목표 (명시적 제외)
 
@@ -63,6 +63,7 @@
 - CI/CD 파이프라인 연동
 - 완전 자동 리뷰 (사람 의사결정 배제) — 사람이 결정권을 가진다
 - 기존 cyberpink 스킬과의 의존성
+- 기존 wtth → papillon:wtth 전환 마이그레이션 계획 (1인 운영, 신규 설치로 대체)
 
 ---
 
@@ -79,9 +80,9 @@
 | 산출물 | 파일명 | 역할 |
 |---|---|---|
 | **papillon** | `papillon.md` | 파이프라인 오케스트레이터. 인터뷰 → 체급 판정 → Phase 자동 전환. 사람은 의사결정만 |
-| **inquisition** | `papillon:inquisition.md` | 요구사항 심문. 구조화 인터뷰 + 체급 판정 |
-| **wtth v2** | `papillon:wtth.md` | 멀티에이전트 리뷰 엔진. PRD/설계/ADR/운영절차/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내장 |
-| **shackled** | `papillon:shackled.md` | 구현 전문. 설계서 기반 태스크 순차 실행 |
+| **inquisition** | `inquisition.md` | 요구사항 심문. 구조화 인터뷰 + 체급 판정 |
+| **wtth v2** | `wtth.md` | 멀티에이전트 리뷰 엔진. PRD/설계/ADR/운영절차/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내장 |
+| **shackled** | `shackled.md` | 구현 전문. 설계서 기반 태스크 순차 실행 |
 
 - `papillon`이 네임스페이스 최상위. `~/.claude/commands/papillon/` 하위에 설치
 - 호출: `/papillon` (오케스트레이터), `/papillon:inquisition` (인터뷰 단독), `/papillon:wtth` (리뷰 단독), `/papillon:shackled` (구현 단독)
@@ -96,7 +97,7 @@
 |---|---|---|
 | R1 | cyberpink 스킬에 대한 의존성 없음 | cyberpink는 별도 팀의 실험적 도구. 참조는 가능 |
 | R2 | 커밋/푸시는 개발 규칙(CLAUDE.md)에 따름 | 도구 의존성 배제 |
-| R3 | 문서 생성 시 문서 작성 규칙 준수 (common-spec §11 기본, 사용자 doc-standard 우선) | 팀원 배포 시 외부 의존성 제거 |
+| R3 | 문서 생성 시 문서 작성 규칙 준수 (common-spec §11 기본, 사용자 doc-standard가 있으면 대신 적용) | 팀원 배포 시 외부 의존성 제거 |
 | R4 | 네임스페이스 글로벌 설치 (`~/.claude/commands/papillon/`) | 특정 프로젝트에 종속되지 않아야 함. papillon이 네임스페이스 최상위 |
 | R5 | 하위 스킬(wtth, inquisition, shackled) 단독 실행 가능 유지 | 각각 `/papillon:wtth`, `/papillon:inquisition`, `/papillon:shackled`로 단독 호출 가능해야 함 |
 | R6 | PR 플랫폼은 프로젝트 CLAUDE.md에서 선언 | `Git.Platform` 값으로 github/bitbucket/none 분기. 자동 감지하지 않음 |
@@ -106,9 +107,9 @@
 ## Output / Results
 
 1. `papillon.md` — 파이프라인 오케스트레이터 스킬
-2. `papillon:inquisition.md` — 요구사항 인터뷰 스킬
-3. `papillon:wtth.md` — 개선된 리뷰 엔진 스킬
-4. `papillon:shackled.md` — 구현 전문 스킬
+2. `inquisition.md` — 요구사항 인터뷰 스킬
+3. `wtth.md` — 개선된 리뷰 엔진 스킬
+4. `shackled.md` — 구현 전문 스킬
 5. 설계서: [03-design-papillon.md](./03-design-papillon.md)
 6. 본 PRD의 Review: Approved (Human) 달성
 
@@ -118,4 +119,4 @@
 - 기존 wtth: `~/Work/work-automation/.claude/commands/wtth.md`
 - 문서 작성 가이드: `~/Work/common-prompt/documentation/00-index.md`
 - 개발 가이드: `~/Work/common-prompt/DEVELOPMENT_GUIDE.md`
-- cyberpink task-auto (참조): `~/.claude/plugins/cache/mzc-pops-marketplace/cyberpink/1.2.1.5/commands/task-auto.md`
+- cyberpink task-auto (참조): `~/.claude/plugins/cache/mzc-pops-marketplace/cyberpink/*/commands/task-auto.md`

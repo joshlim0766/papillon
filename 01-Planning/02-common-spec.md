@@ -220,6 +220,7 @@ papillon이 네임스페이스 최상위이며, 하위 스킬은 papillon 네임
   papillon.md       ← 오케스트레이터 (/papillon)
   inquisition.md    ← 요구사항 추출 (/papillon:inquisition)
   wtth.md           ← 리뷰 엔진 (/papillon:wtth)
+  shackled.md       ← 구현 엔진 (/papillon:shackled)
 ```
 
 **호출 방식:**
@@ -229,6 +230,7 @@ papillon이 네임스페이스 최상위이며, 하위 스킬은 papillon 네임
 | `/papillon` | 파이프라인 오케스트레이터 실행 (인터뷰 → 체급 → Phase 자동 전환) |
 | `/papillon:inquisition` | 요구사항 추출 단독 실행 |
 | `/papillon:wtth` | 리뷰 엔진 단독 실행 |
+| `/papillon:shackled` | 구현 엔진 단독 실행 |
 
 **설계 원칙:**
 - 하위 스킬은 단독 실행 가능해야 한다. papillon 오케스트레이터에 의존하지 않는다.

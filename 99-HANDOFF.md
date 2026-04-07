@@ -4,19 +4,30 @@
 `01-Planning/06-shackled/`
 
 ## 작업 스택 (가장 최근이 위)
-1. **06-shackled 설계 리뷰 준비** — 현재
-   - SPEC, IX 페르소나 정의 (personas/_schema.md 규격 따라)
-   - ARCH + SPEC + IX 3인으로 shackled 설계 리뷰 실행
-   - 리뷰 결과를 03-review/00-review-objectives.md §4~6에 기입
-2. **06-shackled 설계 초안** — 완료
-3. **06-shackled inquisition** — 완료
+1. **06-shackled 설계 리뷰 후 액션 아이템 실행** — 다음
+   - 액션 아이템 상세: `03-review/01-action-items.md` (9건 + 미등록 1건)
+   - 우선순위 높음: AI-1(복합 모드 가이드), AI-2/2-1(SPEC/IX 등록 + 풀 제한), AI-3(라운드 간 비교), AI-5(핸드오프 브리프), AI-6(토큰 최적화), AI-7(관심사 분산도 분할)
+   - 수정 대상: wtth 코어, inquisition 설계, 페르소나 파일
+2. **06-shackled 설계 리뷰** — 완료
+   - ARCH + SPEC(신규) + IX(신규) 3인, 2라운드 + 사인오프
+   - RDR: `03-review/RDR-2026-04-07-design-shackled.md`
+   - 평가 + 회고: `03-review/00-review-objectives.md` §4~6
+3. **06-shackled 설계서 관심사별 분리** — 완료
+   - 코어(00) + 크로스 체크(01) + 상태 관리(02) + 진행 불가(03) + personas/
+4. **06-shackled 설계 초안** — 완료
+5. **06-shackled inquisition** — 완료
 
 ## 핵심 결정 사항
-- wtth 코어 프로세스는 OK, 전문가 풀만 확장하면 됨
-- 기존 설계 리뷰 모드(ARCH/BE/FE/SRE/SEC/PO)는 워크플로우·스킬 명세에 부적합 → review-workflow 모드 필요성 검증 중
-- 리뷰 목적 6개(O1~O6) 확정 — 03-review/00-review-objectives.md 참조
-- Step 3 초안은 Sonnet이 작성 (papillon 설계서 규칙대로)
-- 리뷰는 B방식(부트스트래핑) — 돌려보고 피드백 기반으로 확정
+- review-workflow 별도 모드 불필요 → 설계+운영절차 복합 적용 + 전문가 풀 커스텀
+- SPEC/IX 페르소나 유효 확인 → 정식 등록 + 투입 조건 명시 필요
+- 전문가 풀 상한 3인 + 사람 제외 가능 + 리뷰 세션 내 재추천 금지
+- 라운드 간 비교는 finding 결정 목록 기반, 외부 도구(git/diff) 무의존
+- 런북 생성/실행 분리 (shackled은 생성까지만)
+- 크로스 체크 은닉 → 자동 해소 + 이력 투명 공개 + 변천사 로그
+- inquisition 핸드오프 브리프: 맥락 주의사항 + 깊이 부족 플래그 + 신뢰도 플래그
+- 관심사 분산도 기반 분할 판단: 초안 완료 시(정보 제공) + 1라운드 분석 시(안전망)
+- 액션 아이템 기록 시 배경·결론 과정·수정 대상·검증 기준 필수
 
 ## 열린 질문
-- 없음
+- shackled 전용 페르소나 4축 정의 파일 미작성 (AI-4)
+- 4-B 런북 실행 전담 스킬 필요 여부 (AI-9)

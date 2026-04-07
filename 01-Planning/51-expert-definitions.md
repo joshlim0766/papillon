@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
+- **Related:** [04-wtth/02-design/00-core.md](./04-wtth/02-design/00-core.md)
 - **Status:**
   - Work: Completed
   - Review: Approved (Human)
@@ -10,7 +10,7 @@
 ---
 
 ## Input / Dependency
-- wtth v2 설계: [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
+- wtth v2 설계: [04-wtth/02-design/00-core.md](./04-wtth/02-design/00-core.md)
 
 ---
 
@@ -44,5 +44,5 @@
 ---
 
 ## References
-- wtth v2 설계: [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
+- wtth v2 설계: [04-wtth/02-design/00-core.md](./04-wtth/02-design/00-core.md)
 - 페르소나 규격: [personas/_schema.md](./personas/_schema.md)

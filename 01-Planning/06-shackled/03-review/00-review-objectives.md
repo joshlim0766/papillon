@@ -4,7 +4,7 @@
 - **Parent:** [00-index.md](../00-index.md)
 - **Related:**
   - [02-design/00-design-shackled.md](../02-design/00-design-shackled.md) — 리뷰 대상
-  - [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 엔진
+  - [00-core.md](../../04-wtth/02-design/00-core.md) — 리뷰 엔진
   - [51-expert-definitions.md](../../51-expert-definitions.md) — 기존 전문가 정의
 - **Status:**
   - Work: Completed

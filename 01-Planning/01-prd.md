@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [00-problem-and-proposals.md](../00-problem-and-proposals.md), [03-design-papillon.md](./03-design-papillon.md)
+- **Related:** [00-problem-and-proposals.md](../00-problem-and-proposals.md), [03-papillon/00-index.md](./03-papillon/00-index.md)
 - **Status:**
   - Work: In-Progress
   - Review: Reviewing
@@ -110,7 +110,7 @@
 2. `inquisition.md` — 요구사항 인터뷰 스킬
 3. `wtth.md` — 개선된 리뷰 엔진 스킬
 4. `shackled.md` — 구현 전문 스킬
-5. 설계서: [03-design-papillon.md](./03-design-papillon.md)
+5. 설계서: [00-design-papillon.md](./03-papillon/02-design/00-design-papillon.md)
 6. 본 PRD의 Review: Approved (Human) 달성
 
 ---

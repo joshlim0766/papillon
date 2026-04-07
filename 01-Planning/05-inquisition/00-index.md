@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../../00-index.md)
-- **Related:** [03-design-papillon.md](../03-design-papillon.md), [04-design-wtth/00-core.md](../04-design-wtth/00-core.md), [06-shackled/00-index.md](../06-shackled/00-index.md)
+- **Related:** [03-papillon/00-index.md](../03-papillon/00-index.md), [04-wtth/00-index.md](../04-wtth/00-index.md), [06-shackled/00-index.md](../06-shackled/00-index.md)
 
 ---
 

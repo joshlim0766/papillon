@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [03-design-papillon.md](./03-design-papillon.md), [04-design-wtth/00-core.md](./04-design-wtth/00-core.md)
+- **Related:** [03-papillon/00-index.md](./03-papillon/00-index.md), [04-wtth/02-design/00-core.md](./04-wtth/02-design/00-core.md)
 - **Status:**
   - Work: Completed
   - Review: Approved (Human)
@@ -10,7 +10,7 @@
 ---
 
 ## Input / Dependency
-- papillon 설계서: [03-design-papillon.md](./03-design-papillon.md) — Phase 4-B에서 이 템플릿을 사용
+- papillon 설계서: [03-papillon/02-design/00-design-papillon.md](./03-papillon/02-design/00-design-papillon.md) — Phase 4-B에서 이 템플릿을 사용
 
 ---
 

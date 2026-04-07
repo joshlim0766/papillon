@@ -43,4 +43,4 @@ ADR 승격 시 papillon Phase 2.1에서 본 모드(ADR 리뷰)로 호출된다.
 
 ## References
 - 코어: [00-core.md](./00-core.md)
-- 전문가 정의: [../51-expert-definitions.md](../51-expert-definitions.md)
+- 전문가 정의: [../../51-expert-definitions.md](../../51-expert-definitions.md)

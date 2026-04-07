@@ -6,8 +6,8 @@
   - [01-cross-check.md](./01-cross-check.md) — 크로스 체크 메커니즘 (분리)
   - [02-state-management.md](./02-state-management.md) — 상태 관리 및 재개 (분리)
   - [03-blocked-handling.md](./03-blocked-handling.md) — 진행 불가 처리 (분리)
-  - [03-design-papillon.md](../../03-design-papillon.md) — 오케스트레이터 (shackled 호출자)
-  - [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 엔진 (시블링)
+  - [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md) — 오케스트레이터 (shackled 호출자)
+  - [00-core.md](../../04-wtth/02-design/00-core.md) — 리뷰 엔진 (시블링)
   - [05-inquisition/00-index.md](../../05-inquisition/00-index.md) — 요구사항 추출 (시블링)
   - [02-common-spec.md](../../02-common-spec.md) — 공통 규격
   - [50-runbook-template.md](../../50-runbook-template.md) — 런북 템플릿 (4-B 산출물 형식)
@@ -19,10 +19,10 @@
 ---
 
 ## Input / Dependency
-- papillon 설계: [03-design-papillon.md](../../03-design-papillon.md) — Phase 4 구현 흐름, 호출 인터페이스
+- papillon 설계: [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md) — Phase 4 구현 흐름, 호출 인터페이스
 - 공통 규격: [02-common-spec.md](../../02-common-spec.md) — 심각도 기준, 문서 작성 규칙
 - shackled 인터뷰 결과: `../01-interview/`
-- wtth 코어: [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 계층 구분 참조
+- wtth 코어: [00-core.md](../../04-wtth/02-design/00-core.md) — 리뷰 계층 구분 참조
 
 ---
 
@@ -391,8 +391,8 @@ shackled은 wtth의 전문가 풀과 별도로 구현 특화 페르소나를 사
 - 상태 관리: [02-state-management.md](./02-state-management.md) — 상태 파일, 저장 시점, 충돌 감지, 재개 흐름
 - 진행 불가 처리: [03-blocked-handling.md](./03-blocked-handling.md) — 감지, 보고, 사람 결정 분기
 - shackled 전용 페르소나: [personas/](./personas/) — shackled 크로스 체크용 페르소나 4축 정의
-- papillon 설계: [03-design-papillon.md](../../03-design-papillon.md) — Phase 4 구현 흐름 및 shackled 호출 인터페이스
-- wtth 코어: [04-design-wtth/00-core.md](../../04-design-wtth/00-core.md) — 리뷰 계층 구분 (wtth과의 역할 경계)
+- papillon 설계: [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md) — Phase 4 구현 흐름 및 shackled 호출 인터페이스
+- wtth 코어: [00-core.md](../../04-wtth/02-design/00-core.md) — 리뷰 계층 구분 (wtth과의 역할 경계)
 - inquisition 설계: [00-design-inquisition.md](../../05-inquisition/02-design/00-design-inquisition.md) — 진행 불가 시 롤백 지점
 - 공통 규격: [02-common-spec.md](../../02-common-spec.md) — 심각도 기준, 작업 요약 카드 포맷
 - 런북 템플릿: [50-runbook-template.md](../../50-runbook-template.md) — 4-B 산출물 형식

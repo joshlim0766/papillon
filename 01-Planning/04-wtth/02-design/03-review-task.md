@@ -41,7 +41,7 @@ AI 자동 수정 + diff 승인/반려/직접수정 (코어 [2.2](./00-core.md#22
 
 ### 2.1. 대상
 
-- **런북**: 장애 대응·배포·롤백 등 반복 실행되는 운영 절차. [50-runbook-template.md](../50-runbook-template.md) 규격 적용
+- **런북**: 장애 대응·배포·롤백 등 반복 실행되는 운영 절차. [50-runbook-template.md](../../50-runbook-template.md) 규격 적용
 - **절차서**: 마이그레이션·권한 변경·인프라 작업 등 일회성 또는 비정기 운영 절차. 런북 규격을 따르되, 반복 실행 전제 항목(스케줄, 트리거 조건 등)은 생략 가능
 
 ### 2.2. 전문가 풀
@@ -56,11 +56,11 @@ finding별 수용/기각 (코어 [2.1](./00-core.md#21-finding별-수용기각-p
 
 ### 2.4. 모드 특화 사항
 
-런북 작성 규격은 [50-runbook-template.md](../50-runbook-template.md) 참조.
+런북 작성 규격은 [50-runbook-template.md](../../50-runbook-template.md) 참조.
 
 ---
 
 ## References
 - 코어: [00-core.md](./00-core.md)
-- 전문가 정의: [../51-expert-definitions.md](../51-expert-definitions.md)
+- 전문가 정의: [../../51-expert-definitions.md](../../51-expert-definitions.md)
 - 런북 템플릿: [../50-runbook-template.md](../50-runbook-template.md)

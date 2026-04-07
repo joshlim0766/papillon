@@ -2,7 +2,7 @@
 
 ## Context
 - **Parent:** [00-index.md](../00-index.md)
-- **Related:** [03-design-papillon.md](../../03-design-papillon.md), [02-common-spec.md](../../02-common-spec.md)
+- **Related:** [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md), [02-common-spec.md](../../02-common-spec.md)
 - **Status:**
   - Work: Draft
   - Review: None
@@ -10,7 +10,7 @@
 ---
 
 ## Input / Dependency
-- papillon 설계: [03-design-papillon.md](../../03-design-papillon.md)
+- papillon 설계: [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md)
 - 공통 규격: [02-common-spec.md](../../02-common-spec.md)
 - inquisitor 페르소나: [inquisitor.md](../../personas/inquisitor.md)
 
@@ -183,6 +183,6 @@ papillon 컨텍스트 스캔(§3.0) 또는 단독 호출 시, `00-interview/` �
 ---
 
 ## References
-- papillon 설계: [03-design-papillon.md](../../03-design-papillon.md) — Phase 1에서 본 스킬을 호출
+- papillon 설계: [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md) — Phase 1에서 본 스킬을 호출
 - 공통 규격: [02-common-spec.md](../../02-common-spec.md)
 - inquisitor 페르소나: [inquisitor.md](../../personas/inquisitor.md)

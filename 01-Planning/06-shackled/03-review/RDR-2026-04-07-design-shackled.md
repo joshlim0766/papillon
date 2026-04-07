@@ -104,5 +104,5 @@
 |---|---|
 | `06-shackled/02-design/00-design-shackled.md` | 1·2라운드 전체 반영 (전면 재작성 수준) |
 | `02-common-spec.md` | §7에 `docs/runbooks/` 디렉토리 추가 |
-| `03-design-papillon.md` | §3.4 4-B 흐름 런북 실행 책임 수정 |
+| `03-papillon/02-design/00-design-papillon.md` | §3.4 4-B 흐름 런북 실행 책임 수정 |
 | `06-shackled/02-design/personas/` | 디렉토리 생성 (.gitkeep) |

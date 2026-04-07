@@ -1,7 +1,7 @@
 # 00-core: wtth 코어 — 공통 메커니즘
 
 ## Context
-- **Parent:** [00-index.md](../../00-index.md)
+- **Parent:** [00-index.md](../00-index.md)
 - **Related:** [01-review-prd.md](./01-review-prd.md), [02-review-design.md](./02-review-design.md), [03-review-task.md](./03-review-task.md)
 - **Status:**
   - Work: Draft
@@ -10,10 +10,10 @@
 ---
 
 ## Input / Dependency
-- PRD: [01-prd.md](../01-prd.md)
-- 공통 규격: [02-common-spec.md](../02-common-spec.md)
+- PRD: [01-prd.md](../../01-prd.md)
+- 공통 규격: [02-common-spec.md](../../02-common-spec.md)
 - 기존 wtth 스킬: `~/Work/work-automation/.claude/commands/wtth.md`
-- 런북 템플릿: [50-runbook-template.md](../50-runbook-template.md)
+- 런북 템플릿: [50-runbook-template.md](../../50-runbook-template.md)
 
 ---
 
@@ -226,8 +226,8 @@ wtth 네임스페이스 스킬 파일들 (`~/.claude/commands/papillon/`에 설�
 ---
 
 ## References
-- 공통 규격: [02-common-spec.md](../02-common-spec.md)
+- 공통 규격: [02-common-spec.md](../../02-common-spec.md)
 - 기존 wtth: `~/Work/work-automation/.claude/commands/wtth.md`
-- papillon 설계: [03-design-papillon.md](../03-design-papillon.md)
-- 런북 템플릿: [50-runbook-template.md](../50-runbook-template.md)
-- 전문가 정의: [51-expert-definitions.md](../51-expert-definitions.md)
+- papillon 설계: [00-design-papillon.md](../../03-papillon/02-design/00-design-papillon.md)
+- 런북 템플릿: [50-runbook-template.md](../../50-runbook-template.md)
+- 전문가 정의: [51-expert-definitions.md](../../51-expert-definitions.md)

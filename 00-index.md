@@ -24,7 +24,10 @@ root/
     ├── 06-shackled/
     │   ├── 00-index.md                 # shackled 스킬 인덱스
     │   ├── 01-interview/               # inquisition 산출물
-    │   └── 02-design/                  # 설계서 (작성 예정)
+    │   ├── 02-design/                  # 설계서
+    │   │   └── 00-design-shackled.md
+    │   └── 03-review/                  # 리뷰 산출물
+    │       └── 00-review-objectives.md
     ├── 50-runbook-template.md           # 런북 작성 템플릿
     ├── 51-expert-definitions.md         # 리뷰 전문가 정의 (인덱스)
     └── personas/                        # 개별 페르소나 정의
@@ -33,6 +36,7 @@ root/
         ├── sre.md, sec.md, po.md, dba.md
         ├── inquisitor.md
         └── code.md, test.md
+├── 99-HANDOFF.md                        # 세션 간 컨텍스트 핸드오프
 ```
 
 ---
@@ -50,7 +54,8 @@ root/
 | 01-Planning/04-design-wtth/01-review-prd.md | Draft | None | PRD 리뷰 모드 |
 | 01-Planning/04-design-wtth/02-review-design.md | Draft | None | 설계 / ADR 리뷰 모드 |
 | 01-Planning/04-design-wtth/03-review-task.md | Draft | None | 코드 / 운영 절차 리뷰 모드 |
-| 01-Planning/06-shackled/ | Draft | None | shackled — 페어 프로그래밍 스킬 (인터뷰 완료, 설계 예정) |
+| 01-Planning/06-shackled/ | Draft | None | shackled — 구현 스킬 (인터뷰 완료, 설계 초안 작성 완료, wtth 리뷰 준비 중) |
+| 99-HANDOFF.md | — | — | 세션 간 컨텍스트 핸드오프 (작업 스택 + 핵심 결정 + 다음 할 일) |
 | 01-Planning/50-runbook-template.md | Completed | Approved (Human) | 런북 템플릿 — 필수 구조, 커맨드/검증/롤백 규칙 |
 | 01-Planning/51-expert-definitions.md | Completed | Approved (Human) | 전문가 정의 — 10명 관점/금기/판단기준/체크리스트 |
 
@@ -60,11 +65,11 @@ root/
 
 | 날짜 | 변경 파일 | 내용 | 작성자 |
 |---|---|---|---|
+| 2026-04-07 | 01-Planning/06-shackled/, 99-HANDOFF.md | shackled 설계 초안(Sonnet) + 리뷰 목적 문서(O1~O6) + 핸드오프 도입 | Human / AI |
 | 2026-04-06 | 01-Planning/05-design-inquisition.md | inquisition 스킬 독립 분리 (papillon Step 1 → 별도 설계서) | Human / AI |
 | 2026-04-05 | 01-Planning/04-design-wtth/ | wtth 설계서를 관심사별 4파일로 분리 (코어 + PRD/설계/태스크) | AI |
 | 2026-04-05 | 01-Planning/personas/ | 페르소나 시스템 강화 — 개별 파일 분리, 통과/실패 기준, 성격 풀 | AI |
 | 2026-04-05 | 전체 | 네임스페이스 패키징 구조 반영 + 스킬 개명 | Human / AI |
-| 2026-04-03 | 01-Planning/01-prd.md | PRD 확정 (Approved) | Human / AI |
 
 > 최신 5건만 유지. 초과분은 삭제한다.
 
@@ -75,3 +80,4 @@ root/
 - [ ] 공통 규격 리뷰 — 담당: Human — 관련 파일: 01-Planning/02-common-spec.md
 - [ ] papillon 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/03-design-papillon.md
 - [ ] wtth v2 설계서 리뷰 — 담당: Human — 관련 파일: 01-Planning/04-design-wtth/
+- [ ] shackled 설계 리뷰 (ARCH+SPEC+IX) — 관련 파일: 01-Planning/06-shackled/03-review/00-review-objectives.md

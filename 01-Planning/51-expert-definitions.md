@@ -20,12 +20,12 @@
 |---|---|---|---|
 | [PM](./personas/pm.md) | PRD | 기본 | `personas/pm.md` |
 | [ARCH](./personas/arch.md) | PRD, 설계, ADR | 기본 | `personas/arch.md` |
-| [BE](./personas/be.md) | 설계 | 기본 | `personas/be.md` |
+| [BE](./personas/be.md) | PRD, 설계, ADR | 기본(설계) / 선택적(PRD, ADR) | `personas/be.md` |
 | [FE](./personas/fe.md) | 설계 | 기본 | `personas/fe.md` |
-| [SRE](./personas/sre.md) | 설계, 운영 절차 | 기본 | `personas/sre.md` |
+| [SRE](./personas/sre.md) | PRD, 설계, ADR, 운영 절차 | 기본(설계, 운영 절차) / 선택적(PRD, ADR) | `personas/sre.md` |
 | [SEC](./personas/sec.md) | PRD, 설계, ADR, 운영 절차 | 기본 | `personas/sec.md` |
 | [PO](./personas/po.md) | 설계 | 기본 | `personas/po.md` |
-| [DBA](./personas/dba.md) | 설계 | 선택적 | `personas/dba.md` |
+| [DBA](./personas/dba.md) | 설계, ADR, 운영 절차 | 선택적 | `personas/dba.md` |
 | [CODE](./personas/code.md) | 코드 | 기본 | `personas/code.md` |
 | [TEST](./personas/test.md) | 코드 | 기본 | `personas/test.md` |
 | [INQUISITOR](./personas/inquisitor.md) | inquisition (전용) | 기본 | `personas/inquisitor.md` |

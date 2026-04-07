@@ -21,13 +21,13 @@
 
 wtth은 리뷰 대상 유형에 따라 전문가 풀과 의사결정 방식을 자동 전환한다.
 
-| 모드 | 대상 | 기본 전문가 풀 | 의사결정 방식 | 상세 |
-|---|---|---|---|---|
-| **PRD 리뷰** | PRD, 기획 문서 | PM + ARCH + SEC (3명) | finding별 수용/기각 | [01-review-prd.md](./01-review-prd.md) |
-| **설계 리뷰** | 설계 문서, 명세서 | ARCH/BE/FE/SRE/SEC/PO | finding별 수용/기각 | [02-review-design.md](./02-review-design.md) |
-| **ADR 리뷰** | ADR (아키텍처 결정 기록) | ARCH + SEC (2명) | finding별 수용/기각 | [02-review-design.md](./02-review-design.md) |
-| **운영 절차 리뷰** | 런북, 절차서 | SRE + SEC (2명) | finding별 수용/기각 | [03-review-task.md](./03-review-task.md) |
-| **코드 리뷰** | diff, 소스 파일 | CODE + TEST (2명) | AI 자동 수정 → 사람이 AS-IS/TO-BE diff 승인/반려 | [03-review-task.md](./03-review-task.md) |
+| 모드 | 대상 | 기본 전문가 풀 | 선택적 투입 | 의사결정 방식 | 상세 |
+|---|---|---|---|---|---|
+| **PRD 리뷰** | PRD, 기획 문서 | PM + ARCH + SEC (3명) | BE, SRE | finding별 수용/기각 | [01-review-prd.md](./01-review-prd.md) |
+| **설계 리뷰** | 설계 문서, 명세서 | ARCH/BE/FE/SRE/SEC/PO | DBA | finding별 수용/기각 | [02-review-design.md](./02-review-design.md) |
+| **ADR 리뷰** | ADR (아키텍처 결정 기록) | ARCH + SEC (2명) | BE, DBA, SRE | finding별 수용/기각 | [02-review-design.md](./02-review-design.md) |
+| **운영 절차 리뷰** | 런북, 절차서 | SRE + SEC (2명) | DBA | finding별 수용/기각 | [03-review-task.md](./03-review-task.md) |
+| **코드 리뷰** | diff, 소스 파일 | CODE + TEST (2명) | ARCH, SEC | AI 자동 수정 → 사람이 AS-IS/TO-BE diff 승인/반려 | [03-review-task.md](./03-review-task.md) |
 
 ### 1.1. 모드 선택 규칙
 
@@ -155,7 +155,7 @@ RDR/ADR 포맷 및 저장 경로: [02-common-spec.md 섹션 2~4](../02-common-sp
 | 모드 (내부 용어) | 규칙 | 다음 모드 전환 조건 |
 |---|---|---|
 | **발산** | 전체 지적 허용 (초기 상태) | 직전 라운드 대비 신규 P0/P1이 0건 → 수렴으로 전환. 또는 사람이 직접 지시 |
-| **수렴** | 신규 P0/P1만 허용. 기존 건 재언급 금지 | 신규 finding이 0건 → 사인오프로 전환. 또는 사람이 직접 지시 |
+| **수렴** | 신규 P0/P1만 허용. 기존 건 재언급 금지 | 신규 finding이 0건 → 사인오프로 전환. 신규 P0/P1이 2건 이상 → 사람에게 발산 복귀를 제안. 또는 사람이 직접 지시 |
 | **사인오프** | 각 에이전트 "추가 지적 없음" 확인. P0/P1 발견 시 수렴으로 롤백, P2/P3은 RDR에 기록하고 사인오프 계속 | 전원 확인 → 리뷰 종료 |
 
 **사람에게 보이는 메시지 (내부 용어를 노출하지 않는다):**

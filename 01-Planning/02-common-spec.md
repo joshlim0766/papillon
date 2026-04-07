@@ -179,6 +179,8 @@ RDR의 "결정 근거" 컬럼에 인과관계 수준으로 기록한다.
   reviews/
     RDR-YYYY-MM-DD-{대상명}.md
   ADR-NNN-{제목}.md
+{프로젝트}/docs/runbooks/
+  {런북명}.md                      ← shackled 4-B 산출물
 {프로젝트}/03-tasks/
   TASK-{ID}-{제목}.md              ← 작업 요약 카드 포함
 ```

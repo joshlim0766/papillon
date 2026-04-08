@@ -37,7 +37,11 @@ shackled은 진행 중 상태를 아래 파일에 저장한다:
 | `completed` | 완료 | 사람 확인 승인 시 |
 | `blocked` | 진행 불가 | [03-blocked-handling.md](./03-blocked-handling.md) §1 감지 조건 충족 시 |
 
-**전면 재작성 시 전이:** 코어 프로세스(00-design-shackled.md §3.3.3)에서 사람이 "거부(전면 재작성)"를 선택하면 해당 태스크의 status는 `in-progress`를 유지한다. `cross_check_log`는 초기화하지 않고 누적한다 (재작성 전 이력도 변천사의 일부).
+**전면 재작성 시 전이:** 코어 프로세스(00-design-shackled.md §3.3.3)에서 사람이 "거부(전면 재작성)"를 선택하면 해당 태스크의 status는 `in-progress`를 유지한다. `cross_check_log`는 초기화하지 않고 누적한다.
+
+<rationale>
+재작성 시 로그를 초기화하지 않는 이유: 재작성 전 이력도 변천사의 일부이다. "왜 재작성이 필요했는가"의 맥락이 로그에 남아야 동일 실패를 반복하지 않을 수 있다.
+</rationale>
 
 ---
 

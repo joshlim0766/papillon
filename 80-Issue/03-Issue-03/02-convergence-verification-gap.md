@@ -35,6 +35,8 @@ AI가 이전 라운드의 수용 건이 반영되지 않은 상태에서도, 신
 
 RDR의 finding 결정 목록에서 "수용" 건의 반영 상태를 추적하고, 미반영 건이 있으면 수렴 전환을 차단한다.
 
+**구체적 구현:** [Issue-05 AI-2 — Sign-off ID Cross-Referencing](../05-Issue-05/02-signoff-cross-referencing.md) 참조. 사인오프 에이전트가 P0/P1 수용 건별로 반영 지점을 인용하고, MCP 문자열 일치로 물리적 검증.
+
 ## 수정 대상
 
 - `04-wtth/02-design/00-core.md` §4.1 — 수렴 전환 조건에 반영 완료 조건 추가

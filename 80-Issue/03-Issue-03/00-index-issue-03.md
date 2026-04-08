@@ -58,6 +58,7 @@ Step 3(Sonnet)이 수정 완료 후 자동 생성하는 문서. 전문가에게 
 
 ## 상태
 
-**Closed** (2026-04-08)
+**Partially Closed** (2026-04-08~)
 - Issue-03-00: 반영 완료 (papillon Step 3-B + wtth §2.3)
 - Issue-03-01: 반영 완료 (wtth §2.1 수정 반영 단계 5)
+- Issue-03-02: **Open** — [수렴 판정 조건이 반영 검증 미포함](./02-convergence-verification-gap.md) (높음)

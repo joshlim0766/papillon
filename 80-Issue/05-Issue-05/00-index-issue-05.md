@@ -5,12 +5,19 @@
 **리뷰어:** Claude Web (Opus) × Gemini — Josh 오케스트레이션
 **원본:** `/Users/jslim/Downloads/debate-findings-2026-04-09.md`
 
-## 즉시 반영 (P1, 2건)
+## 즉시 반영 — P1 (2건)
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
 | AI-1 | [01-lxl-consistency-guard.md](./01-lxl-consistency-guard.md) | 공백 | L/XL 태스크 간 정합성: Phase 4 예방 + Phase 5.1 Re-baselining | Open |
-| AI-2 | [02-signoff-cross-referencing.md](./02-signoff-cross-referencing.md) | 공백 | 수렴 판정 강화: Sign-off ID 인용 강제 + MCP 문자열 일치 검증 | Open (→ Issue-03-02 솔루션) |
+| AI-2 | [02-signoff-cross-referencing.md](./02-signoff-cross-referencing.md) | 공백 | 수렴 판정 강화: Sign-off ID 인용 강제 + MCP 문자열 검증 + Sampling + 백업 시점 조정 | Open (→ Issue-03-02 솔루션) |
+
+## 즉시 반영 — P2 (2건)
+
+| # | 파일 | 분류 | 요약 | 상태 |
+|---|---|---|---|---|
+| AI-3 | [06-inquisition-risk-disclosure.md](./06-inquisition-risk-disclosure.md) | 공백 | Inquisition 리스크 고지 강화: 답변 보류 시 후속 영향 제시 | Open |
+| AI-4 | [07-shackled-blocked-options.md](./07-shackled-blocked-options.md) | 공백 | Shackled 진행 불가 시 AI 추론 대응 옵션 2~3개 필수 제시 | Open |
 
 ## 실험에서 확인 (3건)
 
@@ -29,3 +36,6 @@
 | 에이전트 파업 (Agent Strike) | Gemini | hallucinated finding으로 악용 가능. 기각+사유 기록이 더 안전 |
 | 에스컬레이션 (외부 모델 소환) | Gemini | PRD R5 단독 실행 원칙 충돌. AI 동의는 책임 소재가 안 됨 |
 | 페르소나 일관성 점수 시스템 | Gemini | 상태 관리는 태스크 진행용이지 페르소나 평가용 아님. 관심사 혼재 |
+| Global-Lock (00-index.md) | Gemini | L/XL 태스크는 별도 세션에서 순차 실행(PRD G6). 동시성 없는 구조에서 Lock은 불필요한 복잡도 |
+| Inquisition 압박 심문 | Gemini | §1.2 역할 경계(솔루션 제안 금지) + INQUISITOR 톤("원만하고 차분") 충돌. AI-3의 "사실 기반 리스크 고지"로 정제 |
+| Shackled BE 가설 수립 | Gemini | shackled-BE 금기("설계서 이의 제기 금지") 위반. AI-4의 "옵션 제시(정보 제공)"로 정제 |

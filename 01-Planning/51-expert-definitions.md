@@ -28,6 +28,8 @@
 | [DBA](./personas/dba.md) | 설계, ADR, 운영 절차 | 선택적 | `personas/dba.md` |
 | [CODE](./personas/code.md) | 코드 | 기본 | `personas/code.md` |
 | [TEST](./personas/test.md) | 코드 | 기본 | `personas/test.md` |
+| [SPEC](./personas/spec.md) | 설계, 운영 절차 | 선택적 | `personas/spec.md` |
+| [IX](./personas/ix.md) | 설계, 운영 절차 | 선택적 | `personas/ix.md` |
 | [INQUISITOR](./personas/inquisitor.md) | inquisition (전용) | 기본 | `personas/inquisitor.md` |
 
 ---

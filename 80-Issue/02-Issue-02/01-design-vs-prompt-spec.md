@@ -26,7 +26,7 @@
 |---|---|---|---|
 | **설계 근거 (Design Rationale)** | 왜 이 구조인가, 기각된 대안, 제약 | 사람 (미래의 자신) | "Sonnet을 쓰는 이유는 속도·비용 효율 우선" |
 | **프롬프트 스펙 (Prompt Spec)** | AI가 따라야 하는 규칙, 분기, 입출력, 톤 | 프롬프트 작성자 → AI | Phase 간 입출력 매핑 테이블, 문맥 전환 감지 규칙 |
-| **최종 프롬프트 (Skill File)** | 프롬프트 스펙을 토큰 효율적으로 압축 | AI (런타임) | `~/.claude/commands/papillon/*.md` |
+| **최종 프롬프트 (Skill File)** | 프롬프트 스펙을 토큰 효율적으로 압축 | AI (런타임) | `~/.claude/commands/papillon.md` + `~/.claude/commands/papillon/*.md` |
 
 **현실적 적용 — 기존 문서에 태그 마킹:**
 

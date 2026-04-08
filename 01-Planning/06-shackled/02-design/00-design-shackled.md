@@ -397,7 +397,7 @@ wtth 페르소나와 별도로 구현 전용 페르소나를 두는 이유: wtth
 
 ## Output / Results
 
-`shackled.md` — 구현 엔진 스킬 (`~/.claude/commands/papillon/`에 설치, `/papillon:shackled`로 호출)
+`shackled.md` — 구현 엔진 스킬 (`~/.claude/commands/papillon/shackled.md`에 설치, `/papillon:shackled`로 호출)
 
 구현 실행 시 생성되는 산출물:
 

@@ -71,7 +71,7 @@
 
 - **주 사용자**: 본인 (시니어 엔지니어, AI-native 개발 워크플로우 운영)
 - **향후 확장**: 팀 내 엔지니어
-- **설치 위치**: 글로벌 네임스페이스 (`~/.claude/commands/papillon/`)
+- **설치 위치**: 글로벌 네임스페이스 (`~/.claude/commands/papillon.md` + `~/.claude/commands/papillon/`)
 
 ---
 
@@ -84,7 +84,7 @@
 | **wtth v2** | `wtth.md` | 멀티에이전트 리뷰 엔진. PRD/설계/ADR/운영절차/코드 5모드 지원. RDR/ADR 생성. 수렴 메커니즘 내장 |
 | **shackled** | `shackled.md` | 구현 전문. 설계서 기반 태스크 순차 실행 |
 
-- `papillon`이 네임스페이스 최상위. `~/.claude/commands/papillon/` 하위에 설치
+- `papillon`이 네임스페이스 최상위. 오케스트레이터는 `~/.claude/commands/papillon.md`, 하위 스킬은 `~/.claude/commands/papillon/`에 설치
 - 호출: `/papillon` (오케스트레이터), `/papillon:inquisition` (인터뷰 단독), `/papillon:wtth` (리뷰 단독), `/papillon:shackled` (구현 단독)
 - 모든 하위 스킬(inquisition, wtth, shackled)은 papillon 없이 단독 실행 가능
 - 모든 스킬은 cyberpink에 의존하지 않음
@@ -98,7 +98,7 @@
 | R1 | cyberpink 스킬에 대한 의존성 없음 | cyberpink는 별도 팀의 실험적 도구. 참조는 가능 |
 | R2 | 커밋/푸시는 개발 규칙(CLAUDE.md)에 따름 | 도구 의존성 배제 |
 | R3 | 문서 생성 시 문서 작성 규칙 준수 (common-spec §11 기본, 사용자 doc-standard가 있으면 대신 적용) | 팀원 배포 시 외부 의존성 제거 |
-| R4 | 네임스페이스 글로벌 설치 (`~/.claude/commands/papillon/`) | 특정 프로젝트에 종속되지 않아야 함. papillon이 네임스페이스 최상위 |
+| R4 | 네임스페이스 글로벌 설치 (`~/.claude/commands/papillon.md` + `papillon/`) | 특정 프로젝트에 종속되지 않아야 함. papillon이 네임스페이스 최상위 |
 | R5 | 하위 스킬(wtth, inquisition, shackled) 단독 실행 가능 유지 | 각각 `/papillon:wtth`, `/papillon:inquisition`, `/papillon:shackled`로 단독 호출 가능해야 함 |
 | R6 | PR 플랫폼은 프로젝트 CLAUDE.md에서 선언 | `Git.Platform` 값으로 github/bitbucket/none 분기. 자동 감지하지 않음 |
 

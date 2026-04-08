@@ -479,7 +479,7 @@ git diff를 사용하지 않는 이유: 외부 도구 비의존 원칙의 일관
 
 ## Output / Results
 
-wtth 네임스페이스 스킬 파일들 (`~/.claude/commands/papillon/`에 설치, `/papillon:wtth`로 호출):
+wtth 네임스페이스 스킬 파일들 (`~/.claude/commands/papillon/wtth.md`에 설치, `/papillon:wtth`로 호출):
 - `wtth.md` — 오케스트레이터 (코어 메커니즘)
 - 모드별 전문가 풀 및 모드 특화 로직은 하위 파일에서 정의
 

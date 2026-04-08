@@ -222,11 +222,12 @@ papillon이 네임스페이스 최상위이며, 하위 스킬은 papillon 네임
 **설치 구조:**
 
 ```
-~/.claude/commands/papillon/
-  papillon.md       ← 오케스트레이터 (/papillon)
-  inquisition.md    ← 요구사항 추출 (/papillon:inquisition)
-  wtth.md           ← 리뷰 엔진 (/papillon:wtth)
-  shackled.md       ← 구현 엔진 (/papillon:shackled)
+~/.claude/commands/
+  papillon.md           ← 오케스트레이터 (/papillon)
+  papillon/
+    inquisition.md      ← 요구사항 추출 (/papillon:inquisition)
+    wtth.md             ← 리뷰 엔진 (/papillon:wtth)
+    shackled.md         ← 구현 엔진 (/papillon:shackled)
 ```
 
 **호출 방식:**

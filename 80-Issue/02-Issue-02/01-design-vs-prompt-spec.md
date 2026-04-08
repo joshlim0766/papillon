@@ -2,7 +2,7 @@
 
 **심각도:** 높음
 **분류:** 구조
-**상태:** Open
+**상태:** Open — 스킬 변환 사이클에서 순차 적용 (inquisition → wtth → shackled → papillon)
 
 ## 문제
 

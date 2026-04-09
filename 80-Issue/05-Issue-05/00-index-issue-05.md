@@ -9,15 +9,15 @@
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
-| AI-1 | [01-lxl-consistency-guard.md](./01-lxl-consistency-guard.md) | 공백 | L/XL 태스크 간 정합성: Phase 4 예방 + Phase 5.1 Re-baselining | Open |
-| AI-2 | [02-signoff-cross-referencing.md](./02-signoff-cross-referencing.md) | 공백 | 수렴 판정 강화: Sign-off ID 인용 강제 + MCP 문자열 검증 + Sampling + 백업 시점 조정 | Open (→ Issue-03-02 솔루션) |
+| AI-1 | [01-lxl-consistency-guard.md](./01-lxl-consistency-guard.md) | 공백 | L/XL 태스크 간 정합성: Phase 4 예방 + Phase 5.1 Re-baselining | Done |
+| AI-2 | [02-signoff-cross-referencing.md](./02-signoff-cross-referencing.md) | 공백 | 수렴 판정 강화: Sign-off ID 인용 강제 + MCP 문자열 검증 + Sampling + 백업 시점 조정 | Done (→ Issue-03-02 솔루션) |
 
 ## 즉시 반영 — P2 (2건)
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
-| AI-3 | [06-inquisition-risk-disclosure.md](./06-inquisition-risk-disclosure.md) | 공백 | Inquisition 리스크 고지 강화: 답변 보류 시 후속 영향 제시 | Open |
-| AI-4 | [07-shackled-blocked-options.md](./07-shackled-blocked-options.md) | 공백 | Shackled 진행 불가 시 AI 추론 대응 옵션 2~3개 필수 제시 | Open |
+| AI-3 | [06-inquisition-risk-disclosure.md](./06-inquisition-risk-disclosure.md) | 공백 | Inquisition 리스크 고지 강화: 답변 보류 시 후속 영향 제시 | Done |
+| AI-4 | [07-shackled-blocked-options.md](./07-shackled-blocked-options.md) | 공백 | Shackled 진행 불가 시 AI 추론 대응 옵션 2~3개 필수 제시 | Done |
 
 ## 실험에서 확인 (3건)
 

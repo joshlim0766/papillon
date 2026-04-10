@@ -2,7 +2,7 @@
 
 **심각도:** 높음
 **분류:** 구조
-**상태:** Open — 스킬 변환 사이클에서 순차 적용 (inquisition → wtth → shackled → papillon)
+**상태:** Closed — 4개 설계서 전체 + 하위 설계서에 `<rationale>` 태그 적용 완료, common-spec에 컨벤션 문서화 완료 (2026-04-10)
 
 ## 문제
 

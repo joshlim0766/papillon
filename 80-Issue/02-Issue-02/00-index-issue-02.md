@@ -8,7 +8,7 @@
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
-| 1 | [01-design-vs-prompt-spec.md](./01-design-vs-prompt-spec.md) | 구조 | 설계서가 설계 근거와 프롬프트 스펙을 구분하지 않고 혼재 | Open — 스킬 변환 시 순차 적용 |
+| 1 | [01-design-vs-prompt-spec.md](./01-design-vs-prompt-spec.md) | 구조 | 설계서가 설계 근거와 프롬프트 스펙을 구분하지 않고 혼재 | **Closed** (2026-04-10) |
 | 2 | [02-context-window-gap.md](./02-context-window-gap.md) | 제약 | 컨텍스트 윈도우 제약이 설계에 구체적으로 반영되지 않음 | Open (심각도 중간으로 하향) |
 | 3 | [03-human-intervention-paradox.md](./03-human-intervention-paradox.md) | 모순 | PRD "사람은 의사결정만" vs 설계의 10곳+ 사람 확인 지점 | Open — 파이프라인 실험 후 |
 

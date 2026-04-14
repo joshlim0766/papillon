@@ -1,42 +1,53 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/06-shackled/` — 2026-04-14 M 체급 파일럿 피드백 반영 완료
+`01-Planning/09-formal/` — 빠삐용 수학적 정의 L0 착수 (2026-04-14)
 
-## 직전 작업: shackled 파일럿 피드백 반영 (2026-04-14)
+## 직전 작업: 2026-04-14 묶음 (집)
 
-2026-04-14 실시한 shackled M 체급 단일 태스크 파일럿에서 6개 관찰을 수집. 그 중 설계 수정이 필요한 3건을 반영하고 1건은 후속 L/XL 파일럿용 이슈로 등록.
+오늘 진행된 작업 6개 커밋. 큰 흐름은 (1) 이슈 상태 동기화 정리 → (2) 파일럿 정량 지표 프로토콜 신설 → (3) AC 프레임워크 등록 → (4) 빠삐용 수학적 정의 착수.
 
-### 완료 내역
+### 커밋 시계열
 
-| # | 대상 파일 | 변경 | 피드백 항목 |
-|---|----------|------|------------|
-| A1 | `01-Planning/06-shackled/02-design/00-design-shackled.md` §3.3 | 실행 모드 테이블(normal/tdd) 추가 + §3.3.1에 TDD 흐름(테스트 작성→Red 검증→빌드 선결 조건 실패 처리→Green→Refactor) 신설 | #1 TDD 모드 부재, #4 빌드 선결 조건 실패 복구 매뉴얼 |
-| A2 | `01-Planning/06-shackled/02-design/02-state-management.md` §1·§3 | 루트 개념 3축 분리(설계서/구현/상태 파일 루트), `sandbox_mode` 명시 옵션, 스키마에 `mode`/`implementation_root`/`sandbox_mode`/`documentation_root`/`state_root` 필드 추가, `project_root` deprecated(호환성 매핑) | #3 설계서/구현 루트 이원화, #6 pilot 격리 공간 |
-| A3 | `80-Issue/02-Issue-02/08-shackled-lxl-premise-deviation.md` + index | Issue-02 #8 신규 등록 — L/XL 파일럿에서 §3.1 상위 전제 이탈 감지 재검증 | #2 상위 전제 이탈 감지 미검증 |
+| Commit | 내용 |
+|---|---|
+| `6cd7713` | Issue-05 AI-1·AI-2 + Issue-03-02 상태 동기화 (높음·P1 Open 0건 달성) |
+| `36e6592` | 파일럿 정량 지표 프로토콜 신설 — common-spec §13 + `01-Planning/07-metrics/retro-template.md` |
+| `00ede23` | AC Template v3.2 + Inquisition AC v0.1.0 + VOCABULARY.yaml 등록 (Claude Web 대화 산출물 레포 반영) |
+| `a54de43` | HANDOFF stale 문구 정정 (AC 산출물 "별도 환경 대기" → 레포 반영 완료) |
+| `651f1e4` | 빠삐용 수학적 정의 L0 착수 — `01-Planning/09-formal/` 신규 |
+| `9d81a73` | L0 셀프 린트 P0 3건 + P1 2건 반영 |
 
-### 부수 효과
+### 핵심 산출물
 
-- **TDD 모드 산출물 범위 확장**: 테스트 파일이 산출물에 포함되며, 이후 §3.3.2 크로스 체크 대상에도 테스트가 포함됨.
-- **sandbox_mode 자동 감지 금지**: 반드시 호출 시 명시 선언해야 함 — 자동 감지는 drift 원인이 될 수 있어 차단.
-- **상태 파일 역호환성**: 기존 `project_root` 필드를 가진 상태 파일은 `documentation_root`·`state_root`에 동일 매핑으로 읽힘. 기존 파일럿 중단 상태 영향 없음.
-- **실행 모드 기본값 `normal`**: 기존 동작과 동일. TDD는 명시 선언 시만 활성.
-- **이슈 트래커 카운트 업데이트**: Issue-02 낮음 1건 → 2건.
+- **`01-Planning/09-formal/00-index.md`**: L0~L5 층위 인덱스
+- **`01-Planning/09-formal/01-l0-scope.md`**: 단일 LLM 호출의 수학적 정의 (P0/P1 린트 반영 완료)
+- **`01-Planning/08-ac/ac-template-v3.2.md`**: AC 템플릿 (Hard/Fixture/Semantic 3-layer + Stability + Regression + Drift Budget)
+- **`01-Planning/05-inquisition/ac-v0.1.0.md`**: 템플릿 첫 실전 적용
+- **`VOCABULARY.yaml`**: 전역 도메인 약어 14종 (레포 루트)
+- **`01-Planning/02-common-spec.md` §13**: 파일럿 정량 지표 프로토콜
+- **`01-Planning/07-metrics/retro-template.md`**: 파일럿 회고 양식
 
-### 보류(반영하지 않음) 관찰
+### 운영 변경
 
-| # | 항목 | 판단 |
-|---|------|------|
-| #5 | 페르소나 쌍 구조 유효 | 유지. 다음 파일럿에서 정량 지표(크로스 체커 catch 건수) 수집 권장 — 별도 조치 없음 |
+- **`~/.claude/CLAUDE.md` §0 신설**: 호칭 "주인님" 고정, 존댓말 고정, 전역·예외 없음
 
 ## 다음 작업: 다음 단계 후보
 
 우선순위 순:
 
-1. **Python 검증 CLI 구현** — AC Template v3.2(`01-Planning/08-ac/ac-template-v3.2.md`)·Inquisition AC v0.1.0(`01-Planning/05-inquisition/ac-v0.1.0.md`)·VOCABULARY.yaml(레포 루트) 전부 등록 완료(commit `00ede23`). 구현 대상: 유틸 4개(`extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing`) + fixture runner. 구현 중 예상 숙제: (a) `extract_headings()` 부록 E 보강(v3.3 후보), (b) INV-IQ-03/05의 `resolve_scoped_text()` 공통 함수 추출, (c) `ART-IQ-02` 70% 임계값 실측 후 튜닝.
-2. **L/XL 파일럿 기획 (Issue-02 #8 + #2 동시 검증)** — 의도적 미스매치 fixture 포함. 실제 L/XL 작업 기회 발생 시 끼워넣는 방식. 컨텍스트 윈도우(#2)·상위 전제 이탈 감지(#8) 자연 검증.
-3. **파일럿 정량 지표 프로토콜** — 다음 파일럿부터 크로스 체커 catch 건수·TDD 모드 채택 비율 등 기록 포맷 표준화. 회고 템플릿 업데이트 필요.
-4. **파이프라인 실험 계속** — Issue-02 #3(사람 개입)·#5(산출물 생명주기)·#6(체급 캘리브레이션) 실측 데이터 수집.
+1. **Python 검증 CLI 구현 (회사)** — AC 산출물 전부 레포에 있음. 유틸 4개(`extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing`) + fixture runner. 구현 중 예상 숙제: (a) `extract_headings()` 부록 E 보강(v3.3 후보), (b) INV-IQ-03/05의 `resolve_scoped_text()` 공통 함수 추출, (c) `ART-IQ-02` 70% 임계값 실측 후 튜닝.
+2. **L0 후속 작업 2건** — `01-Planning/09-formal/01-l0-scope.md` §7 식별 완료: (a) 빠삐용 호출별 `(x, c, θ)` 매핑 (inquisition·wtth·shackled·papillon), (b) 관측 측정 규약 (tokenizer 종류·API usage 수집·로깅 포맷). 산출 형태(단일/다문서)는 매핑 시도 후 결정.
+3. **L1 착수 (Prompt 공간 구조)** — invariance, composition. L0 후속 후 또는 병렬.
+4. **L0 보류 P1 항목** — P1-2(tokenizer 정확도 가정), P1-4(Claude system/user 분리 가능성). 매핑 작업 시 자연스럽게 부딪힐 가능성, 그때 처리.
+5. **L/XL 파일럿 기획 (Issue-02 #8 + #2 동시 검증)** — 의도적 미스매치 fixture 포함. 실제 L/XL 작업 기회 발생 시 끼워넣는 방식.
+6. **첫 파일럿 회고** — 다음 파일럿부터 `99-retro.md` 작성. 정량 지표 6개(Q1·Q2·C1·C2·A1·A2) 첫 실측.
+7. **ASEWS 모델링 문서 수학적 린트 (L5)** — 본격은 L4 이후. 사전에 ASEWS `docs/modeling/` 6종 훑기는 가능.
+
+## 보류 / 다른 세션에서 진행 중
+
+- **praxis 존치 여부**: ASEWS 측에서 결정 진행. 빠삐용 실패 이벤트 → ASEWS 축적 폐루프는 praxis 결정까지 끊겨있음. 빠삐용 측에서 미리 할 수 있는 건 "실패 이벤트 스키마" 정의이나 praxis 결론에 따라 무용이 될 수 있어 보류.
+- **cross-model logprobs 경로**: L4 이후. 다른 모델 과금 예산 선결.
 
 ## 작업 스택 (완료, 아카이브)
 
@@ -95,6 +106,12 @@
 - shackled 실행 모드 분리: `normal`(기본) / `tdd`(테스트 우선, `output_type: code` 전용) — 태스크별 상태 파일에 기록, 기본값 normal
 - shackled 루트 개념 3축: 설계서 루트 / 구현 루트(태스크별) / 상태 파일 루트 분리. 기존 `project_root`는 deprecated
 - shackled sandbox_mode: 파일럿·샌드박스 환경에서 상태 파일 루트를 `context_path` 기준 로컬 루트로 격리. 자동 감지 금지, 명시 선언만 허용
+- **수학적 모델링 (2026-04-14)**: bottom-up 빌드 순서 (L0→L5) 채택. 수학화 수준은 "약한 수학화 + 경험 분포 보강" — Claude logprobs 미노출 한계로 이론 분포 form은 관측 불가, N회 호출 경험 분포 `̂P_N` 활용. cross-model 경로는 L4 이후 (예산 선결).
+- **L0 투영(π) 옵션 A**: Output → ProjectedSpace 투영의 존재만 L0이 선언, 구체 선택은 use site에서 결정. 측정 문맥마다 진폭 허용 폭을 재조정 가능하게 유지하기 위함.
+- **L0 공리 구조**: A0.3(Independence) + A0.4(Stationarity) 결합으로 i.i.d. induce. i.i.d.를 별도 공리로 두지 않음.
+- **빠삐용 ↔ ASEWS 관계**: 한 연구 프로그램의 두 축. ASEWS = 인프라(MCP·벡터·그래프·KB), 빠삐용 = 방법론·프로토콜(페르소나·AC·핑퐁·shackled). L4에서 접면.
+- **백엔드 필요성**: 전통 백엔드는 불필요하나 "벡터 + 그래프 + 메타데이터 하이브리드" 형태의 비전통 백엔드는 필수 (연구 주제 3개가 종단 데이터·유사도 검색 의존). praxis 존치 논의는 "이 역할이 필요한가"가 아니라 "praxis 구현이 이 역할을 제대로 하는가"가 핵심 판단.
+- **호칭/말투**: `~/.claude/CLAUDE.md` §0에 박음. "주인님" 호칭 + 존댓말, 전역·예외 없음.
 
 ## Issue-02: 전체 프로젝트 구조 리뷰 (2026-04-08, Claude Web)
 

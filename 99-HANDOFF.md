@@ -1,33 +1,42 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/` 전체 — 풀사이클 실험 중, Issue-04 수정 반영 완료
+`01-Planning/06-shackled/` — 2026-04-14 M 체급 파일럿 피드백 반영 완료
 
-## 직전 작업: Issue-04 S+doc 파이프라인 경로 버그 수정 (2026-04-08)
+## 직전 작업: shackled 파일럿 피드백 반영 (2026-04-14)
 
-풀사이클 실험 중 발견된 중대 버그. S 체급 + 설계 문서 수정 태스크가 Phase 4(구현, code/runbook 전용)로 라우팅되어 파이프라인이 꼬이는 문제.
+2026-04-14 실시한 shackled M 체급 단일 태스크 파일럿에서 6개 관찰을 수집. 그 중 설계 수정이 필요한 3건을 반영하고 1건은 후속 L/XL 파일럿용 이슈로 등록.
 
-**근본 원인:** Phase 4의 `output_type`이 `code`/`runbook`만 존재. 설계 문서 수정은 어디에도 안 맞음. Step 3-B(설계 수정 경로)는 M 체급 전용이라 S에서 진입 불가.
+### 완료 내역
 
-**해결:** S 체급에 `output_type` 기반 이중 분기 추가.
-- S + code/runbook → Phase 4 → Phase 5 → Phase 6 (기존 그대로)
-- S + doc → Step 3-B(설계 수정) → Phase 2(설계 리뷰) → Phase 3 → Phase 6 (Phase 4/5 건너뜀)
+| # | 대상 파일 | 변경 | 피드백 항목 |
+|---|----------|------|------------|
+| A1 | `01-Planning/06-shackled/02-design/00-design-shackled.md` §3.3 | 실행 모드 테이블(normal/tdd) 추가 + §3.3.1에 TDD 흐름(테스트 작성→Red 검증→빌드 선결 조건 실패 처리→Green→Refactor) 신설 | #1 TDD 모드 부재, #4 빌드 선결 조건 실패 복구 매뉴얼 |
+| A2 | `01-Planning/06-shackled/02-design/02-state-management.md` §1·§3 | 루트 개념 3축 분리(설계서/구현/상태 파일 루트), `sandbox_mode` 명시 옵션, 스키마에 `mode`/`implementation_root`/`sandbox_mode`/`documentation_root`/`state_root` 필드 추가, `project_root` deprecated(호환성 매핑) | #3 설계서/구현 루트 이원화, #6 pilot 격리 공간 |
+| A3 | `80-Issue/02-Issue-02/08-shackled-lxl-premise-deviation.md` + index | Issue-02 #8 신규 등록 — L/XL 파일럿에서 §3.1 상위 전제 이탈 감지 재검증 | #2 상위 전제 이탈 감지 미검증 |
 
-**변경 파일 (설계서):**
-- `01-Planning/03-papillon/02-design/00-design-papillon.md` — 흐름도, Step 2 분기, Step 3 스코프, 입출력 매핑, Phase 3 분기
-- `01-Planning/05-inquisition/02-design/00-design-inquisition.md` — 체급 판정에 `output_type` 판정 추가 (code/runbook/doc), 핸드오프 브리프 조건
+### 부수 효과
 
-**변경 파일 (스킬):**
-- `~/.claude/commands/papillon.md` — 동일 변경사항 반영
-- `~/.claude/commands/papillon/inquisition.md` — 동일 변경사항 반영
+- **TDD 모드 산출물 범위 확장**: 테스트 파일이 산출물에 포함되며, 이후 §3.3.2 크로스 체크 대상에도 테스트가 포함됨.
+- **sandbox_mode 자동 감지 금지**: 반드시 호출 시 명시 선언해야 함 — 자동 감지는 drift 원인이 될 수 있어 차단.
+- **상태 파일 역호환성**: 기존 `project_root` 필드를 가진 상태 파일은 `documentation_root`·`state_root`에 동일 매핑으로 읽힘. 기존 파일럿 중단 상태 영향 없음.
+- **실행 모드 기본값 `normal`**: 기존 동작과 동일. TDD는 명시 선언 시만 활성.
+- **이슈 트래커 카운트 업데이트**: Issue-02 낮음 1건 → 2건.
 
-**추가:** 스킬 설치 구조 변경 — `papillon.md`를 `commands/papillon/` 내부에서 `commands/` 루트로 이동하여 `/papillon`으로 호출 가능하도록 변경. 관련 설계서(PRD, common-spec, papillon, wtth, shackled, 이슈 문서) 경로 일괄 동기화.
+### 보류(반영하지 않음) 관찰
 
-## 다음 작업: 파이프라인 실험 계속
+| # | 항목 | 판단 |
+|---|------|------|
+| #5 | 페르소나 쌍 구조 유효 | 유지. 다음 파일럿에서 정량 지표(크로스 체커 catch 건수) 수집 권장 — 별도 조치 없음 |
 
-Issue-04 수정이 반영된 스킬로 풀사이클 실험 재개. 별도 오퍼스 세션에서 만든 설계 문서를 인퀴지션에 던져서 파이프라인 실험.
+## 다음 작업: 다음 단계 후보
 
-**Issue-02 검증:** 파이프라인 실험 과정에서 #2(컨텍스트 윈도우), #3(사람 개입), #5(산출물 생명주기), #6(캘리브레이션) 자연 검증.
+우선순위 순:
+
+1. **Python 검증 CLI 구현 준비** — AC Template v3.2·inquisition AC v0.1.0 산출물이 별도 환경에서 대기 중. 양 환경 동기화 후 착수. 대상 함수: `extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing` + fixture runner.
+2. **L/XL 파일럿 기획 (Issue-02 #8 + #2 동시 검증)** — 의도적 미스매치 fixture 포함. 실제 L/XL 작업 기회 발생 시 끼워넣는 방식. 컨텍스트 윈도우(#2)·상위 전제 이탈 감지(#8) 자연 검증.
+3. **파일럿 정량 지표 프로토콜** — 다음 파일럿부터 크로스 체커 catch 건수·TDD 모드 채택 비율 등 기록 포맷 표준화. 회고 템플릿 업데이트 필요.
+4. **파이프라인 실험 계속** — Issue-02 #3(사람 개입)·#5(산출물 생명주기)·#6(체급 캘리브레이션) 실측 데이터 수집.
 
 ## 작업 스택 (완료, 아카이브)
 
@@ -83,6 +92,9 @@ Issue-04 수정이 반영된 스킬로 풀사이클 실험 재개. 별도 오퍼
 - S+doc 파이프라인 경로: S 체급 + output_type=doc → Step 3-B → Phase 2 → Phase 3 → Phase 6 (Phase 4/5 건너뜀)
 - output_type 판정: inquisition 체급 판정 시 산출물 유형(code/runbook/doc)도 함께 판정, 00-summary.md에 기록
 - 스킬 설치 구조: 오케스트레이터는 `~/.claude/commands/papillon.md` (루트), 서브스킬은 `~/.claude/commands/papillon/` (서브디렉토리)
+- shackled 실행 모드 분리: `normal`(기본) / `tdd`(테스트 우선, `output_type: code` 전용) — 태스크별 상태 파일에 기록, 기본값 normal
+- shackled 루트 개념 3축: 설계서 루트 / 구현 루트(태스크별) / 상태 파일 루트 분리. 기존 `project_root`는 deprecated
+- shackled sandbox_mode: 파일럿·샌드박스 환경에서 상태 파일 루트를 `context_path` 기준 로컬 루트로 격리. 자동 감지 금지, 명시 선언만 허용
 
 ## Issue-02: 전체 프로젝트 구조 리뷰 (2026-04-08, Claude Web)
 
@@ -96,6 +108,7 @@ Issue-04 수정이 반영된 스킬로 풀사이클 실험 재개. 별도 오퍼
 | 4 | 중간 | wtth 모드별 상세 부족 | 모드별 스킵/변형/추가 규칙 명시 | 반영 완료 (설계서 + 스킬) |
 | 5 | 중간 | 산출물 생명주기 미정의 | 생명주기 매트릭스 (common-spec) | 파이프라인 실험 후 |
 | 6 | 낮음 | 체급 heuristic 환류 부재 | 캘리브레이션 사례 축적 | 파이프라인 실험 후 |
+| 8 | 낮음 | shackled §3.1 상위 전제 이탈 감지 L/XL 미검증 | 의도적 미스매치 fixture로 감지율/FP 실측 | L/XL 파일럿 시 |
 
 ## Issue-04: S+doc 파이프라인 경로 버그 (2026-04-08) — Closed
 

@@ -19,11 +19,12 @@
 | 4 | [04-wtth-mode-detail-gap.md](./04-wtth-mode-detail-gap.md) | 공백 | wtth 모드별 상세 파일이 얇음, 공통 메커니즘과의 상호작용 미정의 | Open |
 | 5 | [05-artifact-lifecycle.md](./05-artifact-lifecycle.md) | 공백 | 산출물 9종+의 생명주기·정합성 검증 메커니즘 부재 | Open |
 
-## 낮음 (1건)
+## 낮음 (2건)
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
 | 6 | [06-weight-class-heuristic.md](./06-weight-class-heuristic.md) | 공백 | 체급 판정 경계 heuristic이 경험적 데이터와 환류되지 않음 | Open |
+| 8 | [08-shackled-lxl-premise-deviation.md](./08-shackled-lxl-premise-deviation.md) | 공백 | shackled §3.1 "상위 전제 이탈 감지" L/XL 체급 검증 미완 | Open — L/XL 파일럿 후 |
 
 ## 제안된 적용 시점
 
@@ -35,6 +36,7 @@
 | **파이프라인 실험 후** | #3 사람 개입 과다 | 확인 지점 3등급 분류 (Gate/Checkpoint/FYI) + 실행 데이터 기반 |
 | **파이프라인 실험 후** | #5 산출물 생명주기 | 생명주기 매트릭스 (common-spec에 추가) |
 | **파이프라인 실험 후** | #6 체급 heuristic | 캘리브레이션 사례 축적 |
+| **L/XL 파일럿 시** | #8 상위 전제 이탈 감지 | 의도적 미스매치 fixture로 감지율/FP 실측 |
 
 ## 참고 (이슈 아님)
 

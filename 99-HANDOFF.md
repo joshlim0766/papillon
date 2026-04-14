@@ -120,10 +120,10 @@
 
 | # | 분류 | 제목 | 상태 |
 |---|---|---|---|
-| AI-1 | P1 | L/XL 태스크 간 정합성 — Phase 4 예방 + Phase 5.1 Re-baselining | **Open** |
-| AI-2 | P1 | 수렴 판정 강화 — Sign-off ID 인용 강제 + MCP 문자열 검증 + Sampling + 백업 시점 조정 | **Open** (→ Issue-03-02 솔루션) |
-| AI-3 | P2 | Inquisition 리스크 고지 강화 — 답변 보류 시 후속 영향 제시 | **Open** |
-| AI-4 | P2 | Shackled 진행 불가 시 AI 추론 대응 옵션 필수 제시 | **Open** |
+| AI-1 | P1 | L/XL 태스크 간 정합성 — Phase 4 예방 + Phase 5.1 Re-baselining | **Closed** (2026-04-14 상태 동기화, 효과 검증은 Issue-02 #8) |
+| AI-2 | P1 | 수렴 판정 강화 — Sign-off ID 인용 강제 + MCP 문자열 검증 + Sampling + 백업 시점 조정 | **Closed** (2026-04-14 상태 동기화) |
+| AI-3 | P2 | Inquisition 리스크 고지 강화 — 답변 보류 시 후속 영향 제시 | **Done** |
+| AI-4 | P2 | Shackled 진행 불가 시 AI 추론 대응 옵션 필수 제시 | **Done** |
 | EXP-1 | 실험 | 페르소나 일관성 — 반박 시 finding 유지 여부 | 실험 대기 |
 | EXP-2 | 실험 | 사람 개입 과다 — Gate/Checkpoint/FYI 입력 데이터 수집 | 실험 대기 (→ Issue-02 #3) |
 | EXP-3 | 실험 | HANDOFF 자동화 — Phase 5.1/6 자동 생성 | 실험 대기 |
@@ -134,4 +134,4 @@
 |---|---|---|---|
 | 00 | 높음 | 수정 경로 미정의 | 반영 완료 (Step 3-B + §2.3) |
 | 01 | 높음 | 라운드 간 통합 체크 부재 | 반영 완료 |
-| 02 | 높음 | 수렴 판정 조건이 반영 검증 미포함 | **Open** — 수렴 조건에 "수용 건 전건 반영 완료" 추가 필요 (wtth §4.1) |
+| 02 | 높음 | 수렴 판정 조건이 반영 검증 미포함 | **Closed** (2026-04-10, wtth §4.1 반영 — Issue-05 AI-2 솔루션) |

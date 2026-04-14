@@ -2,7 +2,7 @@
 
 **심각도:** P1
 **분류:** 공백
-**상태:** Open
+**상태:** Closed — papillon §3.4(상위 전제 로드) + §3.5.1(Phase 5.1 Re-baselining) + shackled §3.1 반영 완료. 효과 검증(감지율·FP)은 Issue-02 #8(L/XL 파일럿)로 이관
 
 ## 문제
 

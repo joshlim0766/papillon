@@ -33,7 +33,7 @@
 
 우선순위 순:
 
-1. **Python 검증 CLI 구현 준비** — AC Template v3.2·inquisition AC v0.1.0 산출물이 별도 환경에서 대기 중. 양 환경 동기화 후 착수. 대상 함수: `extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing` + fixture runner.
+1. **Python 검증 CLI 구현** — AC Template v3.2(`01-Planning/08-ac/ac-template-v3.2.md`)·Inquisition AC v0.1.0(`01-Planning/05-inquisition/ac-v0.1.0.md`)·VOCABULARY.yaml(레포 루트) 전부 등록 완료(commit `00ede23`). 구현 대상: 유틸 4개(`extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing`) + fixture runner. 구현 중 예상 숙제: (a) `extract_headings()` 부록 E 보강(v3.3 후보), (b) INV-IQ-03/05의 `resolve_scoped_text()` 공통 함수 추출, (c) `ART-IQ-02` 70% 임계값 실측 후 튜닝.
 2. **L/XL 파일럿 기획 (Issue-02 #8 + #2 동시 검증)** — 의도적 미스매치 fixture 포함. 실제 L/XL 작업 기회 발생 시 끼워넣는 방식. 컨텍스트 윈도우(#2)·상위 전제 이탈 감지(#8) 자연 검증.
 3. **파일럿 정량 지표 프로토콜** — 다음 파일럿부터 크로스 체커 catch 건수·TDD 모드 채택 비율 등 기록 포맷 표준화. 회고 템플릿 업데이트 필요.
 4. **파이프라인 실험 계속** — Issue-02 #3(사람 개입)·#5(산출물 생명주기)·#6(체급 캘리브레이션) 실측 데이터 수집.

@@ -1,0 +1,20 @@
+# Papillon Global Vocabulary
+# extract_keywords() 용. 길이 기준 무시하고 무조건 keyword로 채택됨.
+# 수정 빈도: 매우 낮음 (분기 1~2회). 수동 관리: Josh.
+# 참조: 01-Planning/08-ac/ac-template-v3.2.md 부록 D
+
+terms:
+  - BE
+  - FE
+  - SEC
+  - SRE
+  - PO
+  - TW
+  - QA
+  - UX
+  - DBA
+  - ARCH
+  - HITL
+  - AC
+  - RDR
+  - ADR

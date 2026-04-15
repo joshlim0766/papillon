@@ -1,6 +1,6 @@
 # Inquisition Skill — Acceptance Criteria
 
-> papillon AC Template v3.2 적용.
+> papillon AC Template v3.3 적용.
 > test_mode: single_turn (인터뷰 없이 1회 생성. multi_turn은 deferred.)
 
 ---
@@ -178,7 +178,7 @@ hard_ac_document:
 stability:
   tier_2_runs: 5
   optimization:
-    # v3.2 template 규칙 준수: "critical 전원 + major 1개(랜덤)"
+    # v3.3 template 규칙 준수: "critical 전원 + major 1개(랜덤)"
     # fixture ID를 하드코딩하지 않음 — fixture 추가/제거 시 자동 반영.
     selection_rule: "severity == critical 전원 + severity == major 랜덤 1개"
     fallback: "대표 fixture stability fail → 전체 fixture로 확대 재검증"
@@ -194,7 +194,7 @@ stability:
 
 ```yaml
 artifact_ac:
-  # v3.2 template Section 3의 기본 4항목 그대로 적용.
+  # v3.3 template Section 3의 기본 4항목 그대로 적용.
   # inquisition-specific override 없음.
   # check 내 merged_vocabulary = global(VOCABULARY.yaml) ∪ skill-local(domain_vocabulary)
 
@@ -237,7 +237,7 @@ artifact_ac:
 
 ## 4. Fixture AC
 
-> Fixture expected 필드 스키마는 v3.2 template Section 4에 정의됨. 여기서 중복 선언하지 않음.
+> Fixture expected 필드 스키마는 v3.3 template Section 4에 정의됨. 여기서 중복 선언하지 않음.
 
 ### Fixtures
 
@@ -349,7 +349,7 @@ fixtures:
       min_length: 1500
 
 fixture_policy:
-  # v3.2 template 기본값 참조. inquisition-specific override만 기술.
+  # v3.3 template 기본값 참조. inquisition-specific override만 기술.
   tier_2_minimum: 5
   severity_policy:
     critical_fail: "전체 reject"
@@ -362,7 +362,7 @@ fixture_policy:
 ## 5. Retry Policy
 
 ```yaml
-# v3.2 template 기본값 그대로 적용. override 없음.
+# v3.3 template 기본값 그대로 적용. override 없음.
 retry_policy:
   hard_ac_retry: 3
   stability_retry: 2
@@ -490,6 +490,7 @@ drift_budget:
 |------|------|-----------|
 | 0.1.0-draft | 2026-04-13 | dry run 초안 (v3.1 template 적용) |
 | 0.1.0 | 2026-04-13 | v3.2 template 동기화. Critical 3건 해소. |
+| 0.1.0 | 2026-04-15 | template 참조 v3.2 → v3.3 업데이트 (토크나이저 재정의 + 한글 조사 제거 + `extract_headings()` 명세 반영). 본문 구조 변경 없음 — 전방호환. ART-IQ-02 실측 92.86% PASS. |
 
 ### v3.2 동기화 상세
 

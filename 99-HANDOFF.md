@@ -1,18 +1,38 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/04-wtth/ac/` — wtth reviewer AC 착수 (CODE 페르소나 수동 dry run 완료, 2026-04-15)
+`~/.claude/commands/papillon/wtth.md` (신규 설치) + `01-Planning/04-wtth/ac/` — wtth 스킬 설계서 기반 신규 작성 + 설계서↔스킬 gap 점검 완료 (2026-04-16 새벽, 집)
 
-## 직전 작업: 2026-04-15 저녁 (집) — wtth reviewer AC 착수
+## 직전 작업: 2026-04-16 새벽 (집) — wtth 스킬 신규 작성 + gap 점검
 
-회사 세션에서 Python CLI 유틸·Template v3.2→v3.3 승격·common-spec §9.1 신설 완료. 집 세션에서 **다음 스킬 AC 순서 정립 + wtth reviewer AC 공통/CODE 페르소나 초안 + 수동 dry run**.
+집 머신 wtth 스킬 부재가 CODE AC 실측 dry run의 최대 블로커였음. 설계서(`04-wtth/02-design/00-core.md` + `01/02/03-review-*.md`) 기반으로 `~/.claude/commands/papillon/wtth.md` 신규 작성 (592줄). 작성 후 Explore 에이전트로 독립 gap 점검 수행.
 
-### 오늘 커밋 시계열 (집 세션)
+### 오늘 작업 (커밋 없음 — 스킬 소스는 `~/.claude/commands/` 경로, 레포 밖)
+
+| 항목 | 내용 |
+|---|---|
+| 신규 | `~/.claude/commands/papillon/wtth.md` (592줄) — 5모드 + 전문가 거버넌스 + 수렴 메커니즘 + RDR/ADR 전부 반영 |
+| 점검 | 설계서 SSOT 4건 + common-spec §2/§6/§9/§12 + `_schema.md` 대조. Explore 에이전트 독립 검증 |
+
+### Gap 점검 결과 (미수정, 다음 세션 선결)
+
+**P0 누락 3건 (행동 왜곡 가능):**
+1. 스킬 §2.4 — "리뷰 세션 = RDR 1개 단위, 대화 컨텍스트와 무관" 용어 정의 누락. 출처: 설계서 §1.3
+2. 스킬 §3.1 — `.pre-review.md` 삭제 시점 "(리뷰 종료 시 아님)" 구분 누락. 최종 확인 중 AS-IS 참조 누락 위험. 출처: 설계서 §3.3
+3. 스킬 §4.3 — 경량 통합 체크 후 "**이상 없으면** 다음 라운드 시작" 완료 조건 누락. 출처: 설계서 §2.1
+
+**P1 축약 2건:** §3.1 백업 용도 맥락 약화 / §4.3 "Opus/Sonnet 1회 호출 수준" 스케일 가이드 누락
+
+**P2 제안 2건:** §1.1 단독 실행 시 복수 모드 발견 → §1.3 직진 연쇄 명시 / §2.4 복합 모드에서 `excluded_experts`는 세션 전체 적용 (모드별 제외 불가) 명시
+
+**양호:** 복합 모드 4단계 확정 흐름·최종 확인 P0 전수/P1 샘플링 문자열 일치 검증·RDR/ADR 포맷 전부 정확.
+
+### 이전 세션 (2026-04-15 저녁 집) 커밋
 
 | Commit | 내용 |
 |---|---|
 | `24f1324` | wtth reviewer AC v0.1.0 — 공통 베이스(common-v0.1.0.md) + CODE 페르소나(code-v0.1.0.md) 초안 |
-| (예정) | CODE AC 수동 dry run 리포트 (dry-run-code-v0.1.0.md) |
+| `8398390` | CODE AC v0.1.0 수동 dry run 리포트 + HANDOFF 갱신 |
 
 ### 이전 커밋 (2026-04-14 + 회사)
 
@@ -55,21 +75,23 @@
 
 우선순위 순:
 
-1. **CODE AC 실제 스킬 실행 dry run (회사)** — 오늘 수동 dry run에서 발견된 구멍 후보 6건 재검증. 선결 조건: wtth 스킬 설치 (`~/.claude/commands/papillon/wtth.md` 또는 세분화된 reviewer 스킬), fixture runner 최소 버전 구현 (output 텍스트 ↔ AC invariants 자동 대조). dry-run-code-v0.1.0.md §6 액션 항목 참조.
-2. **CODE AC v0.1.1 보강** — dry run에서 나온 P1/P2 수정 반영: (a) `INV-WREV-01` heading 형식 완화 + 페르소나 output format 규약 추가, (b) `FIX-CODE-01` expected 정규식 관대화, (c) `forbidden_patterns` "좀 더" 제거 검토.
-3. **다른 reviewer 페르소나 AC 복제** — CODE 구조가 안정되면 BE/FE/SEC/TEST/ARCH/DBA 순서로 복사 + 페르소나별 override. 공통 베이스는 그대로 사용.
-4. **shackled AC 착수** — code variant 첫 실전. wtth reviewer와 다른 축 (output_type=code + syntax/lint invariants).
-5. **L0 후속 작업 2건** — `01-Planning/09-formal/01-l0-scope.md` §7: (a) 빠삐용 호출별 `(x, c, θ)` 매핑, (b) 관측 측정 규약.
-6. **L1 착수 (Prompt 공간 구조)** — invariance, composition. input equivalence `~_input` 정의 필요.
-7. **L/XL 파일럿 기획 (Issue-02 #8 + #2)** — 실제 L/XL 작업 기회 발생 시.
-8. **첫 파일럿 회고** — 정량 지표 6개 첫 실측.
-9. **ASEWS 모델링 문서 수학적 린트 (L5)** — 본격은 L4 이후.
+1. **wtth 스킬 P0 3건 수정** (선결) — 위 §"Gap 점검 결과" P0-1·2·3. 각각 1~2줄 추가면 끝남. 수정 후 P1/P2는 판단.
+2. **CODE AC 실제 스킬 실행 dry run** — wtth 스킬 수정 완료 후 바로 가능. 수동 dry run(dry-run-code-v0.1.0.md) 구멍 후보 6건을 실측으로 재검증. Fixture runner 미구현이지만 수동 AC 대조로도 진행 가능.
+3. **CODE AC v0.1.1 보강** — 실측 결과 반영: (a) `INV-WREV-01` heading 형식 완화 + 페르소나 output format 규약 추가, (b) `FIX-CODE-01` expected 정규식 관대화, (c) `forbidden_patterns` "좀 더" 제거 검토.
+4. **다른 reviewer 페르소나 AC 복제** — CODE 구조 안정 후 BE/FE/SEC/TEST/ARCH/DBA 복사 + override.
+5. **shackled AC 착수** — code variant 첫 실전. wtth reviewer와 다른 축 (output_type=code + syntax/lint invariants).
+6. **Fixture runner 최소 버전** — output 텍스트 ↔ AC invariants 자동 대조. AC 복제 확장 전에 필요.
+7. **L0 후속 작업 2건** — `01-Planning/09-formal/01-l0-scope.md` §7: (a) 빠삐용 호출별 `(x, c, θ)` 매핑, (b) 관측 측정 규약.
+8. **L1 착수 (Prompt 공간 구조)** — invariance, composition. input equivalence `~_input` 정의 필요.
+9. **L/XL 파일럿 기획 (Issue-02 #8 + #2)** — 실제 L/XL 작업 기회 발생 시.
+10. **첫 파일럿 회고** — 정량 지표 6개 첫 실측.
+11. **ASEWS 모델링 문서 수학적 린트 (L5)** — 본격은 L4 이후.
 
-### 다음 회사 세션 체크리스트
+### 다음 세션 체크리스트
 
-- [ ] wtth 스킬이 `~/.claude/commands/papillon/` 아래에 설치됐는지 확인 (HANDOFF에는 "설치됨" 표시였으나 로컬 집 머신에서는 inquisition.md만 존재, 동기화 이슈 가능성)
-- [ ] Fixture runner 최소 버전 구상·착수 (스킬 실행은 수동·CLI 어느 쪽이든 결정)
-- [ ] CODE AC 실제 dry run으로 수동 dry run 결과 재검증
+- [x] wtth 스킬 집 머신에 설치 완료 (2026-04-16 신규 작성, 592줄)
+- [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 소스 경로 정책 결정: 레포 편입 vs 머신별 수동 복사)
+- [ ] P0 3건 수정 후 CODE AC 실측 dry run 진입
 
 ## 보류 / 다른 세션에서 진행 중
 

@@ -1,4 +1,4 @@
-"""Papillon AC Template v3.2 validator utilities."""
+"""Papillon AC Template v3.3 validator utilities."""
 
 from papillon_ac.keywords import extract_keywords
 from papillon_ac.markdown_utils import (

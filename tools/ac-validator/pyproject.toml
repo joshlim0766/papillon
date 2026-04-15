@@ -1,7 +1,7 @@
 [project]
 name = "papillon-ac"
 version = "0.1.0"
-description = "Papillon AC Template v3.2 validator utilities"
+description = "Papillon AC Template v3.3 validator utilities"
 requires-python = ">=3.9"
 dependencies = [
     "pyyaml>=6.0",

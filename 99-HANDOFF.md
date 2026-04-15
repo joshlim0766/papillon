@@ -1,48 +1,75 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/09-formal/` — 빠삐용 수학적 정의 L0 착수 (2026-04-14)
+`01-Planning/04-wtth/ac/` — wtth reviewer AC 착수 (CODE 페르소나 수동 dry run 완료, 2026-04-15)
 
-## 직전 작업: 2026-04-14 묶음 (집)
+## 직전 작업: 2026-04-15 저녁 (집) — wtth reviewer AC 착수
 
-오늘 진행된 작업 6개 커밋. 큰 흐름은 (1) 이슈 상태 동기화 정리 → (2) 파일럿 정량 지표 프로토콜 신설 → (3) AC 프레임워크 등록 → (4) 빠삐용 수학적 정의 착수.
+회사 세션에서 Python CLI 유틸·Template v3.2→v3.3 승격·common-spec §9.1 신설 완료. 집 세션에서 **다음 스킬 AC 순서 정립 + wtth reviewer AC 공통/CODE 페르소나 초안 + 수동 dry run**.
 
-### 커밋 시계열
+### 오늘 커밋 시계열 (집 세션)
+
+| Commit | 내용 |
+|---|---|
+| `24f1324` | wtth reviewer AC v0.1.0 — 공통 베이스(common-v0.1.0.md) + CODE 페르소나(code-v0.1.0.md) 초안 |
+| (예정) | CODE AC 수동 dry run 리포트 (dry-run-code-v0.1.0.md) |
+
+### 이전 커밋 (2026-04-14 + 회사)
 
 | Commit | 내용 |
 |---|---|
 | `6cd7713` | Issue-05 AI-1·AI-2 + Issue-03-02 상태 동기화 (높음·P1 Open 0건 달성) |
 | `36e6592` | 파일럿 정량 지표 프로토콜 신설 — common-spec §13 + `01-Planning/07-metrics/retro-template.md` |
-| `00ede23` | AC Template v3.2 + Inquisition AC v0.1.0 + VOCABULARY.yaml 등록 (Claude Web 대화 산출물 레포 반영) |
-| `a54de43` | HANDOFF stale 문구 정정 (AC 산출물 "별도 환경 대기" → 레포 반영 완료) |
+| `00ede23` | AC Template v3.2 + Inquisition AC v0.1.0 + VOCABULARY.yaml 등록 |
+| `a54de43` | HANDOFF stale 문구 정정 |
 | `651f1e4` | 빠삐용 수학적 정의 L0 착수 — `01-Planning/09-formal/` 신규 |
 | `9d81a73` | L0 셀프 린트 P0 3건 + P1 2건 반영 |
+| `1eb5ff6` | L0 §3.3 추정 가능성 노트 추가 (̂P_N의 L1 의존 명시) |
+| `2229165` | (회사) Python CLI 유틸 3종 + Template v3.3 승격 + common-spec §9.1 (SKILL.md 포맷) + ART-IQ-02 실측 92.86% PASS |
 
 ### 핵심 산출물
 
-- **`01-Planning/09-formal/00-index.md`**: L0~L5 층위 인덱스
-- **`01-Planning/09-formal/01-l0-scope.md`**: 단일 LLM 호출의 수학적 정의 (P0/P1 린트 반영 완료)
-- **`01-Planning/08-ac/ac-template-v3.3.md`**: AC 템플릿 (Hard/Fixture/Semantic 3-layer + Stability + Regression + Drift Budget)
-- **`01-Planning/05-inquisition/ac-v0.1.0.md`**: 템플릿 첫 실전 적용
-- **`VOCABULARY.yaml`**: 전역 도메인 약어 14종 (레포 루트)
-- **`01-Planning/02-common-spec.md` §13**: 파일럿 정량 지표 프로토콜
-- **`01-Planning/07-metrics/retro-template.md`**: 파일럿 회고 양식
+- **`01-Planning/04-wtth/ac/common-v0.1.0.md`** (신규): wtth reviewer 공통 AC 베이스 (Tier 1 document)
+- **`01-Planning/04-wtth/ac/code-v0.1.0.md`** (신규): CODE 페르소나 override
+- **`01-Planning/04-wtth/ac/dry-run-code-v0.1.0.md`** (신규): CODE AC 수동 dry run 리포트 (편향 고지 포함)
+- `01-Planning/09-formal/00-index.md`·`01-l0-scope.md`: 수학적 정의 L0 (이전 작업, stable)
+- `01-Planning/08-ac/ac-template-v3.3.md`: AC 템플릿 (회사 세션에서 v3.2 → v3.3 승격)
+- `01-Planning/05-inquisition/ac-v0.1.0.md`: 템플릿 첫 실전 적용 (회사 세션에서 v3.3 참조로 업데이트)
+- `VOCABULARY.yaml`: 전역 도메인 약어 14종
+- `01-Planning/02-common-spec.md` §13: 파일럿 정량 지표 프로토콜 / §9.1: SKILL.md 포맷 표준 (회사)
+- `tools/ac-validator/`: Python CLI 유틸 3종 + ART-IQ-02 실측 스크립트 (회사, 92.86% PASS)
+- `01-Planning/07-metrics/retro-template.md`: 파일럿 회고 양식
 
 ### 운영 변경
 
 - **`~/.claude/CLAUDE.md` §0 신설**: 호칭 "주인님" 고정, 존댓말 고정, 전역·예외 없음
 
+### 오늘 핵심 판단
+
+- **스킬 AC 작성 순서 확정**: wtth:reviewer:code(1) → shackled(2) → wtth:orchestrator(3) → papillon/task sizing/gate(4). Tier 1 먼저, variant 다양화, 복잡도 상승.
+- **wtth reviewer AC 구조**: 공통 베이스 + 페르소나별 override (옵션 B). CODE 먼저, 이후 페르소나별 copy-paste.
+- **금기·발언 품질 검증은 Tier 1에서 불가**: `Tier 2 승격 후보` 섹션에 명시. 실측 후 승격 판단.
+- **Dry run 수동 수행 제약**: wtth 스킬 미설치(로컬) + fixture runner 미구현이 실제 자동 dry run의 블로커. 오늘은 수동 dry run으로 AC 구조 검증만 진행.
+
 ## 다음 작업: 다음 단계 후보
 
 우선순위 순:
 
-1. **Python 검증 CLI 구현 (회사)** — AC 산출물 전부 레포에 있음. 유틸 4개(`extract_keywords`, `extract_section`, `exclude_section`, `get_sentence_containing`) + fixture runner. 구현 중 예상 숙제: (a) `extract_headings()` 부록 E 보강(v3.3 후보), (b) INV-IQ-03/05의 `resolve_scoped_text()` 공통 함수 추출, (c) `ART-IQ-02` 70% 임계값 실측 후 튜닝.
-2. **L0 후속 작업 2건** — `01-Planning/09-formal/01-l0-scope.md` §7 식별 완료: (a) 빠삐용 호출별 `(x, c, θ)` 매핑 (inquisition·wtth·shackled·papillon), (b) 관측 측정 규약 (tokenizer 종류·API usage 수집·로깅 포맷). 산출 형태(단일/다문서)는 매핑 시도 후 결정.
-3. **L1 착수 (Prompt 공간 구조)** — invariance, composition. L0 후속 후 또는 병렬.
-4. **L0 보류 P1 항목** — P1-2(tokenizer 정확도 가정), P1-4(Claude system/user 분리 가능성). 매핑 작업 시 자연스럽게 부딪힐 가능성, 그때 처리.
-5. **L/XL 파일럿 기획 (Issue-02 #8 + #2 동시 검증)** — 의도적 미스매치 fixture 포함. 실제 L/XL 작업 기회 발생 시 끼워넣는 방식.
-6. **첫 파일럿 회고** — 다음 파일럿부터 `99-retro.md` 작성. 정량 지표 6개(Q1·Q2·C1·C2·A1·A2) 첫 실측.
-7. **ASEWS 모델링 문서 수학적 린트 (L5)** — 본격은 L4 이후. 사전에 ASEWS `docs/modeling/` 6종 훑기는 가능.
+1. **CODE AC 실제 스킬 실행 dry run (회사)** — 오늘 수동 dry run에서 발견된 구멍 후보 6건 재검증. 선결 조건: wtth 스킬 설치 (`~/.claude/commands/papillon/wtth.md` 또는 세분화된 reviewer 스킬), fixture runner 최소 버전 구현 (output 텍스트 ↔ AC invariants 자동 대조). dry-run-code-v0.1.0.md §6 액션 항목 참조.
+2. **CODE AC v0.1.1 보강** — dry run에서 나온 P1/P2 수정 반영: (a) `INV-WREV-01` heading 형식 완화 + 페르소나 output format 규약 추가, (b) `FIX-CODE-01` expected 정규식 관대화, (c) `forbidden_patterns` "좀 더" 제거 검토.
+3. **다른 reviewer 페르소나 AC 복제** — CODE 구조가 안정되면 BE/FE/SEC/TEST/ARCH/DBA 순서로 복사 + 페르소나별 override. 공통 베이스는 그대로 사용.
+4. **shackled AC 착수** — code variant 첫 실전. wtth reviewer와 다른 축 (output_type=code + syntax/lint invariants).
+5. **L0 후속 작업 2건** — `01-Planning/09-formal/01-l0-scope.md` §7: (a) 빠삐용 호출별 `(x, c, θ)` 매핑, (b) 관측 측정 규약.
+6. **L1 착수 (Prompt 공간 구조)** — invariance, composition. input equivalence `~_input` 정의 필요.
+7. **L/XL 파일럿 기획 (Issue-02 #8 + #2)** — 실제 L/XL 작업 기회 발생 시.
+8. **첫 파일럿 회고** — 정량 지표 6개 첫 실측.
+9. **ASEWS 모델링 문서 수학적 린트 (L5)** — 본격은 L4 이후.
+
+### 다음 회사 세션 체크리스트
+
+- [ ] wtth 스킬이 `~/.claude/commands/papillon/` 아래에 설치됐는지 확인 (HANDOFF에는 "설치됨" 표시였으나 로컬 집 머신에서는 inquisition.md만 존재, 동기화 이슈 가능성)
+- [ ] Fixture runner 최소 버전 구상·착수 (스킬 실행은 수동·CLI 어느 쪽이든 결정)
+- [ ] CODE AC 실제 dry run으로 수동 dry run 결과 재검증
 
 ## 보류 / 다른 세션에서 진행 중
 

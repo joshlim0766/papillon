@@ -22,7 +22,7 @@
 
 - **`01-Planning/09-formal/00-index.md`**: L0~L5 층위 인덱스
 - **`01-Planning/09-formal/01-l0-scope.md`**: 단일 LLM 호출의 수학적 정의 (P0/P1 린트 반영 완료)
-- **`01-Planning/08-ac/ac-template-v3.2.md`**: AC 템플릿 (Hard/Fixture/Semantic 3-layer + Stability + Regression + Drift Budget)
+- **`01-Planning/08-ac/ac-template-v3.3.md`**: AC 템플릿 (Hard/Fixture/Semantic 3-layer + Stability + Regression + Drift Budget)
 - **`01-Planning/05-inquisition/ac-v0.1.0.md`**: 템플릿 첫 실전 적용
 - **`VOCABULARY.yaml`**: 전역 도메인 약어 14종 (레포 루트)
 - **`01-Planning/02-common-spec.md` §13**: 파일럿 정량 지표 프로토콜

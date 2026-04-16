@@ -1,20 +1,50 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/04-wtth/ac/common-v0.1.1.md` + `code-v0.1.1.md` — 격리 dry run §8 P0 2건 패치 적용 완료 (2026-04-16 오전, 회사)
+`01-Planning/04-wtth/ac/` — reviewer AC 전 페르소나 v0.1.0 작성 완료 + fixture runner 자동화 (2026-04-16 오전, 회사)
 
-## 직전 작업: 2026-04-16 오전 (회사) — wtth CODE AC v0.1.1 패치 적용
+## 직전 작업: 2026-04-16 오전 (회사) — AC 패치 + fixture runner + 6개 페르소나 AC 복제
 
-격리 dry run(`dry-run-code-v0.2.0-actual-skill.md`)에서 확정된 P0 2건을 v0.1.1로 즉시 반영. 기존 v0.1.0은 보존(predecessor chain).
+### 커밋 3건
 
-| 파일 | 변경 |
+| Commit | 내용 |
 |---|---|
-| `common-v0.1.1.md` (신규) | INV-WREV-01에 finding-per-block fallback 추가. heading 부재여도 P[0-3] 태그 ≥1이면 통과. `required_sections.required: true → false`. |
-| `code-v0.1.1.md` (신규) | FIX-CODE-01/02/03 체크리스트 정규식을 `[^\]]*` 와일드카드로 관대화. 부가 설명 인용 변형 허용. parent를 common-v0.1.1.md로 갱신. |
+| `21c7788` | CODE AC v0.1.1 — 격리 dry run P0 2건 패치 (INV-WREV-01 fallback + 체크리스트 정규식 관대화) |
+| `bbd5972` | fixture runner — AC 동적 파서 + invariant/fixture 자동 검증 엔진 (67 tests passed) |
+| `63b02e6` | reviewer AC 6개 페르소나 복제 (BE/FE/TEST/SEC/ARCH/DBA v0.1.0) |
 
-**재판정**: dry run output을 v0.1.1 기준으로 재대조한 결과 P0 2건 모두 PASS 전환 — INV-WREV-01은 P0/P1/P2 태그 3개로 fallback 충족, FIX-CODE-01 정규식은 `[체크리스트: 리소스 누수 (커넥션, 파일핸들, 메모리)]` 매치.
+### 작업 상세
 
-**한계**: dry run §9 한계는 v0.1.1에도 그대로 적용 — 1-fixture-1-run 데이터. FIX-CODE-02/03 실측은 미수행. v0.1.1 적용 후 격리 재실행으로 회귀 검증 권장.
+**1. CODE AC v0.1.1 패치**
+- `common-v0.1.1.md`: INV-WREV-01에 finding-per-block fallback. heading 부재여도 P[0-3] 태그 ≥1이면 통과.
+- `code-v0.1.1.md`: FIX-CODE-01/02/03 체크리스트 정규식 `[^\]]*` 와일드카드로 관대화.
+- dry run output 재판정: P0 2건 모두 PASS 전환.
+
+**2. Fixture Runner (tools/ac-validator 확장)**
+- `ac_parser.py`: YAML-in-Markdown 동적 파서. 공통 + 페르소나 AC 합산. 중첩 ``` 핸들링 (multiline `^```$`).
+- `fixture_runner.py`: invariant 전수 + fixture expected 대조 엔진. Markdown 리포트 출력.
+- `scripts/run_fixture.py`: CLI (`--common`, `--persona`, `--output`, `--fixture`). exit code 0=PASS, 1=FAIL.
+- 검증: v0.1.1 → 18 PASS / v0.1.0 → 16 PASS + 2 FAIL (dry run 리포트와 일치).
+- **페르소나 추가 시 코드 수정 없이 `--persona` 인자만 교체.**
+
+**3. 6개 페르소나 AC 복제**
+
+| 페르소나 | 파일 | 리뷰 대상 | Fixture 3개 |
+|---|---|---|---|
+| BE | `be-v0.1.0.md` | 설계 문서 | 트랜잭션 경계, N+1 쿼리, 에러 응답 규격 |
+| FE | `fe-v0.1.0.md` | 설계 문서 | 에러 상태 부재, 멀티스텝 이탈, 로딩/빈 상태 |
+| TEST | `test-v0.1.0.md` | 소스 코드 | 테스트 부재, 에러 경로 누락, 격리 위반 |
+| SEC | `sec-v0.1.0.md` | 설계 문서 | 인증 우회, 시크릿 하드코딩, 민감 데이터 노출 |
+| ARCH | `arch-v0.1.0.md` | 설계 문서 | 순환 의존, 패턴 불일관, 모듈 정합성 |
+| DBA | `dba-v0.1.0.md` | 설계 문서 | 마이그레이션 락, 인덱스 부재, 파티셔닝 미고려 |
+
+- SEC/ARCH: 다중 모드 중 설계 리뷰만 v0.1.0. PRD/ADR fixture는 v0.2.0 예정.
+- 전부 fixture runner 파싱 검증 완료 (6개 × 3 fixture = 18 fixture 정상 로드).
+
+### 한계
+- 6개 페르소나 AC는 **격리 dry run 미수행** — fixture 설계의 현실성은 실측으로 확인 필요.
+- CODE AC v0.1.1 격리 재검증도 미수행 (FIX-CODE-02/03 첫 실측 포함).
+- 1-fixture-1-run 데이터. multi-sample 격리는 전 페르소나에 걸쳐 미수행.
 
 ## 이전 작업: 2026-04-16 새벽 (집) — wtth 스킬 신규 작성 + gap 점검
 
@@ -62,9 +92,15 @@
 
 ### 핵심 산출물
 
-- **`01-Planning/04-wtth/ac/common-v0.1.0.md`** (신규): wtth reviewer 공통 AC 베이스 (Tier 1 document)
-- **`01-Planning/04-wtth/ac/code-v0.1.0.md`** (신규): CODE 페르소나 override
-- **`01-Planning/04-wtth/ac/dry-run-code-v0.1.0.md`** (신규): CODE AC 수동 dry run 리포트 (편향 고지 포함)
+- **`01-Planning/04-wtth/ac/common-v0.1.1.md`**: 공통 AC (INV-WREV-01 fallback 도입)
+- **`01-Planning/04-wtth/ac/code-v0.1.1.md`**: CODE 페르소나 override (정규식 관대화)
+- **`01-Planning/04-wtth/ac/{be,fe,test,sec,arch,dba}-v0.1.0.md`** (6개 신규): 전 reviewer 페르소나 AC
+- **`tools/ac-validator/src/papillon_ac/ac_parser.py`** (신규): YAML-in-Markdown 동적 파서
+- **`tools/ac-validator/src/papillon_ac/fixture_runner.py`** (신규): invariant + fixture 자동 검증 엔진
+- **`tools/ac-validator/scripts/run_fixture.py`** (신규): CLI (exit 0=PASS, 1=FAIL)
+- `01-Planning/04-wtth/ac/common-v0.1.0.md`: 공통 AC 초판 (보존)
+- `01-Planning/04-wtth/ac/code-v0.1.0.md`: CODE AC 초판 (보존)
+- `01-Planning/04-wtth/ac/dry-run-code-v0.1.0.md`: CODE AC 수동 dry run 리포트 (편향 고지 포함)
 - `01-Planning/09-formal/00-index.md`·`01-l0-scope.md`: 수학적 정의 L0 (이전 작업, stable)
 - `01-Planning/08-ac/ac-template-v3.3.md`: AC 템플릿 (회사 세션에서 v3.2 → v3.3 승격)
 - `01-Planning/05-inquisition/ac-v0.1.0.md`: 템플릿 첫 실전 적용 (회사 세션에서 v3.3 참조로 업데이트)
@@ -88,9 +124,12 @@
 
 우선순위 순:
 
-1. **wtth 스킬 P0 3건 수정** (선결) — 위 §"Gap 점검 결과" P0-1·2·3. 각각 1~2줄 추가면 끝남. 수정 후 P1/P2는 판단.
-2. **CODE AC v0.1.1 격리 재검증** — 패치 적용 후 동일 격리 에이전트 패턴으로 1회 재실행. P0 2건 회귀 확인 + FIX-CODE-02/03 신규 실측 (현재까지 미수행).
-3. **CODE AC v0.2.0 후속 보강** — v0.1.1 미반영분: (a) 페르소나 v0.1.1 (체크리스트 인용 길이 가이드 + 다중 형식 예시), (b) `forbidden_patterns` "좀 더" 제거 검토 (다른 fixture에서 false positive 발현 시).
+1. **wtth 스킬 P0 3건 수정** (선결) — 위 §"Gap 점검 결과" P0-1·2·3. 각각 1~2줄 추가면 끝남.
+2. **CODE AC v0.1.1 격리 재검증** — fixture runner 연동 완료. 격리 에이전트로 dry run → runner 자동 판정. FIX-CODE-02/03 첫 실측 포함.
+3. **6개 페르소나 AC 중 1개 격리 dry run** — BE 또는 SEC 추천. fixture 설계의 현실성 검증.
+4. **inquisition AC → fixture runner 연동** — AC v0.1.0 이미 있음, runner에 태우기만.
+5. **CODE AC v0.2.0 후속 보강** — 페르소나 v0.1.1 (체크리스트 인용 가이드 + 다중 형식 예시), SEC/ARCH PRD/ADR 모드 fixture 추가.
+6. **스킬 repo 편입** — `tools/skills/papillon/` + symlink. 회사/집 동기화 해결.
 4. **다른 reviewer 페르소나 AC 복제** — CODE 구조 안정 후 BE/FE/SEC/TEST/ARCH/DBA 복사 + override.
 5. **shackled AC 착수** — code variant 첫 실전. wtth reviewer와 다른 축 (output_type=code + syntax/lint invariants).
 6. **Fixture runner 최소 버전** — output 텍스트 ↔ AC invariants 자동 대조. AC 복제 확장 전에 필요.
@@ -103,10 +142,13 @@
 ### 다음 세션 체크리스트
 
 - [x] wtth 스킬 집 머신에 설치 완료 (2026-04-16 신규 작성, 592줄)
-- [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 소스 경로 정책 결정: 레포 편입 vs 머신별 수동 복사)
 - [x] CODE AC v0.1.1 P0 2건 패치 적용 완료 (2026-04-16 회사)
-- [ ] v0.1.1 격리 재검증 (회귀 확인 + FIX-CODE-02/03 실측)
+- [x] Fixture runner 구현 + 67 tests passed (2026-04-16 회사)
+- [x] 6개 페르소나 AC 복제 + fixture runner 파싱 검증 (2026-04-16 회사)
+- [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 repo 편입 정책)
 - [ ] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강
+- [ ] CODE v0.1.1 격리 재검증 (회귀 + FIX-CODE-02/03 실측)
+- [ ] 6개 페르소나 중 1개 격리 dry run (fixture 현실성 검증)
 
 ## 보류 / 다른 세션에서 진행 중
 

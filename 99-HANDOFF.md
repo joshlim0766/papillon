@@ -1,9 +1,22 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`~/.claude/commands/papillon/wtth.md` (신규 설치) + `01-Planning/04-wtth/ac/` — wtth 스킬 설계서 기반 신규 작성 + 설계서↔스킬 gap 점검 완료 (2026-04-16 새벽, 집)
+`01-Planning/04-wtth/ac/common-v0.1.1.md` + `code-v0.1.1.md` — 격리 dry run §8 P0 2건 패치 적용 완료 (2026-04-16 오전, 회사)
 
-## 직전 작업: 2026-04-16 새벽 (집) — wtth 스킬 신규 작성 + gap 점검
+## 직전 작업: 2026-04-16 오전 (회사) — wtth CODE AC v0.1.1 패치 적용
+
+격리 dry run(`dry-run-code-v0.2.0-actual-skill.md`)에서 확정된 P0 2건을 v0.1.1로 즉시 반영. 기존 v0.1.0은 보존(predecessor chain).
+
+| 파일 | 변경 |
+|---|---|
+| `common-v0.1.1.md` (신규) | INV-WREV-01에 finding-per-block fallback 추가. heading 부재여도 P[0-3] 태그 ≥1이면 통과. `required_sections.required: true → false`. |
+| `code-v0.1.1.md` (신규) | FIX-CODE-01/02/03 체크리스트 정규식을 `[^\]]*` 와일드카드로 관대화. 부가 설명 인용 변형 허용. parent를 common-v0.1.1.md로 갱신. |
+
+**재판정**: dry run output을 v0.1.1 기준으로 재대조한 결과 P0 2건 모두 PASS 전환 — INV-WREV-01은 P0/P1/P2 태그 3개로 fallback 충족, FIX-CODE-01 정규식은 `[체크리스트: 리소스 누수 (커넥션, 파일핸들, 메모리)]` 매치.
+
+**한계**: dry run §9 한계는 v0.1.1에도 그대로 적용 — 1-fixture-1-run 데이터. FIX-CODE-02/03 실측은 미수행. v0.1.1 적용 후 격리 재실행으로 회귀 검증 권장.
+
+## 이전 작업: 2026-04-16 새벽 (집) — wtth 스킬 신규 작성 + gap 점검
 
 집 머신 wtth 스킬 부재가 CODE AC 실측 dry run의 최대 블로커였음. 설계서(`04-wtth/02-design/00-core.md` + `01/02/03-review-*.md`) 기반으로 `~/.claude/commands/papillon/wtth.md` 신규 작성 (592줄). 작성 후 Explore 에이전트로 독립 gap 점검 수행.
 
@@ -76,8 +89,8 @@
 우선순위 순:
 
 1. **wtth 스킬 P0 3건 수정** (선결) — 위 §"Gap 점검 결과" P0-1·2·3. 각각 1~2줄 추가면 끝남. 수정 후 P1/P2는 판단.
-2. **CODE AC 실제 스킬 실행 dry run** — wtth 스킬 수정 완료 후 바로 가능. 수동 dry run(dry-run-code-v0.1.0.md) 구멍 후보 6건을 실측으로 재검증. Fixture runner 미구현이지만 수동 AC 대조로도 진행 가능.
-3. **CODE AC v0.1.1 보강** — 실측 결과 반영: (a) `INV-WREV-01` heading 형식 완화 + 페르소나 output format 규약 추가, (b) `FIX-CODE-01` expected 정규식 관대화, (c) `forbidden_patterns` "좀 더" 제거 검토.
+2. **CODE AC v0.1.1 격리 재검증** — 패치 적용 후 동일 격리 에이전트 패턴으로 1회 재실행. P0 2건 회귀 확인 + FIX-CODE-02/03 신규 실측 (현재까지 미수행).
+3. **CODE AC v0.2.0 후속 보강** — v0.1.1 미반영분: (a) 페르소나 v0.1.1 (체크리스트 인용 길이 가이드 + 다중 형식 예시), (b) `forbidden_patterns` "좀 더" 제거 검토 (다른 fixture에서 false positive 발현 시).
 4. **다른 reviewer 페르소나 AC 복제** — CODE 구조 안정 후 BE/FE/SEC/TEST/ARCH/DBA 복사 + override.
 5. **shackled AC 착수** — code variant 첫 실전. wtth reviewer와 다른 축 (output_type=code + syntax/lint invariants).
 6. **Fixture runner 최소 버전** — output 텍스트 ↔ AC invariants 자동 대조. AC 복제 확장 전에 필요.
@@ -91,7 +104,9 @@
 
 - [x] wtth 스킬 집 머신에 설치 완료 (2026-04-16 신규 작성, 592줄)
 - [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 소스 경로 정책 결정: 레포 편입 vs 머신별 수동 복사)
-- [ ] P0 3건 수정 후 CODE AC 실측 dry run 진입
+- [x] CODE AC v0.1.1 P0 2건 패치 적용 완료 (2026-04-16 회사)
+- [ ] v0.1.1 격리 재검증 (회귀 확인 + FIX-CODE-02/03 실측)
+- [ ] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강
 
 ## 보류 / 다른 세션에서 진행 중
 

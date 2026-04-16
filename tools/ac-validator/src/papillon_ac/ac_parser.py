@@ -10,7 +10,7 @@ import yaml
 
 
 _YAML_BLOCK_RE = re.compile(
-    r"```ya?ml\s*\n(.*?)```", re.DOTALL
+    r"```ya?ml\s*\n(.*?)^```\s*$", re.DOTALL | re.MULTILINE
 )
 
 

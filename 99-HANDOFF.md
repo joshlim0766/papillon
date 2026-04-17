@@ -1,9 +1,42 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`80-Issue/06-Issue-06/` — TDD-ready 설계서 규격 신설 이슈 문서화 완료 (2026-04-17 오후, 회사). 스펙 초안 착수 대기.
+`80-Issue/06-Issue-06/tdd-ready-spec-v0.1.0-draft.md` — Issue-06 #1 스펙 초안 작성 완료 (2026-04-17 저녁, 집). 회사 exemplar 실측 → v0.2.0 환류 대기.
 
-## 직전 작업: 2026-04-17 오후 (회사) — Issue-06 개설 (TDD-ready 설계서)
+## 직전 작업: 2026-04-17 저녁 (집) — Issue-06 #1 스펙 초안 v0.1.0-draft 작성
+
+### 산출물
+`80-Issue/06-Issue-06/tdd-ready-spec-v0.1.0-draft.md` (신규) — 8개 섹션.
+
+### 핵심 결정 (draft 시점)
+
+- **저장 위치**: 이슈 디렉토리 안. v1.0 안정화 시 `02-common-spec.md` §14 흡수 또는 분할 common-spec 편입.
+- **판정 기준축**: "자동·구조적 판정 가능성" 단일 축. MUST/금기 = 게이트, SHOULD/체크리스트 = reviewer 재량.
+- **MUST 신호 (4건 + 조건부 1건)**: #1 RED 시나리오 번호 / #2 I/O data class / #5 TDD 플래그 헤더 / #7 TDD 구현 규율 (7A+7B 통합) / #8 상태·부작용 경계. 조건부: #4 의존 DAG (다중 태스크 overview만).
+- **SHOULD 신호 (3건)**: #3 에러 타입 응집 / #4 의존 DAG (단일) / #6 테스트 파일 경로.
+- **Anti-pattern 체크리스트 (2건)**: AP-1 비결정적 RED / AP-2 구현 상세 검증. AP-3는 신호 #7로 통합 (sub-requirement 7A/7B).
+- **게이트 연동**: `tdd_mode=yes`면 MUST 미충족 시 P0, SHOULD는 P1~P2. `tdd_mode=no`면 전체 informational.
+
+### 커밋 없음
+파일 1건 추가. 커밋 타이밍은 주인님 판단.
+
+### v0.2.0 환류 프로토콜 (선결 정의됨, §8)
+
+**tracing 대상 (회사 exemplar 실측 후)**:
+1. MUST 신호별 "exemplar에서 이 신호가 없었다면 shackled가 실패했을 곳" 확인.
+2. SHOULD 신호별 "신호 유무가 shackled 결과에 영향 준 정도" 측정.
+3. AP-1/AP-2별 "exemplar RED에서 실제 위반 있었는지 + 있었다면 결과" 확인.
+4. 신호 #7 7A/7B별 tracing → 재분리 판단 근거.
+
+**환류 가능 범위**:
+- MUST/SHOULD 재분류 (예: #3, #6 MUST 승격 후보)
+- AP-3의 신호 #7 통합 해제 (7A/7B가 다른 실패 패턴이면)
+- 판정 기준축 보강 (false positive 비용 축 도입 등)
+- 신호·anti-pattern 신규 발굴
+
+**v0.2.0 발행 기준**: 최소 3개 exemplar 분석 + 재분류 결정 확정 + 환류 근거 문서화.
+
+## 이전 작업: 2026-04-17 오후 (회사) — Issue-06 개설 (TDD-ready 설계서)
 
 ### 배경
 AI TDD 코딩의 강한 품질 효과를 실전에서 확인. 전제 조건은 "TDD를 잘 할 수 있는 설계서". 현재 파이프라인에 3가지 격차 존재:
@@ -178,14 +211,23 @@ AI TDD 코딩의 강한 품질 효과를 실전에서 확인. 전제 조건은 "
 - [x] Fixture runner 구현 + 67 tests passed (2026-04-16 회사)
 - [x] 6개 페르소나 AC 복제 + fixture runner 파싱 검증 (2026-04-16 회사)
 - [x] Issue-06 개설 — TDD-ready 설계서 규격 (2026-04-17 회사)
-- [ ] **Issue-06 #1 착수 — tdd_mode/tdd_ready 두 축 스펙 초안** (집 or 자전거 후)
-  - exemplar 경로 안정화 결정 (외부 레포 절대경로 vs 복제)
-  - 신호 8개 MUST/SHOULD 분류
-  - anti-pattern 3건 배치 위치 결정 (금기 vs 체크리스트)
-  - wtth 설계 모드 testability invariant 초안 (페르소나 추가 vs 기존 확장 택1)
+- [x] **Issue-06 #1 스펙 초안 v0.1.0-draft 작성** (2026-04-17 저녁, 집)
+  - [x] 저장 위치: 이슈 디렉토리 안, v1.0 시 common-spec 흡수 경로 열어둠
+  - [x] 신호 8개 MUST/SHOULD 분류 가설 확정 (MUST 4+조건부 1, SHOULD 3)
+  - [x] anti-pattern 배치: AP-1/AP-2 체크리스트, AP-3 → 신호 #7 통합 (sub-requirement 7A/7B)
+  - [x] 판정 기준축 "자동·구조적 판정 가능성" 확정
+  - [ ] **미결: exemplar 경로 안정화 방식** — 합의: "익명화 복제" 방향. 다음 회사 세션에서 실행
+- [ ] **회사 세션 (다음)**:
+  - [ ] exemplar 익명화 복제 → `80-Issue/06-Issue-06/exemplar/` 배치 (QLSN/T1 등 고유명 마스킹)
+  - [ ] shackled 실측 데이터 수집 (Sonnet, TDD 명세 기반, P0/P1 0건 확인)
+  - [ ] 환류 프로토콜 §8 수행 — tracing 대상 4건 분석
+  - [ ] 재분류·재분리 결정 → v0.2.0 draft 갱신
+  - [ ] v0.2.0 발행 (최소 3개 exemplar 분석 + 재분류 확정 + 근거 문서화)
+- [ ] Issue-06 #3 착수 (wtth 설계 모드 testability invariant) — v0.2.0 이후 권장
+- [ ] common-spec 분할 검토 이슈 개설 (신규) — 14개 섹션 도달로 단일 파일 가독성 저하
 - [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 repo 편입 정책)
 - [ ] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강
-- [ ] reviewer AC에 testability 항목 반영 (Issue-06 #1 완료 후)
+- [ ] reviewer AC에 testability 항목 반영 (Issue-06 #3 완료 후)
 - [ ] CODE v0.1.1 격리 재검증 (회귀 + FIX-CODE-02/03 실측)
 - [ ] 6개 페르소나 중 1개 격리 dry run (fixture 현실성 검증, testability 반영 후)
 

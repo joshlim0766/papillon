@@ -1,7 +1,37 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/04-wtth/ac/` — reviewer AC 전 페르소나 v0.1.0 작성 완료 + fixture runner 자동화 (2026-04-16 오전, 회사)
+`80-Issue/06-Issue-06/` — TDD-ready 설계서 규격 신설 이슈 문서화 완료 (2026-04-17 오후, 회사). 스펙 초안 착수 대기.
+
+## 직전 작업: 2026-04-17 오후 (회사) — Issue-06 개설 (TDD-ready 설계서)
+
+### 배경
+AI TDD 코딩의 강한 품질 효과를 실전에서 확인. 전제 조건은 "TDD를 잘 할 수 있는 설계서". 현재 파이프라인에 3가지 격차 존재:
+1. wtth 설계 리뷰가 testability 렌즈 없음
+2. shackled tdd 모드 업스트림 게이트 없음
+3. tdd 방법론 선택 시점이 shackled 진입 시점(설계서 고정 후)이라 소급 불가
+
+### 핵심 결정 (두 축 분리)
+- **`tdd_mode`** (사람 Gate 결정): 인퀴지션에서 질문 → summary 기록 → shackled까지 전파
+- **`tdd_ready`** (AI 리뷰 체크): wtth 설계 모드 invariant. `tdd_mode=yes`일 때 게이트, `no`일 때 informational
+
+### 참조 샘플 (TDD-ready exemplar 지정)
+`~/Work/megabird/megabird-work-plan/QLSN-476/QLSN-478/50-pipeline/T1-stats-consumer/shackled-phase2*.md` — phase 2A(★★★★★) / 2C(★★★★) / 2E(★★★☆). 이 문서군에서 TDD-ready 신호 8개 + anti-pattern 3건 추출. 상세는 `80-Issue/06-Issue-06/00-index-issue-06.md`.
+
+### 로드맵 재배치 (Issue-06으로 선결)
+```
+1. Issue-06 #1 — tdd_mode/tdd_ready 두 축 분리 스펙 (NEW, 선결)
+2. wtth 스킬 P0 3건 수정 (기존 1)
+3. reviewer AC에 testability 항목 반영 (NEW, Issue-06 #3)
+4. CODE AC v0.1.1 격리 재검증 (기존 2)
+5. 6개 페르소나 dry run (기존 3, testability 반영 후)
+```
+근거: 지금 dry run 먼저 돌리면 testability 미반영 baseline 고정 → 재작업 비용. 스펙 먼저가 경제적.
+
+### 커밋 없음
+문서만 추가: `80-Issue/06-Issue-06/00-index-issue-06.md` + `80-Issue/00-index.md` 갱신 + 본 HANDOFF 갱신. 커밋 타이밍은 주인님 판단.
+
+## 이전 작업: 2026-04-16 오전 (회사) — AC 패치 + fixture runner + 6개 페르소나 AC 복제
 
 ## 직전 작업: 2026-04-16 오전 (회사) — AC 패치 + fixture runner + 6개 페르소나 AC 복제
 
@@ -122,11 +152,13 @@
 
 ## 다음 작업: 다음 단계 후보
 
-우선순위 순:
+우선순위 순 (2026-04-17 Issue-06 발견으로 재배치):
 
+0. **Issue-06 #1 — tdd_mode/tdd_ready 두 축 분리 스펙** (NEW 선결) — `80-Issue/06-Issue-06/00-index-issue-06.md` 참조. exemplar(T1-stats-consumer phase2) 기준으로 신호 8개 MUST/SHOULD 분류 + anti-pattern 3건 금기화. 결과는 `02-common-spec.md` §14 (가칭) 또는 신규 파일.
 1. **wtth 스킬 P0 3건 수정** (선결) — 위 §"Gap 점검 결과" P0-1·2·3. 각각 1~2줄 추가면 끝남.
-2. **CODE AC v0.1.1 격리 재검증** — fixture runner 연동 완료. 격리 에이전트로 dry run → runner 자동 판정. FIX-CODE-02/03 첫 실측 포함.
-3. **6개 페르소나 AC 중 1개 격리 dry run** — BE 또는 SEC 추천. fixture 설계의 현실성 검증.
+2. **reviewer AC에 testability 항목 반영** (NEW, Issue-06 #3 연계) — CODE + 6개 페르소나 AC에 testability invariant 추가. dry run 전 선결.
+3. **CODE AC v0.1.1 격리 재검증** — fixture runner 연동 완료. 격리 에이전트로 dry run → runner 자동 판정. FIX-CODE-02/03 첫 실측 포함.
+4. **6개 페르소나 AC 중 1개 격리 dry run** — BE 또는 SEC 추천. fixture 설계의 현실성 검증. **testability 반영 후 진행**.
 4. **inquisition AC → fixture runner 연동** — AC v0.1.0 이미 있음, runner에 태우기만.
 5. **CODE AC v0.2.0 후속 보강** — 페르소나 v0.1.1 (체크리스트 인용 가이드 + 다중 형식 예시), SEC/ARCH PRD/ADR 모드 fixture 추가.
 6. **스킬 repo 편입** — `tools/skills/papillon/` + symlink. 회사/집 동기화 해결.
@@ -145,10 +177,17 @@
 - [x] CODE AC v0.1.1 P0 2건 패치 적용 완료 (2026-04-16 회사)
 - [x] Fixture runner 구현 + 67 tests passed (2026-04-16 회사)
 - [x] 6개 페르소나 AC 복제 + fixture runner 파싱 검증 (2026-04-16 회사)
+- [x] Issue-06 개설 — TDD-ready 설계서 규격 (2026-04-17 회사)
+- [ ] **Issue-06 #1 착수 — tdd_mode/tdd_ready 두 축 스펙 초안** (집 or 자전거 후)
+  - exemplar 경로 안정화 결정 (외부 레포 절대경로 vs 복제)
+  - 신호 8개 MUST/SHOULD 분류
+  - anti-pattern 3건 배치 위치 결정 (금기 vs 체크리스트)
+  - wtth 설계 모드 testability invariant 초안 (페르소나 추가 vs 기존 확장 택1)
 - [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 repo 편입 정책)
 - [ ] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강
+- [ ] reviewer AC에 testability 항목 반영 (Issue-06 #1 완료 후)
 - [ ] CODE v0.1.1 격리 재검증 (회귀 + FIX-CODE-02/03 실측)
-- [ ] 6개 페르소나 중 1개 격리 dry run (fixture 현실성 검증)
+- [ ] 6개 페르소나 중 1개 격리 dry run (fixture 현실성 검증, testability 반영 후)
 
 ## 보류 / 다른 세션에서 진행 중
 

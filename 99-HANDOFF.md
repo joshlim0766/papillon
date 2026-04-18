@@ -226,6 +226,7 @@ AI TDD 코딩의 강한 품질 효과를 실전에서 확인. 전제 조건은 "
 - [ ] Issue-06 #3 착수 (wtth 설계 모드 testability invariant) — v0.2.0 이후 권장
 - [ ] common-spec 분할 검토 이슈 개설 (신규) — 14개 섹션 도달로 단일 파일 가독성 저하
 - [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 repo 편입 정책)
+- [ ] **회사 머신 스킬 frontmatter 버전 업데이트**: `~/.claude/commands/papillon/{inquisition,wtth}.md` 3번 줄 `model: claude-opus-4-6` → `claude-opus-4-7`. 집 머신은 2026-04-18 적용 완료. `o.md`(개인 커맨드)는 폐기 예정이므로 손대지 않음
 - [ ] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강
 - [ ] reviewer AC에 testability 항목 반영 (Issue-06 #3 완료 후)
 - [ ] CODE v0.1.1 격리 재검증 (회귀 + FIX-CODE-02/03 실측)

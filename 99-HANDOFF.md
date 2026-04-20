@@ -1,7 +1,7 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`80-Issue/06-Issue-06/session-split-design-v0.1.0-draft.md` + `tracing-2f-2026-04-20.md` — 2f 진행 중 발견한 **shackled TDD 세션 분할 메커니즘** 초안 박제. 2e tracing 1차 완료. 2f 완료 후 세션 분할 실측 + v0.2.0 통합 진행. wtth 스킬 회사 머신 P1 2건 반영 완료.
+`80-Issue/06-Issue-06/tracing-2f-2026-04-20.md` 관찰 3 — 2f 3라운드 P0/P1 재귀 패턴 + 실패 경로 계약 축 발견 (Claude 분석). session-split 설계(시간+공간)로는 불충분, 신호 #9 "실패 경로 계약" 신설 후보. 2F 완료 후 RDR 부록 + v0.2.0 draft 반영 진행. wtth 스킬 회사 머신 P1 2건 반영 완료.
 
 ## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 

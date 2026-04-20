@@ -1,4 +1,4 @@
-# TDD-ready Exemplar 독립 재평가 메모 (2026-04-20 집 세션)
+# TDD-ready Exemplar 독립 재평가 메모 (2026-04-20 회사 세션)
 
 ## 목적
 

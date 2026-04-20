@@ -1,9 +1,9 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`80-Issue/06-Issue-06/tdd-ready-evaluation-memo-2026-04-20.md` — exemplar 10건 독립 재평가 박제 완료 (2026-04-20 집). 회사 exemplar 실측 + 익명화 복제 → v0.2.0 환류 대기. wtth 스킬 집 머신 P1 2건 추가 반영 완료.
+`80-Issue/06-Issue-06/exemplar/` — exemplar 10건 익명화 복제 완료 (2026-04-20 회사). 2e 지시서 wtth 리뷰 finding 수용 중, 2f 착수 전 → shackled 실측은 2f 진입 후 유효 데이터 확보. 환류 프로토콜 §8 tracing 대기. wtth 스킬 회사 머신 P1 2건 반영 완료.
 
-## 직전 작업: 2026-04-20 오전 (집) — exemplar 재평가 메모 박제 + wtth 스킬 P0/P1 상태 정정
+## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 
 ### 산출물
 - **신규** `80-Issue/06-Issue-06/tdd-ready-evaluation-memo-2026-04-20.md` — 10개 `shackled-*.md` 파일 전수 독립 평가(신호 8개·AP 3개 기준) + 핵심 발견 3건 + 회사 세션 재진입 체크리스트. 원본 megabird 레포 무변경.
@@ -258,8 +258,8 @@ AI TDD 코딩의 강한 품질 효과를 실전에서 확인. 전제 조건은 "
 - [ ] 회사 머신에도 동일 스킬 동기화 필요 (스킬 repo 편입 정책)
 - [ ] **회사 머신 스킬 frontmatter 버전 업데이트**: `~/.claude/commands/papillon/{inquisition,wtth}.md` 3번 줄 `model: claude-opus-4-6` → `claude-opus-4-7`. 집 머신은 2026-04-18 적용 완료. `o.md`(개인 커맨드)는 폐기 예정이므로 손대지 않음
 - [x] wtth 스킬 §2.4/§3.1/§4.3 P0 3건 보강 — **2026-04-20 확인: 섹션 재조직 후 현 §1.3/§3.3/§2.1에 이미 반영된 상태**
-- [x] wtth 스킬 P1 2건 집 머신 반영 (§3.3 용도 복원 + §2.1 경량 통합 체크 비용 가이드, 2026-04-20)
-- [ ] **회사 머신 wtth 스킬 P1 2건 동기화** — 위 2건 회사 머신 `~/.claude/commands/papillon/wtth.md`에 동일 반영
+- [x] wtth 스킬 P1 2건 회사 머신 반영 (§3.3 용도 복원 + §2.1 경량 통합 체크 비용 가이드, 2026-04-20)
+- [x] exemplar 10건 익명화 복제 — `80-Issue/06-Issue-06/exemplar/` (2026-04-20, 커밋 `ec41ad3`). phase2e/2f 확정 후 `tools/anonymize-exemplar.py` 재실행 필요
 - [ ] reviewer AC에 testability 항목 반영 (Issue-06 #3 완료 후)
 - [ ] CODE v0.1.1 격리 재검증 (회귀 + FIX-CODE-02/03 실측)
 - [ ] 6개 페르소나 중 1개 격리 dry run (fixture 현실성 검증, testability 반영 후)

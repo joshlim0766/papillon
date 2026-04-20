@@ -1,8 +1,9 @@
 # Issue-06: TDD-ready 설계서 규격 신설
 
 ## 상태
-- **Open** — 2026-04-17 발견. 스펙 초안 작업 예정.
-- **영향 범위**: inquisition + wtth (설계 모드) + shackled (tdd 모드) + common-spec
+- **v0.2.0 발행** — 2026-04-20 회사. 2e + 2f 실측 2건 기반 환류 완료. 신호 #9 실패 경로 계약 신설 + #2/#7B/#8 확장 + 지시서 분할 요건 + 체계 개선 2건. 정본: [`tdd-ready-spec-v0.2.0.md`](./tdd-ready-spec-v0.2.0.md).
+- **영향 범위**: inquisition + wtth (설계 모드) + shackled (tdd 모드 + 세션 분할) + common-spec
+- **차기 재검토**: 배치 엔진 exemplar 3건 이상 실측 후 또는 6개월 경과 시점.
 
 ## 배경
 

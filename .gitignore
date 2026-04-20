@@ -9,3 +9,6 @@ __pycache__/
 dist/
 build/
 uv.lock
+
+# Issue-06 exemplar 원본↔마스킹 매핑 (회사 정보 복원키 — gitignore 필수)
+80-Issue/06-Issue-06/exemplar/anonymization-mapping.md

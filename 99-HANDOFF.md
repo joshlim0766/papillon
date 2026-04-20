@@ -1,7 +1,7 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`80-Issue/06-Issue-06/exemplar/` — exemplar 10건 익명화 복제 완료 (2026-04-20 회사). 2e 지시서는 wtth 리뷰 반영본(snapshot 시점 이미 최종 상태), 2f 착수 준비 중 → shackled 실측은 2f 진입 후 유효 데이터 확보. 환류 프로토콜 §8 tracing 대기. wtth 스킬 회사 머신 P1 2건 반영 완료.
+`80-Issue/06-Issue-06/exemplar/` — exemplar 10건 익명화 복제 완료 (2026-04-20 회사). **2e는 TDD 명세 → shackled → 코드 구현 완전 사이클 종료 = 실측 데이터 확보 상태**. 2f는 shackled TDD 진행 준비 중. 2e 데이터만으로 환류 §8 tracing 부분 수행 가능. wtth 스킬 회사 머신 P1 2건 반영 완료.
 
 ## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 

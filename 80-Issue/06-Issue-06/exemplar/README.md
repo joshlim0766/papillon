@@ -10,14 +10,15 @@
 - **원본 위치**: `~/Work/example/example-work-plan/PROJ-101/PROJ-102/50-pipeline/T1-stats-consumer/` (마스킹 후 표기)
 - **복제 방식**: `tools/anonymize-exemplar.py` 일괄 실행 (468+ 치환 × 10 파일)
 
-## 중요 — phase2e / phase2f 확정본 아님
+## 중요 — snapshot 시점의 지시서 상태
 
-복제 시점 기준으로 **phase2e는 TDD 코드 리뷰 진행 중**이며 phase2f도 착수 전이다. 따라서:
+복제 시점 기준 각 지시서 상태 (2026-04-20 12:16 KST):
 
-- `shackled-phase2e-upsert-service.md` — 실측 피드백으로 재개정 가능
-- `shackled-phase2f-pipeline-assembly.md` — 착수 전, 변동 가능
+- `shackled-phase2e-upsert-service.md` — **wtth 리뷰 반영본**. finding 수용 완료 후 지시서 본문에 반영된 상태가 이 snapshot. 단 **shackled TDD 실측은 미실시** (실측 데이터는 2f 진입 시 처음 관측).
+- `shackled-phase2f-pipeline-assembly.md` — **착수 준비 중**. 2f 지시서 보완이 별도 세션에서 진행 중이므로 변동 가능. 최종 확정 후 재복제 필요.
+- 나머지 8건 — 이미 구현 완료 또는 선행 자산. snapshot 이후 변동 가능성 낮음.
 
-두 파일은 **확정 후 재복제** 필요. 재복제 방법은 아래 §"재복제 방법" 참조.
+재복제 방법은 아래 §"재복제 방법" 참조.
 
 ## 익명화 규칙 요약
 
@@ -49,7 +50,7 @@
 | `shackled-phase2b-channel-type-code.md` | S | ★★★★★ (신규 exemplar 후보) |
 | `shackled-phase2c-original-lookup.md` | M | ★★★★★ (상향 제안) |
 | `shackled-phase2d-dimension-mapper.md` | S | ★★★★★ (신규 exemplar 후보) |
-| `shackled-phase2e-upsert-service.md` | L | ★★★★ (상향 제안, 진행 중) |
+| `shackled-phase2e-upsert-service.md` | L | ★★★★ (상향 제안, 리뷰 반영본) |
 | `shackled-phase2f-pipeline-assembly.md` | L | ★★★★★ (신규 exemplar 후보, 착수 전) |
 | `shackled-shared-tenant-context-use-block.md` | XS | ★★★★☆ |
 | `shackled-use-tenant-directive.md` | S | ★★★★ |

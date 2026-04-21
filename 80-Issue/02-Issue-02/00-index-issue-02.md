@@ -16,7 +16,7 @@
 
 | # | 파일 | 분류 | 요약 | 상태 |
 |---|---|---|---|---|
-| 4 | [04-wtth-mode-detail-gap.md](./04-wtth-mode-detail-gap.md) | 공백 | wtth 모드별 상세 파일이 얇음, 공통 메커니즘과의 상호작용 미정의 | Open |
+| 4 | [04-wtth-mode-detail-gap.md](./04-wtth-mode-detail-gap.md) | 공백 | wtth 모드별 상세 파일이 얇음, 공통 메커니즘과의 상호작용 미정의 | **Closed** (2026-04-16, 설계서 + 스킬 반영) |
 | 5 | [05-artifact-lifecycle.md](./05-artifact-lifecycle.md) | 공백 | 산출물 9종+의 생명주기·정합성 검증 메커니즘 부재 | Open |
 
 ## 낮음 (2건)

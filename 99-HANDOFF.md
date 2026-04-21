@@ -1,7 +1,7 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`80-Issue/08-Issue-08/00-index-issue-08.md` — **Issue-08 개설** (2026-04-21). 빠삐용 리스크 매트릭스 (심각도 × 확률 축 도입). 4축 솔루션 (A 프롬프트 reasoning / B 사후 캘리브레이션 / C anti-pattern / E prior KB). Phase 3 배치 엔진 착수 전 최소 A+E 완료 권장. Issue-06 v0.2.0 발행 완료는 유지 (이번 세션 추가 박제 없음, 8월 재검토는 배치 엔진 실측 후).
+`01-Planning/baseline-probability.md` **v0.1 박제 완료** (2026-04-21 회사). Issue-08 실행 계획 #1+#2 통합 완료 — 확률 bucket 5단계 어휘 + 영향×확률 매트릭스 + 8 카테고리 prior 카탈로그 (인프라/동시성/DB/Kafka/Redis/HTTP/배포/네트워크). 워커 배포 병행. 다음 단계: #3 common-spec §1 매트릭스 박제 → #4 wtth reviewer 프롬프트 확률 reasoning 지침 (축 A 메인).
 
 ## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 

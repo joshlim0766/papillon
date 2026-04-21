@@ -1,7 +1,9 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-`01-Planning/baseline-probability.md` **v0.1 박제 완료** (2026-04-21 회사). Issue-08 실행 계획 #1+#2 통합 완료 — 확률 bucket 5단계 어휘 + 영향×확률 매트릭스 + 8 카테고리 prior 카탈로그 (인프라/동시성/DB/Kafka/Redis/HTTP/배포/네트워크). 워커 배포 병행. 다음 단계: #3 common-spec §1 매트릭스 박제 → #4 wtth reviewer 프롬프트 확률 reasoning 지침 (축 A 메인).
+Issue-08 실행 계획 **#1~#7 전부 완료** (2026-04-21 회사, 1차 구현). 축 A (reviewer 프롬프트 5단계) + 축 B (RDR 포맷 + 수용률 지표 기반) + 축 C (AP-Severity-1 + AP-3 TDD-ready) + 축 E (baseline-probability.md) 박제 완료. 실측 피드백 대기.
+
+**중요**: wtth 스킬 (`~/.claude/commands/papillon/wtth.md`) §2.0 심각도 5단계 박제는 레포 밖 편집 — 회사 머신에 반영됨. 다음 세션 시작 시 집 머신 동기화 여부 spot check 필요 (현재 회사·집 동일 머신이면 자동 동기화).
 
 ## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 

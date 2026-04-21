@@ -10,3 +10,4 @@
 | 05 | [Opus × Gemini Debate Findings](./05-Issue-05/00-index-issue-05.md) | 프로젝트 전체 | Open (실험 대기) | 0 | 0 | 0 |
 | 06 | [TDD-ready 설계서 규격 신설](./06-Issue-06/00-index-issue-06.md) | inquisition + wtth + shackled + common-spec | **Open** | 1 | 0 | 0 |
 | 07 | [02-common-spec.md 분할 검토](./07-Issue-07/00-index-issue-07.md) | 02-common-spec.md + 전 참조 문서 | Open (보류, 트리거 대기) | 0 | 0 | 1 |
+| 08 | [빠삐용 리스크 매트릭스 — 심각도 × 확률 축 도입](./08-Issue-08/00-index-issue-08.md) | common-spec §1 + wtth 페르소나 + TDD-ready spec + VOCABULARY | **Open** | 1 | 0 | 0 |

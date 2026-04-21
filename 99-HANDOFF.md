@@ -5,7 +5,62 @@ Issue-08 실행 계획 **#1~#7 전부 완료** (2026-04-21 회사, 1차 구현).
 
 **중요**: wtth 스킬 (`~/.claude/commands/papillon/wtth.md`) §2.0 심각도 5단계 박제는 레포 밖 편집 — 회사 머신에 반영됨. 다음 세션 시작 시 집 머신 동기화 여부 spot check 필요 (현재 회사·집 동일 머신이면 자동 동기화).
 
-## 직전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
+## 직전 작업: 2026-04-21 (회사) — Issue-08 개설 + 1차 구현 완료
+
+### 배경 — 주인님 실무 진단
+
+"빠삐용이 필요 이상으로 너무 깐깐한 거 아닌가? 발생확률에 대해서 재고하지 않고 P0, P1 으로 올리는 경향이 제법 있지 않은가?" + 20년 경력 prior ("뭐가 자주 발생하고 뭐가 희박하지 알거든").
+
+핵심 대비 사례:
+- 스레드 경합 (1h 내 재현) → P0 유지 타당.
+- Elasticache 45분+ 장애 (AWS SLA 99.99%, 연 1회 이하) → P0 꽂는 것은 "개소리".
+
+실증: Issue-06 2e 수용률 36% / 2f 4라운드 수렴. 발견 findings 의 대략 2/3 가 "심각도로는 P0/P1 이지만 발생 확률 희박".
+
+### Issue-08 개설 — 리스크 매트릭스 (심각도 × 확률 축)
+
+4축 솔루션 1차 구현 완료:
+
+| 축 | 완료 산출물 |
+|---|---|
+| **A (메인)** — reviewer 프롬프트 5단계 reasoning 강제 | `02-common-spec.md §1.4` + `04-wtth/02-design/00-core.md §2.0` + 스킬 `~/.claude/commands/papillon/wtth.md §2.0` |
+| **B (사후)** — RDR 포맷 확장 + 수용률 캘리브레이션 | `02-common-spec.md §2 / §2.1` (영향·Bucket 컬럼 + Finding 상세 블록) |
+| **C (금기)** — anti-pattern "확률 무시 방어" | `02-common-spec.md §1.6 AP-Severity-1` + `tdd-ready-spec-v0.2.0 §5 AP-3` (patch 2026-04-21) |
+| **E (정본 KB)** — 공용 확률 prior | `01-Planning/baseline-probability.md` v0.1 — 5 bucket + 4×5 매트릭스 + 60+ prior 8 카테고리 |
+
+### 실행 계획 7건 전부 완료
+
+- #1+#2: `baseline-probability.md` v0.1 박제
+- #3: `common-spec §1` 영향×확률 매트릭스 박제
+- #4: wtth 설계 + 스킬 5단계 강제
+- #5: anti-pattern "확률 무시 방어" 공통 + TDD 특수판 병기
+- #6: RDR 포맷 확장
+- #7: reviewer AC 신규 `common-v0.1.2.md` (INV-WREV-06 신설)
+
+### 커밋
+
+| Commit | 내용 |
+|---|---|
+| `249e410` | Issue-08 개설 — 빠삐용 리스크 매트릭스 |
+| `b22a42f` | Issue-08 #1+#2 — `baseline-probability.md` v0.1 |
+| `a1a7bdc` | Issue-08 #3 — common-spec §1 매트릭스 박제 |
+| `2cc7f50` | Issue-08 #4 — wtth 설계 + 스킬 5단계 강제 |
+| `7c2b2ee` | Issue-08 #5/#6/#7 — AP + RDR 포맷 + common-v0.1.2 |
+
+### 다음 단계 — 실측 피드백 루프
+
+Phase 3 배치 엔진 착수 시 자연 활성:
+- reviewer 가 5단계 reasoning 자동 수행 → RDR 영향/Bucket 컬럼 + Finding 상세 박제.
+- 수용률 지표 자연 생성 → 분기 메타리뷰로 `baseline-probability.md` 보강.
+- HITL escalation 3회 누적 시 SEM-WREV-05 Tier 2 승격 (reasoning 타당성 자동 검증).
+
+### 후속 보강 후보
+
+- 페르소나별 AC (`be/fe/test/sec/arch/dba/code`) 에 확률 축 override 필요 여부 — 실측 후 결정. 현재 common-v0.1.2 베이스만으로 대부분 커버.
+- `baseline-probability.md` 내부 실측 prior 보강 (MZ·MegaBird 조직 특화).
+- 체급별 (S/M/L) bucket 세분화.
+
+## 이전 작업: 2026-04-20 오전 (회사) — exemplar 재평가 + 익명화 복제 + wtth 스킬 P1 반영
 
 ### 산출물
 - **신규** `80-Issue/06-Issue-06/tdd-ready-evaluation-memo-2026-04-20.md` — 10개 `shackled-*.md` 파일 전수 독립 평가(신호 8개·AP 3개 기준) + 핵심 발견 3건 + 회사 세션 재진입 체크리스트. 원본 megabird 레포 무변경.

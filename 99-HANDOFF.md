@@ -1,11 +1,151 @@
 # 99-HANDOFF
 
 ## 현재 작업 위치
-**Open Issue 인덱스 정합성 정리 완료** (2026-04-21 저녁, 집). 다음 세션 = 내일 회사 Phase 3 배치 엔진 shackled TDD 실측 → Issue-06 v0.3.0 + Issue-08 축 B 수용률 캘리브레이션 환류 트리거.
+**회사 운영 실측 시그널 박제 + 다음 사례 해부 준비 완료** (2026-04-25, 집). 다음 세션 = 회사. 잔여 작업(대사배치, 통계 롤업 배치)이 표본 N 확장 + 구조 해부 자료로 양호 — 빠삐용 자동 파이프라인 미투입, Opus 작성 + wtth 리뷰 수동 운영 패턴 그대로 진행하면서 **사례 해부 측정 동시 수행** 권장.
 
 **중요**: wtth 스킬 (`~/.claude/commands/papillon/wtth.md`) §2.0 심각도 5단계 박제는 레포 밖 편집 — 회사 머신에 반영됨. 다음 세션 시작 시 집 머신 동기화 여부 spot check 필요 (현재 회사·집 동일 머신이면 자동 동기화).
 
-## 직전 작업: 2026-04-21 저녁 (집) — Open Issue 훑기 + 인덱스 정합성 동기화
+## 직전 작업: 2026-04-25 (집) — 회사 운영 실측 시그널 박제
+
+### 진입 맥락
+주인님 보고: "회사에서는 따로 파이프라인 돌리지 않고 설계서·TDD 지시서 만들어서 돌리고 있는데 제법 잘 동작하고 있음."
+
+### 운영 실태 (N=1, 이전 제공 TDD 지시서 제외)
+
+- 설계서·TDD 지시서 모두 **Opus 작성** (간단한 건 Sonnet)
+- 양 산출물 모두 **wtth 리뷰** 통과
+- 주인님 검토 게이트 — 지적할 부분은 지적 (prior 메꿈 명시적으로 일어남)
+- 사람 개입 빈도 낮음, RED 첫 통과율 양호
+- 주인님 판단: "Contract/Geis가 설계서·지시서에 잘 녹아들었다"
+
+### 직전 세션 박제와 부딪히는 시그널
+
+2026-04-22 박제는 (a) "Phase 3 shackled TDD 실측" 계획 + (b) "현재 파이프라인은 Contract/Geis 산출 공백"이었음. 그러나 실제로는:
+- shackled 자동 실측 **자연 우회됨** (수동 운영으로 대체)
+- 분산 신호 형태(tdd-ready-spec v0.2.0 신호 9개 + wtth 리뷰)로도 **Contract/Geis 암묵 흡수되어 작동 중**
+
+**재조립 프레임 강화** + **결정 2 전제 흔들림** (Phase 3 v0.2.0 실측이 계획대로 모이지 않음).
+
+### 신설 아이디어 5건 재평가
+
+`project_contract_geis_direction.md` 신설 아이디어 5건 중 2건이 redundant 후보로 격하:
+- ~~Geis Gate (Inquisition 종료 직후)~~ — wtth 설계 리뷰가 이미 Geis 흡수 게이트로 작동 중 시그널
+- ~~설계서 §Contract / §Geis 이중 섹션 의무화~~ — 분산 신호 형태로도 작동 시그널, 명시 섹션화는 형식 비용만 추가 가능성
+
+**drop 결정은 N=1이라 보류**. N≥3 누적 후 결정.
+
+남는 후보 (유효):
+- Inquisition Phase B-2 "접면 매핑" — 코딩 외 신규 프로젝트 인터페이스 설계 영역, 별 축
+- wtth reviewer AC에 Contract/Geis invariant 신설 — 분산 신호 명시 게이팅, 형식 비용 적음
+- shackled tdd 모드 RED/GREEN/REFACTOR 세션 분리 — Contract 명시화와 별 축
+
+### 새 논점 박제 — 사람 친화 ≠ AI 친화 포맷 격차
+
+주인님 우려: "사람이 보기 편한 문서 ≠ AI가 보기 편한 문서". 산출물이 두 청중을 동시 만족시켜야 하는 갈등.
+
+**기존 답 발견**: `01-Planning/02-common-spec.md §12` SPEC/RAT 분리. 본문(SPEC) = AI 행동 결정 신호, `<rationale>` = 사람용 맥락. 판별: *"빼면 AI 행동 달라지나?"*. 새로운 발명이 아니라 **기존 패턴의 확장 적용** 영역.
+
+**현재 미적용 영역**: TDD 지시서·Contract/Geis 산출물.
+
+**v0.3.0 Contract/Geis 설계 시 SPEC/RAT 패턴 확장 적용을 1순위 검토**:
+- 설계서 §Contract: SPEC = invariant / RAT = 도메인 prior 출처
+- TDD 지시서: SPEC = 시나리오 명세 / RAT = 시나리오 선택 이유 (RAT 비율 낮게)
+- 설계서 §Geis: SPEC = 금기 명제 + 위반 신호 / RAT = 도출 근거
+
+### 다음 회사 세션 액션 — 사례 해부 (C안)
+
+대사배치, 통계 롤업 배치 잔여 작업이 후보. **수동 운영 패턴 그대로 진행하되 사례 해부 측정 동시 수행**. 측정 항목:
+
+- tdd-ready-spec v0.2.0 신호 9개 중 어느 항목이 Contract 4축을 어떻게 표현했는가
+- anti-pattern이 Geis로 작동한 흔적 (도메인 금기 막은 사례)
+- **주인님 지적 종류 분포** — typo/포맷 vs Contract 보강 vs Geis 발견. AI 산출물 단독 품질과 prior 메꿈 분리.
+- 사람 개입 없이 통과한 항목 비율
+- Opus 산출물이 SPEC/RAT 패턴을 자연 준수했는지 확인
+
+### 박제 산출물
+
+- 신규 메모리 `project_company_runtime_pattern.md` — 회사 운영 패턴 + N=1 + 다음 사례 후보
+- 신규 메모리 `project_human_ai_format_gap.md` — 포맷 격차 인식 + SPEC/RAT 확장 적용 가설
+- 갱신 메모리 `project_contract_geis_direction.md` — 신설 아이디어 5건 중 2건 redundant 후보 표기 (drop 보류)
+- MEMORY.md 인덱스 2건 추가
+- 본 HANDOFF (2026-04-22 박제와 통합 커밋 예정)
+
+---
+
+## 이전 작업: 2026-04-22 저녁 (집) — Contract/Geis + TDD 메인 루프 방향성 검토
+
+### 진입 맥락
+주인님 진입 질문: "inquisitor 현 상태 + 인터뷰로 Contract/Geis 뽑을 수 있나?"
+→ 단순 상태 점검이 아니라 **빠삐용 코딩 파이프라인의 근본 수렴 방향성 논의**로 전개.
+
+### 논의 궤적 (6단계)
+
+1. **주인님 4요소 공표**:
+   - (1) 메인 루프 = TDD (코딩 한정)
+   - (2) Contract/Geis 명시 산출 + 설계 반영 + 리뷰 게이팅 + 단일 책임 지시서 분할
+   - (3) RED/GREEN/REFACTOR 세션 분리 (Sonnet)
+   - (4) TDD 진행 여부 = 사람 선택
+
+2. **현재 파이프라인 × 의도 매핑**:
+   - (4)만 완료 (Issue-06 `tdd_mode`). (3)은 `session-split-design-v0.1.0-draft.md` draft. (1)(2)는 실질 공백.
+   - Contract 4축(precondition/postcondition/invariant/failure-contract)은 tdd-ready-spec v0.2.0 신호 9개에 분산. 단일 섹션으로 묶이지 않음.
+   - **Geis** (도메인 금기)는 wtth anti-pattern + 페르소나 금기로만 존재. **설계 산출물 섹션 없음**.
+
+3. **"허사" 논쟁 → 재조립 프레임**:
+   - 주인님 우려: 빠삐용 단순화되면 기존 노력 허사.
+   - 반박: 축적물 대부분 Contract/Geis 프레임에서 재해석됨. tdd-ready-spec v0.2.0 신호 = Contract 초기 버전, anti-pattern = Geis 비특수판, baseline-probability = Failure Contract 확률 축, 페르소나 판단기준·체크리스트·금기 = 페르소나별 Contract/Geis 템플릿, wtth RDR/ADR = Contract 합의 프로토콜.
+   - 허사가 되는 것은 "복합 페르소나 + 5모드로 코딩 잡기" **가설 하나**이지 전체 노력 아님. "재조립"이 정확한 프레임.
+
+4. **Draft/확정 생명주기 제안 (Geis vs Contract 분리)**:
+   - **Geis**: Inquisition Phase G에서 후보 추출 → **설계 착수 직전 Gate로 확정** → 프로젝트 내내 불변. 변경 시 MUST 재리뷰 (사실상 PRD 변경).
+   - **Contract**: Sonnet 설계 초안 §Contract 섹션 Draft → wtth 설계 리뷰 수렴 시점 확정 → shackled tdd 진입 시 **락**.
+   - RED 중 Contract 수정 필요 발견 = 설계 회귀 Gate 경유. Geis 위반 발견 = 경로 폐기.
+   - **신설 포인트**: Geis Gate (Inquisition 종료 직후, 설계 착수 전).
+
+5. **도메인 prior 책임 층위 L1~L5 + Contract 붕괴 구조**:
+   - L1 (prior 진위) = **사람 몫, 위임 불가**.
+   - L2 (형식화) = AI.
+   - L3 (누락 감지) / L4 (교차 검증) / L5 (Contract ↔ 코드 정합) = **ASEWS KB로 자동화 가능 영역**.
+   - Contract 붕괴 3구조: (a) 틀린 prior 주입 (b) prior 누락 (c) 형식화 오류. 주인님 토큰 낭비 = (a)(b) + 제도 부재 증폭.
+   - **Geis Gate에 prior source 필수 필드 + baseline-probability 교차 검증 플래그** 추가 시 토큰 낭비 저비용 방지 수단 성립.
+
+6. **ASEWS 자원 재평가 + 빠삐용-ASEWS 접면 진단**:
+   - 초기 평가 "KB 얕음" = 잘못된 평균화. 정정: 소스코드(회사 제품 전체 + 인프라 + argocd, 20K chunk) + Kafka 파이프라인 추론 가능 수준까지 **두껍게** 시딩됨. decision/incident KB만 얕음 (운영시간 필요).
+   - **빠삐용-ASEWS 접면 = 0건**. Contract 붕괴 시 ASEWS가 옆에서 놀고 있었던 구조적 공백.
+   - 실패 원인 3분할: (1) 인터페이스 공백 (빠삐용 스킬에 `search_knowledge` 호출 없음) (2) decision/incident 축적 얕음 (운영시간) (3) 호출 시점 프로토콜 미설계.
+   - Contract/Geis 관점 접면 기대치: 분산 시스템 Contract 붕괴의 단일 최대 원인인 "업스트림 변경이 하류 Contract를 깸"을 Neo4j CALLS/Kafka 체인으로 **전수 추적 가능**.
+
+### 핵심 결정 2건
+
+**결정 1 — 현 Kotlin 신규 레포 프로젝트(5월 운영 론칭)**: 빠삐용-ASEWS 통합 적용 **없음**.
+- 론칭 리스크 대비 검증 안 된 파이프라인 투입 비용 맞지 않음.
+- 빠삐용 스킬 수정 이번 사이클 보류.
+- **KB 소비**: 주인님 수동, **결정적 3순간만** — (i) 접면 설계 결정 (Kafka 토픽 스키마 / 공유 DB / 기존 인증) (ii) Contract 초안이 막히는 순간 (iii) 장애 설명이 이상한 순간.
+- **KB 축적**: `store_knowledge` **루틴화 권장** — 다음 파일럿의 L3/L4 재료. 축적은 파이프라인 영향 0.
+
+**결정 2 — 방향성 반영 시점**: Phase 3 배치 엔진 **v0.2.0 실측 완료 후** v0.3.0 착수 시점에 Contract/Geis 섹션 신설 검토. Phase 3에 오늘 논의 신규 개념 투입 금지 (baseline 오염 방지).
+
+### 보류 / 다음 파일럿 후보
+
+- **Phase 3 배치 엔진 shackled TDD 실측** — tdd-ready-spec v0.2.0 검증 목표 그대로. 내일 회사 예정.
+- **Kotlin 신규 레포 5월 론칭 완료 후** — 빠삐용-ASEWS 통합 1호 파일럿 후보. 그린필드 + Kafka 접면 + 소규모 + 기존과 독립 = 교과서적 파일럿 조건. 주인님 실무 여력 확보 후.
+- **신설 후보 아이디어 (메모만)**:
+  - Inquisition Phase B-2 "접면 매핑" 서브페이즈 (새 프로젝트용: Kafka/DB/인프라/외부 API 4축 접면 영향 평가).
+  - Geis Gate (Inquisition 종료 직후, 설계 착수 전).
+  - 설계서 §Contract / §Geis 이중 섹션 의무화 (tdd_mode=yes일 때 MUST).
+  - wtth reviewer AC에 Contract/Geis invariant 신설 (Issue-06 #3 연계 확대).
+  - shackled `tdd` 모드에 Contract 단위 지시서 분할 규칙 + RED/GREEN/REFACTOR 세션 분리.
+
+### 다음 세션 선결 지시 (내일 회사)
+
+**Phase 3 배치 엔진 실측 그대로 진행**. 오늘 논의는 **다음 파일럿 설계 재료**이며 실측에 개입 금지. 실측 결과가 나오면 그걸로 v0.3.0 Contract/Geis 설계 방향 검증 가능.
+
+### 커밋 없음
+오늘 세션은 방향성 논의. 문서 수정 없음. HANDOFF + 메모리 갱신만.
+
+---
+
+## 이전 작업: 2026-04-21 저녁 (집) — Open Issue 훑기 + 인덱스 정합성 동기화
 
 ### 산출물 (커밋 `bc08aca`, 3 files +4/-4)
 
